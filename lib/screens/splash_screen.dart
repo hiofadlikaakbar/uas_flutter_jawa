@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class SplashScreen extends StateLessWidget {
+class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
   @override
   Widget build(BuildContext context) {
@@ -37,6 +37,34 @@ class SplashScreen extends StateLessWidget {
                 'images/logo-global.png',
                 height: 280,
                 fit: BoxFit.contain,
+              ),
+
+              const SizedBox(height: 50),
+
+              // tombol lanjut/started
+              SizedBox(
+                width: double.infinity,
+                height: 54,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color(0xFF10138F),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(28),
+                    ),
+                    elevation: 0,
+                  ),
+                  onPressed: () {
+                    //
+                  },
+                  child: const Text(
+                    "Mulai Belajar",
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
               ),
             ],
           ),
