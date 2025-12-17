@@ -19,7 +19,7 @@ class SplashScreen extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 26,
                     fontWeight: FontWeight.w600,
-                    color: Colors.black,
+                    color: Colors.white,
                   ),
                   children: [
                     TextSpan(text: "Selamat datang di "),
@@ -54,7 +54,7 @@ class SplashScreen extends StatelessWidget {
                     elevation: 0,
                   ),
                   onPressed: () {
-                    //
+                    Navigator.pushReplacementNamed(context, '/login');
                   },
                   child: const Text(
                     "Mulai Belajar",
