@@ -31,6 +31,13 @@ class SplashScreen extends StateLessWidget {
                   ],
                 ),
               ),
+              // gambar
+              const SizedBox(height: 40),
+              Image.asset(
+                'images/logo-global.png',
+                height: 280,
+                fit: BoxFit.contain,
+              ),
             ],
           ),
         ),
