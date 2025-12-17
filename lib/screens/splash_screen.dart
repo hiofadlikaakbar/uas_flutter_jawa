@@ -5,7 +5,7 @@ class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFFFEFE6),
+      backgroundColor: const Color(0xFF13283D),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24.0),
@@ -25,7 +25,7 @@ class SplashScreen extends StatelessWidget {
                     TextSpan(text: "Selamat datang di "),
                     TextSpan(
                       text: "LearnCode",
-                      style: TextStyle(color: Color(0xFFFF6A00)),
+                      style: TextStyle(color: Color(0xFF00DDF8)),
                     ),
                     TextSpan(text: "\nnow"),
                   ],
@@ -34,7 +34,7 @@ class SplashScreen extends StatelessWidget {
               // gambar
               const SizedBox(height: 40),
               Image.asset(
-                'images/logo-global.png',
+                'images/global.png',
                 height: 280,
                 fit: BoxFit.contain,
               ),
@@ -47,7 +47,7 @@ class SplashScreen extends StatelessWidget {
                 height: 54,
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFF10138F),
+                    backgroundColor: const Color(0xFF00DDF8),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(28),
                     ),
