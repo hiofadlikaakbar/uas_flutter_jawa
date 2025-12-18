@@ -137,8 +137,31 @@ class LoginPage extends StatelessWidget {
                             color: Colors.cyanAccent,
                           ),
                         ),
-                      )
+                      ),
                     ],
+                  ),
+                  SizedBox(
+                    width: double.infinity,
+                    height: 52,
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor:
+                            Colors.cyanAccent,
+                        shape: RoundedRectangleBorder(
+                          borderRadius:
+                              BorderRadius.circular(14),
+                        ),
+                      ),
+                      child: const Text(
+                        "Masuk  →",
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ),
                   ),
                 ],
               ),
