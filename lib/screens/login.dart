@@ -67,6 +67,7 @@ class LoginPage extends StatelessWidget {
                     ),
                   ),
                 ),
+                const SizedBox(height: 16),
                 TextField(
                   obscureText: true,
                   style: const TextStyle(color: Colors.white),
