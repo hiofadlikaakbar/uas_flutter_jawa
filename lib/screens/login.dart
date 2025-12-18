@@ -161,8 +161,7 @@ class LoginPage extends StatelessWidget {
                       children: [
                         const Text(
                           "Belum punya akun? ",
-                          style: TextStyle(
-                              color: Colors.white70),
+                          style: TextStyle(color: Colors.white70),
                         ),
                         TextButton(
                           onPressed: () {},
@@ -170,18 +169,17 @@ class LoginPage extends StatelessWidget {
                             "Daftar sekarang",
                             style: TextStyle(
                               color: Colors.cyanAccent,
-                              fontWeight:
-                                  FontWeight.w600,
+                              fontWeight: FontWeight.w600,
                             ),
                           ),
                         ),
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ),
-                ],
           ),
-        ),
-      ),
         ),
       ),
     );
