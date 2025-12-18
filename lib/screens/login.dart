@@ -34,6 +34,14 @@ class LoginPage extends StatelessWidget {
                     color: Colors.cyanAccent,
                   ),
                 ),
+                const Text(
+                  "CodeLearnJawa",
+                  style: TextStyle(
+                    fontSize: 26,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.cyanAccent,
+                  ),
+                ),
               ],
             ),
           ),
