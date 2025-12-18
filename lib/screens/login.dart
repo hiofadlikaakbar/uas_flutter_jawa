@@ -46,7 +46,7 @@ class LoginPage extends StatelessWidget {
                 const Text(
                   "Masuk untuk mulai belajar",
                   style: TextStyle(
-                    color: Colors.white,
+                    color: Colors.white70,
                     fontSize: 14,
                   ),
                 ),
