@@ -81,6 +81,12 @@ class LoginPage extends StatelessWidget {
                       Icons.visibility_off,
                       color: Colors.white54,
                     ),
+                    filled: true,
+                    fillColor: Colors.white.withOpacity(0.08),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(14),
+                      borderSide: BorderSide.none,
+                    ),
                   ),
                 ),
               ],
