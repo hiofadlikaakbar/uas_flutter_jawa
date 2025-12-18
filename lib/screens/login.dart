@@ -128,6 +128,16 @@ class LoginPage extends StatelessWidget {
                         style:
                             TextStyle(color: Colors.white70),
                       ),
+                      const Spacer(),
+                      TextButton(
+                        onPressed: () {},
+                        child: const Text(
+                          "Lupa password?",
+                          style: TextStyle(
+                            color: Colors.cyanAccent,
+                          ),
+                        ),
+                      )
                     ],
                   ),
                 ],
