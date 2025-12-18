@@ -43,6 +43,7 @@ class LoginPage extends StatelessWidget {
                     color: Colors.cyanAccent,
                   ),
                 ),
+                const SizedBox(height: 6),
                 const Text(
                   "Masuk untuk mulai belajar",
                   style: TextStyle(
