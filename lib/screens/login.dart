@@ -48,6 +48,7 @@ class LoginPage extends StatelessWidget {
                   "Masuk untuk mulai belajar",
                   style: TextStyle(color: Colors.white70, fontSize: 14),
                 ),
+                const SizedBox(height: 32),
                 TextField(
                   keyboardType: TextInputType.emailAddress,
                   style: const TextStyle(color: Colors.white),
