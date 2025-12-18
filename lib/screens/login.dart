@@ -67,6 +67,22 @@ class LoginPage extends StatelessWidget {
                     ),
                   ),
                 ),
+                TextField(
+                  obscureText: true,
+                  style: const TextStyle(color: Colors.white),
+                  decoration: InputDecoration(
+                    hintText: "Password",
+                    hintStyle: const TextStyle(color: Colors.white54),
+                    prefixIcon: const Icon(
+                      Icons.lock_outline,
+                      color: Colors.white70,
+                    ),
+                    suffixIcon: const Icon(
+                      Icons.visibility_off,
+                      color: Colors.white54,
+                    ),
+                  ),
+                ),
               ],
             ),
           ),
