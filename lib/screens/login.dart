@@ -46,23 +46,25 @@ class LoginPage extends StatelessWidget {
                 const SizedBox(height: 6),
                 const Text(
                   "Masuk untuk mulai belajar",
-                  style: TextStyle(
-                    color: Colors.white70,
-                    fontSize: 14,
-                  ),
+                  style: TextStyle(color: Colors.white70, fontSize: 14),
                 ),
                 TextField(
-                    keyboardType: TextInputType.emailAddress,
-                    style: const TextStyle(color: Colors.white),
-                    decoration: InputDecoration(
-                      hintText: "nama@email.com",
-                      hintStyle:
-                          const TextStyle(color: Colors.white54),
-                      prefixIcon: const Icon(
-                        Icons.email_outlined,
-                        color: Colors.white70,
-                      ),
+                  keyboardType: TextInputType.emailAddress,
+                  style: const TextStyle(color: Colors.white),
+                  decoration: InputDecoration(
+                    hintText: "nama@email.com",
+                    hintStyle: const TextStyle(color: Colors.white54),
+                    prefixIcon: const Icon(
+                      Icons.email_outlined,
+                      color: Colors.white70,
                     ),
+                    filled: true,
+                    fillColor: Colors.white.withOpacity(0.08),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(14),
+                      borderSide: BorderSide.none,
+                    ),
+                  ),
                 ),
               ],
             ),
