@@ -83,6 +83,14 @@ class LoginPage extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 16),
+                  const Text(
+                    "Password",
+                    style: TextStyle(
+                      color: Colors.white70,
+                      fontSize: 14,
+                    ),
+                  ),
+                  const SizedBox(height: 6),
                   TextField(
                     obscureText: true,
                     style: const TextStyle(color: Colors.white),
