@@ -51,6 +51,19 @@ class LoginPage extends StatelessWidget {
                     fontSize: 14,
                   ),
                 ),
+                TextField(
+                    keyboardType: TextInputType.emailAddress,
+                    style: const TextStyle(color: Colors.white),
+                    decoration: InputDecoration(
+                      hintText: "nama@email.com",
+                      hintStyle:
+                          const TextStyle(color: Colors.white54),
+                      prefixIcon: const Icon(
+                        Icons.email_outlined,
+                        color: Colors.white70,
+                      ),
+                    ),
+                ),
               ],
             ),
           ),
