@@ -85,10 +85,7 @@ class LoginPage extends StatelessWidget {
                   const SizedBox(height: 16),
                   const Text(
                     "Password",
-                    style: TextStyle(
-                      color: Colors.white70,
-                      fontSize: 14,
-                    ),
+                    style: TextStyle(color: Colors.white70, fontSize: 14),
                   ),
                   const SizedBox(height: 6),
                   TextField(
@@ -118,24 +115,19 @@ class LoginPage extends StatelessWidget {
                       Checkbox(
                         value: false,
                         onChanged: (value) {},
-                        side: const BorderSide(
-                          color: Colors.white54,
-                        ),
+                        side: const BorderSide(color: Colors.white54),
                         activeColor: Colors.cyanAccent,
                       ),
                       const Text(
                         "Ingat saya",
-                        style:
-                            TextStyle(color: Colors.white70),
+                        style: TextStyle(color: Colors.white70),
                       ),
                       const Spacer(),
                       TextButton(
                         onPressed: () {},
                         child: const Text(
                           "Lupa password?",
-                          style: TextStyle(
-                            color: Colors.cyanAccent,
-                          ),
+                          style: TextStyle(color: Colors.cyanAccent),
                         ),
                       ),
                     ],
@@ -148,11 +140,9 @@ class LoginPage extends StatelessWidget {
                     child: ElevatedButton(
                       onPressed: () {},
                       style: ElevatedButton.styleFrom(
-                        backgroundColor:
-                            Colors.cyanAccent,
+                        backgroundColor: Colors.cyanAccent,
                         shape: RoundedRectangleBorder(
-                          borderRadius:
-                              BorderRadius.circular(14),
+                          borderRadius: BorderRadius.circular(14),
                         ),
                       ),
                       child: const Text(
@@ -165,10 +155,22 @@ class LoginPage extends StatelessWidget {
                       ),
                     ),
                   ),
+                  Center(
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        const Text(
+                          "Belum punya akun? ",
+                          style: TextStyle(
+                              color: Colors.white70),
+                        ),
                 ],
               ),
             ),
+                ],
           ),
+        ),
+      ),
         ),
       ),
     );
