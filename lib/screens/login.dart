@@ -164,6 +164,17 @@ class LoginPage extends StatelessWidget {
                           style: TextStyle(
                               color: Colors.white70),
                         ),
+                        TextButton(
+                          onPressed: () {},
+                          child: const Text(
+                            "Daftar sekarang",
+                            style: TextStyle(
+                              color: Colors.cyanAccent,
+                              fontWeight:
+                                  FontWeight.w600,
+                            ),
+                          ),
+                        ),
                 ],
               ),
             ),
