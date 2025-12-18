@@ -113,15 +113,22 @@ class LoginPage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Align(
-                    alignment: Alignment.centerRight,
-                    child: TextButton(
-                      onPressed: () {},
-                      child: const Text(
-                        "Lupa password?",
-                        style: TextStyle(color: Colors.cyanAccent),
+                  Row(
+                    children: [
+                      Checkbox(
+                        value: false,
+                        onChanged: (value) {},
+                        side: const BorderSide(
+                          color: Colors.white54,
+                        ),
+                        activeColor: Colors.cyanAccent,
                       ),
-                    ),
+                      const Text(
+                        "Ingat saya",
+                        style:
+                            TextStyle(color: Colors.white70),
+                      ),
+                    ],
                   ),
                 ],
               ),
