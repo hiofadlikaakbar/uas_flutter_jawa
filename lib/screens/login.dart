@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
+
+  @override
+  State<LoginPage> createState() => _LoginState();
+}
+
+class _LoginState extends State<LoginPage> {
+  bool rememberMe = false;
+  bool obscurePassword = true;
 
   @override
   Widget build(BuildContext context) {
