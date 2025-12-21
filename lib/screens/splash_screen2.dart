@@ -23,7 +23,7 @@ class SplashScreen2 extends StatelessWidget {
             children: [
               Image.asset(
                 'images/global.png',
-                height: 100,
+                height: 200,
                 fit: BoxFit.contain,
               ),
               const SizedBox(height: 20),
@@ -38,8 +38,8 @@ class SplashScreen2 extends StatelessWidget {
               ),
               SizedBox(height: 10),
               const Text(
-                "JawaKode membantu mahasiswa memahami dasar "
-                "pemrograman Java melalui materi terstruktur, "
+                "JawaKode membantu pengguna memahami dasar "
+                "bahasa pemrograman melalui materi terstruktur, "
                 "contoh kode, dan latihan interaktif.",
                 textAlign: TextAlign.center,
                 style: TextStyle(
@@ -47,6 +47,24 @@ class SplashScreen2 extends StatelessWidget {
                   color: Colors.white70,
                   height: 1.5,
                 ),
+              ),
+              const SizedBox(height: 30),
+               ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.cyanAccent,
+                  foregroundColor: Colors.black,
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 40,
+                    vertical: 14,
+                  ),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                ),
+                onPressed: () {
+                  Navigator.pushReplacementNamed(context, '/login');
+                },
+                child: const Text("Lanjutkan"),
               ),
             ],
           ),
