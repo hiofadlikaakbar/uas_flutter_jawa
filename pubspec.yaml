@@ -60,6 +60,7 @@ flutter:
   assets:
     - images/global.png
     - images/ftik.png
+    - images/se1.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

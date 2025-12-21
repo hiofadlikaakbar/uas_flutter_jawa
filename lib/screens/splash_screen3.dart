@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class SplashScreen2 extends StatelessWidget {
-  const SplashScreen2({super.key});
+class SplashScreen3 extends StatelessWidget {
+  const SplashScreen3({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -27,14 +27,14 @@ class SplashScreen2 extends StatelessWidget {
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   image: DecorationImage(
-                    image: AssetImage("images/ftik.png"),
+                    image: AssetImage("images/se1.jpg"),
                     fit: BoxFit.cover,
                   ),
                 ),
               ),
               const SizedBox(height: 20),
               const Text(
-                "Belajar Pemrograman\nDengan Mudah & Terarah",
+                "Belajar Pemrograman\nDengan Mudah & Jelas",
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 22,
@@ -44,9 +44,9 @@ class SplashScreen2 extends StatelessWidget {
               ),
               SizedBox(height: 10),
               const Text(
-                "JawaKode membantu pengguna memahami dasar "
-                "bahasa pemrograman melalui materi terstruktur, "
-                "contoh kode, dan latihan interaktif.",
+                "JawaKode menjadi media pembelajaran dasar "
+                "pemrograman dengan materi terstruktur, "
+                "contoh kode yang jelas dan latihan interaktif.",
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 16,
@@ -68,7 +68,7 @@ class SplashScreen2 extends StatelessWidget {
                   ),
                 ),
                 onPressed: () {
-                  Navigator.pushReplacementNamed(context, '/splash3');
+                  Navigator.pushReplacementNamed(context, '/login');
                 },
                 child: const Text("Lanjutkan"),
               ),
