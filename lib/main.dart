@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 import 'package:flutter/material.dart';
 import 'package:uas_flutter_jawa/screens/login.dart';
 import 'screens/splash_screen.dart';
@@ -24,4 +22,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
->>>>>>> 6b8b99226e4648fe5d2c0c73692323da614ace2d
