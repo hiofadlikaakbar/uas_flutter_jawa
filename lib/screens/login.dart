@@ -137,7 +137,11 @@ class _LoginState extends State<LoginPage> {
                     children: [
                       Checkbox(
                         value: false,
-                        onChanged: (value) {},
+                        onChanged: (value) {
+                          setState(() {
+                            rememberMe = value!;
+                          });
+                        },
                         side: const BorderSide(color: Colors.white54),
                         activeColor: Colors.cyanAccent,
                       ),
