@@ -44,9 +44,9 @@ class SplashScreen3 extends StatelessWidget {
               ),
               SizedBox(height: 10),
               const Text(
-                "JawaKode membantu pengguna memahami dasar "
-                "bahasa pemrograman melalui materi terstruktur, "
-                "contoh kode, dan latihan interaktif.",
+                "JawaKode menjadi media pembelajaran dasar "
+                "pemrograman dengan materi terstruktur, "
+                "contoh kode yang jelas dan latihan interaktif.",
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 16,
