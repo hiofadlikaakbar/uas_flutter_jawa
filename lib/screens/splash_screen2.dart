@@ -26,7 +26,6 @@ class SplashScreen2 extends StatelessWidget {
                 height: 100,
                 fit: BoxFit.contain,
               ),
-
               const SizedBox(height: 20),
               const Text(
                 "Belajar Pemrograman\nDengan Mudah & Terarah",
@@ -35,6 +34,18 @@ class SplashScreen2 extends StatelessWidget {
                   fontSize: 22,
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
+                ),
+              ),
+              SizedBox(height: 10),
+              const Text(
+                "JawaKode membantu mahasiswa memahami dasar "
+                "pemrograman Java melalui materi terstruktur, "
+                "contoh kode, dan latihan interaktif.",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 16,
+                  color: Colors.white70,
+                  height: 1.5,
                 ),
               ),
             ],
