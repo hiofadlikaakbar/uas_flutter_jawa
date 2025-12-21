@@ -31,7 +31,6 @@ class _LoginState extends State<LoginPage> {
 
         child: Center(
           child: SingleChildScrollView(
-            controller: ScrollController(),
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 28),
               child: Column(
@@ -54,7 +53,7 @@ class _LoginState extends State<LoginPage> {
                   ),
                   const SizedBox(height: 16),
                   const Center(
-                    child: const Text(
+                    child: Text(
                       "CodeLearnJawa",
                       style: TextStyle(
                         fontSize: 26,
@@ -65,9 +64,12 @@ class _LoginState extends State<LoginPage> {
                   ),
                   const SizedBox(height: 6),
                   const Center(
-                    child: const Text(
+                    child: Text(
                       "Masuk untuk mulai belajar",
-                      style: TextStyle(color: Colors.white70, fontSize: 14),
+                      style: TextStyle(
+                        color: Colors.white70,
+                        fontSize: 14,
+                      ),
                     ),
                   ),
                   const SizedBox(height: 32),
