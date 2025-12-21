@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:uas_flutter_jawa/screens/login.dart';
 import 'screens/splash_screen.dart';
 
 void main() {
@@ -13,7 +14,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: "Mulai Belajar",
       initialRoute: '/',
-      routes: {'/': (context) => const SplashScreen()},
+      routes: {'/': (context) => const SplashScreen(),
+      '/login': (context) => const LoginPage(),},
     );
   }
 }
