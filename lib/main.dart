@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
       title: "Mulai Belajar",
       initialRoute: '/',
       routes: {'/': (context) => const SplashScreen(),
+      '/splash2': (context) => const SplashScreen(),
       '/login': (context) => const LoginPage(),},
     );
   }
