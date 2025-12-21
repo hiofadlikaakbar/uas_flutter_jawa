@@ -27,7 +27,7 @@ class SplashScreen3 extends StatelessWidget {
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   image: DecorationImage(
-                    image: AssetImage("images/ftik.png"),
+                    image: AssetImage("images/se1.jpg"),
                     fit: BoxFit.cover,
                   ),
                 ),
