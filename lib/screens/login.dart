@@ -103,7 +103,7 @@ class _LoginState extends State<LoginPage> {
                   ),
                   const SizedBox(height: 6),
                   TextField(
-                    obscureText: true,
+                    obscureText: obscurePassword,
                     style: const TextStyle(color: Colors.white),
                     decoration: InputDecoration(
                       hintText: "Password",
@@ -112,9 +112,18 @@ class _LoginState extends State<LoginPage> {
                         Icons.lock_outline,
                         color: Colors.white70,
                       ),
-                      suffixIcon: const Icon(
-                        Icons.visibility_off,
-                        color: Colors.white54,
+                      suffixIcon: IconButton(
+                        icon: Icon(
+                          obscurePassword
+                              ? Icons.visibility_off
+                              : Icons.visibility,
+                          color: Colors.white54,
+                        ),
+                        onPressed: () {
+                          setState(() {
+                            obscurePassword = !obscurePassword;
+                          });
+                        },
                       ),
                       filled: true,
                       fillColor: Colors.white.withOpacity(0.08),
