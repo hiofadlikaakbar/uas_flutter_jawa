@@ -49,7 +49,7 @@ class SplashScreen2 extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 30),
-               ElevatedButton(
+              ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.cyanAccent,
                   foregroundColor: Colors.black,
