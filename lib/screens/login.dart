@@ -136,7 +136,7 @@ class _LoginState extends State<LoginPage> {
                   Row(
                     children: [
                       Checkbox(
-                        value: false,
+                        value: rememberMe,
                         onChanged: (value) {
                           setState(() {
                             rememberMe = value!;
@@ -165,7 +165,9 @@ class _LoginState extends State<LoginPage> {
                     width: double.infinity,
                     height: 52,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushReplacementNamed(context, '/dasboard');
+                      },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.cyanAccent,
                         shape: RoundedRectangleBorder(
