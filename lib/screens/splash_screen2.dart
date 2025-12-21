@@ -21,10 +21,16 @@ class SplashScreen2 extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.asset(
-                'images/global.png',
+              Container(
                 height: 200,
-                fit: BoxFit.contain,
+                width: 200,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  image: DecorationImage(
+                    image: AssetImage("images/ftik.png"),
+                    fit: BoxFit.cover,
+                  ),
+                ),
               ),
               const SizedBox(height: 20),
               const Text(
