@@ -68,7 +68,7 @@ class SplashScreen3 extends StatelessWidget {
                   ),
                 ),
                 onPressed: () {
-                  Navigator.pushReplacementNamed(context, '/login');
+                  Navigator.pushReplacementNamed(context, '/splash4');
                 },
                 child: const Text("Lanjutkan"),
               ),
