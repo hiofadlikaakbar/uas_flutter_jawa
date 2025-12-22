@@ -85,18 +85,22 @@ class MyDashboard extends StatelessWidget {
                         CategoryCard(
                           title: 'C++ Programming',
                           image: '../../images/ftik.png',
+                          press: () {},
                         ),
                         CategoryCard(
                           title: 'Python Programming',
                           image: '../../images/ftik.png',
+                          press: () {},
                         ),
                         CategoryCard(
                           title: 'Laravel Programming',
                           image: '../../images/ftik.png',
+                          press: () {},
                         ),
                         CategoryCard(
                           title: 'Java Programming',
                           image: '../../images/ftik.png',
+                          press: () {},
                         ),
                       ],
                     ),
@@ -114,41 +118,50 @@ class MyDashboard extends StatelessWidget {
 class CategoryCard extends StatelessWidget {
   final String title;
   final String image;
-  const CategoryCard({super.key, required this.title, required this.image});
+  final Function press;
+  const CategoryCard({
+    super.key,
+    required this.title,
+    required this.image,
+    required this.press,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(20),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(13),
-        boxShadow: [
-          BoxShadow(
-            offset: Offset(0, 17),
-            blurRadius: 17,
-            spreadRadius: -23,
-            color: Colors.black,
-          ),
-        ],
-      ),
-      child: Material(
-        color: Colors.transparent,
-        child: InkWell(
-          onTap: () {},
-          child: Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: Column(
-              children: <Widget>[
-                Spacer(),
-                Image.asset(image, height: 200),
-                Spacer(),
-                Text(
-                  title,
-                  textAlign: TextAlign.center,
-                  style: Theme.of(context).textTheme.titleMedium,
-                ),
-              ],
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(13),
+      child: Container(
+        padding: EdgeInsets.all(20),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(13),
+          boxShadow: [
+            BoxShadow(
+              offset: Offset(0, 17),
+              blurRadius: 17,
+              spreadRadius: -23,
+              color: Colors.black,
+            ),
+          ],
+        ),
+        child: Material(
+          color: Colors.transparent,
+          child: InkWell(
+            onTap: press(),
+            child: Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Column(
+                children: <Widget>[
+                  Spacer(),
+                  Image.asset(image),
+                  Spacer(),
+                  Text(
+                    title,
+                    textAlign: TextAlign.center,
+                    style: Theme.of(context).textTheme.titleMedium,
+                  ),
+                ],
+              ),
             ),
           ),
         ),
