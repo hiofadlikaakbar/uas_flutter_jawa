@@ -21,11 +21,7 @@ class _LoginState extends State<LoginPage> {
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            colors: [
-              Color(0xFF0F2027),
-              Color(0xFF203A43),
-              Color(0xFF2C5364),
-            ],
+            colors: [Color(0xFF0F2027), Color(0xFF203A43), Color(0xFF2C5364)],
           ),
         ),
 
@@ -66,10 +62,7 @@ class _LoginState extends State<LoginPage> {
                   const Center(
                     child: Text(
                       "Masuk untuk mulai belajar",
-                      style: TextStyle(
-                        color: Colors.white70,
-                        fontSize: 14,
-                      ),
+                      style: TextStyle(color: Colors.white70, fontSize: 14),
                     ),
                   ),
                   const SizedBox(height: 32),
@@ -175,7 +168,7 @@ class _LoginState extends State<LoginPage> {
                         ),
                       ),
                       child: const Text(
-                        "Masuk  →",
+                        "Masuk",
                         style: TextStyle(
                           color: Colors.black,
                           fontSize: 16,

@@ -30,22 +30,25 @@ class MyDashboard extends StatelessWidget {
             ),
           ),
           SafeArea(
-            child: Column(
-              children: <Widget>[
-                Align(
-                  alignment: Alignment.topRight,
-                  child: Container(
-                    alignment: Alignment.center,
-                    height: 52,
-                    width: 52,
-                    decoration: BoxDecoration(
-                      color: Color(0xFF00DDF8).withOpacity(0.2),
-                      shape: BoxShape.circle,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              child: Column(
+                children: <Widget>[
+                  Align(
+                    alignment: Alignment.topRight,
+                    child: Container(
+                      alignment: Alignment.center,
+                      height: 52,
+                      width: 52,
+                      decoration: BoxDecoration(
+                        color: Color(0xFF00DDF8).withOpacity(0.2),
+                        shape: BoxShape.circle,
+                      ),
+                      child: SvgPicture.asset("../../android/icons/Filter.svg"),
                     ),
-                    child: SvgPicture.asset("../../android/icons/Filter.svg"),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ],
