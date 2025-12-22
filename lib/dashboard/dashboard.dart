@@ -83,23 +83,23 @@ class MyDashboard extends StatelessWidget {
                       childAspectRatio: .85,
                       children: <Widget>[
                         CategoryCard(
-                          title: 'C++ Programming',
-                          image: '../../images/ftik.png',
+                          title: 'C++ ',
+                          image: '../../images/C++.png',
                           press: () {},
                         ),
                         CategoryCard(
-                          title: 'Python Programming',
-                          image: '../../images/ftik.png',
+                          title: 'Python ',
+                          image: '../../images/PY.png',
                           press: () {},
                         ),
                         CategoryCard(
-                          title: 'Laravel Programming',
-                          image: '../../images/ftik.png',
+                          title: 'JavaScript',
+                          image: '../../images/JS.png',
                           press: () {},
                         ),
                         CategoryCard(
-                          title: 'Java Programming',
-                          image: '../../images/ftik.png',
+                          title: 'Java ',
+                          image: '../../images/JAVA.png',
                           press: () {},
                         ),
                       ],
