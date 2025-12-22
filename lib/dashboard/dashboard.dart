@@ -69,6 +69,18 @@ class MyDashboard extends StatelessWidget {
                         border: InputBorder.none,
                       ),
                     ),
+                  ),
+                  Expanded(
+                    child: GridView.count(
+                      crossAxisCount: 2,
+                      children: <Widget>[
+                        Container(
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(13),
+                          ),
+                      )],
+                    ),
                   )
                 ],
               ),
