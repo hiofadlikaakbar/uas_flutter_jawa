@@ -13,15 +13,8 @@ class MyDashboard extends StatelessWidget {
         height: 80,
         color: Colors.white,
         child: Row(
-          children: <Widget>[
-            Column(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: <Widget>[
-                Image.asset("../../images/Calendar.png", width: 30, height: 30),
-                Text("Kalender"),
-              ],
-            ),
-          ],
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[BottomNavItem(), BottomNavItem()],
         ),
       ),
       body: Stack(
@@ -125,6 +118,24 @@ class MyDashboard extends StatelessWidget {
               ),
             ),
           ),
+        ],
+      ),
+    );
+  }
+}
+
+class BottomNavItem extends StatelessWidget {
+  const BottomNavItem({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {},
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: <Widget>[
+          Image.asset("../../images/Calendar.png", width: 30, height: 30),
+          Text("Kalender"),
         ],
       ),
     );
