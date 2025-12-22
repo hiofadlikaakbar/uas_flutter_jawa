@@ -10,11 +10,12 @@ class MyDashboard extends StatelessWidget {
     return Scaffold(
       bottomNavigationBar: Container(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-        height: 70,
+        height: 80,
         color: Colors.white,
         child: Row(
           children: <Widget>[
             Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Image.asset("../../images/Calendar.png", width: 30, height: 30),
                 Text("Kalender"),
