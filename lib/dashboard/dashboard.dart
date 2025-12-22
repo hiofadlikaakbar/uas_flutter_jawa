@@ -136,17 +136,20 @@ class CategoryCard extends StatelessWidget {
         color: Colors.transparent,
         child: InkWell(
           onTap: () {},
-          child: Column(
-            children: <Widget>[
-              Spacer(),
-              Image.asset(image, height: 200),
-              Spacer(),
-              Text(
-                title,
-                textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.titleMedium,
-              ),
-            ],
+          child: Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Column(
+              children: <Widget>[
+                Spacer(),
+                Image.asset(image, height: 200),
+                Spacer(),
+                Text(
+                  title,
+                  textAlign: TextAlign.center,
+                  style: Theme.of(context).textTheme.titleMedium,
+                ),
+              ],
+            ),
           ),
         ),
       ),
