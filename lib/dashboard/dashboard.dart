@@ -118,7 +118,8 @@ class MyDashboard extends StatelessWidget {
 class CategoryCard extends StatelessWidget {
   final String title;
   final String image;
-  final Function press;
+  final VoidCallback press;
+
   const CategoryCard({
     super.key,
     required this.title,
@@ -130,38 +131,32 @@ class CategoryCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return ClipRRect(
       borderRadius: BorderRadius.circular(13),
-      child: Container(
-        padding: EdgeInsets.all(20),
-        decoration: BoxDecoration(
-          color: Colors.white,
+      child: Material(
+        color: Colors.white,
+        elevation: 3,
+        child: InkWell(
+          onTap: press,
           borderRadius: BorderRadius.circular(13),
-          boxShadow: [
-            BoxShadow(
-              offset: Offset(0, 17),
-              blurRadius: 17,
-              spreadRadius: -23,
-              color: Colors.black,
-            ),
-          ],
-        ),
-        child: Material(
-          color: Colors.transparent,
-          child: InkWell(
-            onTap: press(),
-            child: Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: Column(
-                children: <Widget>[
-                  Spacer(),
-                  Image.asset(image),
-                  Spacer(),
-                  Text(
-                    title,
-                    textAlign: TextAlign.center,
-                    style: Theme.of(context).textTheme.titleMedium,
-                  ),
-                ],
-              ),
+          child: Padding(
+            padding: const EdgeInsets.all(12),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Image.asset(
+                  image,
+                  width: 150,
+                  height: 150,
+                  fit: BoxFit.contain,
+                ),
+                const SizedBox(height: 8),
+                Text(
+                  title,
+                  textAlign: TextAlign.center,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                  style: Theme.of(context).textTheme.bodyMedium,
+                ),
+              ],
             ),
           ),
         ),
