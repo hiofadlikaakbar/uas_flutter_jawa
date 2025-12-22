@@ -57,14 +57,19 @@ class MyDashboard extends StatelessWidget {
                   ),
                   Container(
                     margin: const EdgeInsets.symmetric(vertical: 20),
-                    padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 5),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 30,
+                      vertical: 5,
+                    ),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(29.5),
                     ),
                     child: TextField(
                       decoration: InputDecoration(
-                        icon: SvgPicture.asset("../../android/icons/Search.svg"),
+                        icon: SvgPicture.asset(
+                          "../../android/icons/Search.svg",
+                        ),
                         hintText: "Cari Kursus",
                         border: InputBorder.none,
                       ),
@@ -73,6 +78,7 @@ class MyDashboard extends StatelessWidget {
                   Expanded(
                     child: GridView.count(
                       crossAxisCount: 2,
+                      childAspectRatio: .85,
                       children: <Widget>[
                         Container(
                           padding: EdgeInsets.all(20),
@@ -81,32 +87,29 @@ class MyDashboard extends StatelessWidget {
                             borderRadius: BorderRadius.circular(13),
                             boxShadow: [
                               BoxShadow(
-                                offset: Offset(0, 17),
+                                offset: Offset(17, 17),
                                 blurRadius: 17,
                                 spreadRadius: -23,
-                                color: Colors.grey,
+                                color: Colors.black,
                               ),
                             ],
                           ),
                           child: Column(
                             children: <Widget>[
                               Spacer(),
-                              Image.asset(
-                                '../../images/ftik.png',
-                                height: 100,
-                              ),
+                              Image.asset('../../images/ftik.png', height: 100),
                               Spacer(),
-                              Text("C++ Programming",
-                              textAlign: TextAlign.center,
-                              style: Theme.of(context)
-                              .textTheme
-                              .titleMedium,
+                              Text(
+                                "C++ Programming",
+                                textAlign: TextAlign.center,
+                                style: Theme.of(context).textTheme.titleMedium,
                               ),
                             ],
                           ),
-                      )],
+                        ),
+                      ],
                     ),
-                  )
+                  ),
                 ],
               ),
             ),
