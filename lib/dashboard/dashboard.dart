@@ -48,12 +48,28 @@ class MyDashboard extends StatelessWidget {
                       child: SvgPicture.asset("../../android/icons/Filter.svg"),
                     ),
                   ),
-                  Text("Selamat Datang di \nCodeLearnJawa",
-                      style: Theme.of(context)
-                          .textTheme
-                          .headlineMedium
-                          ?.copyWith(
-                              color: Colors.white, fontWeight: FontWeight.bold)),
+                  Text(
+                    "Selamat Datang \ndi \nCodeLearnJawa",
+                    style: Theme.of(context).textTheme.displayMedium?.copyWith(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w900,
+                    ),
+                  ),
+                  Container(
+                    margin: const EdgeInsets.symmetric(vertical: 20),
+                    padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 5),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(29.5),
+                    ),
+                    child: TextField(
+                      decoration: InputDecoration(
+                        icon: SvgPicture.asset("../../android/icons/Search.svg"),
+                        hintText: "Cari Kursus",
+                        border: InputBorder.none,
+                      ),
+                    ),
+                  )
                 ],
               ),
             ),
