@@ -8,6 +8,21 @@ class MyDashboard extends StatelessWidget {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Scaffold(
+      bottomNavigationBar: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+        height: 70,
+        color: Colors.white,
+        child: Row(
+          children: <Widget>[
+            Column(
+              children: <Widget>[
+                Image.asset("../../images/Calendar.png", width: 30, height: 30),
+                Text("Kalender"),
+              ],
+            ),
+          ],
+        ),
+      ),
       body: Stack(
         children: <Widget>[
           Container(
