@@ -15,7 +15,7 @@ class MyDashboard extends StatelessWidget {
         child: Row(
           children: <Widget>[
             Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
                 Image.asset("../../images/Calendar.png", width: 30, height: 30),
                 Text("Kalender"),
