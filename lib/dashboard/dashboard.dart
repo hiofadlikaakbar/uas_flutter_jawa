@@ -78,34 +78,25 @@ class MyDashboard extends StatelessWidget {
                   Expanded(
                     child: GridView.count(
                       crossAxisCount: 2,
+                      crossAxisSpacing: 20,
+                      mainAxisSpacing: 20,
                       childAspectRatio: .85,
                       children: <Widget>[
-                        Container(
-                          padding: EdgeInsets.all(20),
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(13),
-                            boxShadow: [
-                              BoxShadow(
-                                offset: Offset(17, 17),
-                                blurRadius: 17,
-                                spreadRadius: -23,
-                                color: Colors.black,
-                              ),
-                            ],
-                          ),
-                          child: Column(
-                            children: <Widget>[
-                              Spacer(),
-                              Image.asset('../../images/ftik.png', height: 100),
-                              Spacer(),
-                              Text(
-                                "C++ Programming",
-                                textAlign: TextAlign.center,
-                                style: Theme.of(context).textTheme.titleMedium,
-                              ),
-                            ],
-                          ),
+                        CategoryCard(
+                          title: 'C++ Programming',
+                          image: '../../images/ftik.png',
+                        ),
+                        CategoryCard(
+                          title: 'Python Programming',
+                          image: '../../images/ftik.png',
+                        ),
+                        CategoryCard(
+                          title: 'Laravel Programming',
+                          image: '../../images/ftik.png',
+                        ),
+                        CategoryCard(
+                          title: 'Java Programming',
+                          image: '../../images/ftik.png',
                         ),
                       ],
                     ),
@@ -115,6 +106,49 @@ class MyDashboard extends StatelessWidget {
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class CategoryCard extends StatelessWidget {
+  final String title;
+  final String image;
+  const CategoryCard({super.key, required this.title, required this.image});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(13),
+        boxShadow: [
+          BoxShadow(
+            offset: Offset(0, 17),
+            blurRadius: 17,
+            spreadRadius: -23,
+            color: Colors.black,
+          ),
+        ],
+      ),
+      child: Material(
+        color: Colors.transparent,
+        child: InkWell(
+          onTap: () {},
+          child: Column(
+            children: <Widget>[
+              Spacer(),
+              Image.asset(image, height: 200),
+              Spacer(),
+              Text(
+                title,
+                textAlign: TextAlign.center,
+                style: Theme.of(context).textTheme.titleMedium,
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
