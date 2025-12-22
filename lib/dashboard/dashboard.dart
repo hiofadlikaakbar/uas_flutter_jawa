@@ -9,12 +9,29 @@ class MyDashboard extends StatelessWidget {
     var size = MediaQuery.of(context).size;
     return Scaffold(
       bottomNavigationBar: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+        padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 10),
         height: 80,
         color: Colors.white,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[BottomNavItem(), BottomNavItem()],
+          children: <Widget>[
+            BottomNavItem(
+              image: '../../images/home.png',
+              title: 'Home',
+              press: () {},
+            ),
+            BottomNavItem(
+              image: '../../images/book.png',
+              title: 'All Exercise',
+              isActive: true,
+              press: () {},
+            ),
+            BottomNavItem(
+              image: '../../images/user.png',
+              title: 'Profile',
+              press: () {},
+            ),
+          ],
         ),
       ),
       body: Stack(
@@ -125,17 +142,30 @@ class MyDashboard extends StatelessWidget {
 }
 
 class BottomNavItem extends StatelessWidget {
-  const BottomNavItem({super.key});
+  final String image;
+  final String title;
+  final VoidCallback press;
+  final bool isActive;
+  const BottomNavItem({
+    super.key,
+    required this.image,
+    required this.title,
+    required this.press,
+    this.isActive = false,
+  });
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: press,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: <Widget>[
-          Image.asset("../../images/Calendar.png", width: 30, height: 30),
-          Text("Kalender"),
+          Image.asset(image, width: 30, height: 30),
+          Text(
+            title,
+            style: TextStyle(color: isActive ? Colors.blue : Colors.black),
+          ),
         ],
       ),
     );
