@@ -21,6 +21,18 @@ class SplashScreen4 extends StatelessWidget {
               end: Alignment.bottomCenter,
             ),
           ),
+          child: Stack(
+            children: [
+              Center(
+                child: Image.asset(
+                  "images/jawa.gif",
+                  width: double.infinity,
+                  height: double.infinity,
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
