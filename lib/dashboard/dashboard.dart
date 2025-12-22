@@ -25,7 +25,7 @@ class MyDashboard extends StatelessWidget {
               ),
               image: DecorationImage(
                 alignment: Alignment.centerLeft,
-                image: AssetImage('images/jawa.gif'),
+                image: AssetImage(''),
               ),
             ),
           ),
@@ -33,6 +33,7 @@ class MyDashboard extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Align(
                     alignment: Alignment.topRight,
@@ -47,6 +48,12 @@ class MyDashboard extends StatelessWidget {
                       child: SvgPicture.asset("../../android/icons/Filter.svg"),
                     ),
                   ),
+                  Text("Selamat Datang di \nCodeLearnJawa",
+                      style: Theme.of(context)
+                          .textTheme
+                          .headlineMedium
+                          ?.copyWith(
+                              color: Colors.white, fontWeight: FontWeight.bold)),
                 ],
               ),
             ),
