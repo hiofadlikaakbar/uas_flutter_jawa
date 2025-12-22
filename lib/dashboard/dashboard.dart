@@ -75,9 +75,34 @@ class MyDashboard extends StatelessWidget {
                       crossAxisCount: 2,
                       children: <Widget>[
                         Container(
+                          padding: EdgeInsets.all(20),
                           decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(13),
+                            boxShadow: [
+                              BoxShadow(
+                                offset: Offset(0, 17),
+                                blurRadius: 17,
+                                spreadRadius: -23,
+                                color: Colors.grey,
+                              ),
+                            ],
+                          ),
+                          child: Column(
+                            children: <Widget>[
+                              Spacer(),
+                              Image.asset(
+                                '../../images/ftik.png',
+                                height: 100,
+                              ),
+                              Spacer(),
+                              Text("C++ Programming",
+                              textAlign: TextAlign.center,
+                              style: Theme.of(context)
+                              .textTheme
+                              .titleMedium,
+                              ),
+                            ],
                           ),
                       )],
                     ),
