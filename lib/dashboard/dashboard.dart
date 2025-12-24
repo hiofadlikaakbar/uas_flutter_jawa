@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:uas_flutter_jawa/constants.dart';
-import 'package:uas_flutter_jawa/detail/detail_dashboard.dart';
+import 'package:uas_flutter_jawa/detail/C++.dart';
 import 'package:uas_flutter_jawa/widget/bottom_nav_bar.dart';
 import 'package:uas_flutter_jawa/widget/categorycard.dart';
 
@@ -115,7 +115,7 @@ class MyDashboard extends StatelessWidget {
                               context,
                               MaterialPageRoute(
                                 builder: (context) {
-                                  return DetailDashboard();
+                                  return CPP();
                                 },
                               ),
                             );
