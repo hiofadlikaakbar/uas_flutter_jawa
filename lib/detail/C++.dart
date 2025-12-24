@@ -5,14 +5,13 @@ class CPP extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
+    final size = MediaQuery.of(context).size;
     return Scaffold(
       body: Stack(
-        children: <Widget>[
+        children: [
           Container(
             height: size.height * 0.45,
             decoration: const BoxDecoration(
-              color: Color(0xFF0F2027),
               gradient: LinearGradient(
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
@@ -24,10 +23,47 @@ class CPP extends StatelessWidget {
               ),
             ),
           ),
-          Positioned(
-            right: 20,
-            bottom: 20,
-            child: Image.asset('../../images/C++.png', width: 120),
+          SafeArea(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: SizedBox(
+                height: size.height * 0.45,
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            "C++ Programming",
+                            style: Theme.of(context).textTheme.displayMedium
+                                ?.copyWith(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w900,
+                                ),
+                          ),
+                          const SizedBox(height: 16),
+                          const Text(
+                            "C++ adalah matkul terbaik\nYEAYYYY :)",
+                            style: TextStyle(color: Colors.white, fontSize: 16),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Align(
+                      alignment: Alignment.bottomRight,
+                      child: Image.asset(
+                        '../../images/C++.png',
+                        width: 150,
+                        fit: BoxFit.contain,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
           ),
         ],
       ),
