@@ -22,12 +22,12 @@ class CPP extends StatelessWidget {
                   Color(0xFF2C5364),
                 ],
               ),
-              image: DecorationImage(
-                alignment: Alignment.centerLeft,
-                image: AssetImage('../../images/C++.png'),
-                fit: BoxFit.fitWidth,
-              ),
             ),
+          ),
+          Positioned(
+            right: 20,
+            bottom: 20,
+            child: Image.asset('../../images/C++.png', width: 120),
           ),
         ],
       ),
