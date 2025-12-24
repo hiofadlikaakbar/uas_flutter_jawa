@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:uas_flutter_jawa/constants.dart';
+import 'package:uas_flutter_jawa/detail/detail_dashboard.dart';
 import 'package:uas_flutter_jawa/widget/bottom_nav_bar.dart';
 import 'package:uas_flutter_jawa/widget/categorycard.dart';
 
@@ -109,7 +110,16 @@ class MyDashboard extends StatelessWidget {
                         CategoryCard(
                           title: 'C++ ',
                           image: '../../images/C++.png',
-                          press: () {},
+                          press: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) {
+                                  return DetailDashboard();
+                                },
+                              ),
+                            );
+                          },
                         ),
                         CategoryCard(
                           title: 'Python ',
