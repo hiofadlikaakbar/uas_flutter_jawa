@@ -8,32 +8,8 @@ class MyDashboard extends StatelessWidget {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Scaffold(
-      bottomNavigationBar: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 10),
-        height: 80,
-        color: Colors.white,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            BottomNavItem(
-              image: '../../images/home.png',
-              title: 'Home',
-              press: () {},
-            ),
-            BottomNavItem(
-              image: '../../images/book.png',
-              title: 'All Exercise',
-              isActive: true,
-              press: () {},
-            ),
-            BottomNavItem(
-              image: '../../images/user.png',
-              title: 'Profile',
-              press: () {},
-            ),
-          ],
-        ),
-      ),
+      
+      bottomNavigationBar: BottomNavBar(),
       body: Stack(
         children: <Widget>[
           Container(
@@ -134,6 +110,42 @@ class MyDashboard extends StatelessWidget {
                 ],
               ),
             ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class BottomNavBar extends StatelessWidget {
+  const BottomNavBar({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 10),
+      height: 80,
+      color: Colors.white,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: <Widget>[
+          BottomNavItem(
+            image: '../../images/home.png',
+            title: 'Home',
+            press: () {},
+          ),
+          BottomNavItem(
+            image: '../../images/book.png',
+            title: 'All Exercise',
+            isActive: true,
+            press: () {},
+          ),
+          BottomNavItem(
+            image: '../../images/user.png',
+            title: 'Profile',
+            press: () {},
           ),
         ],
       ),
