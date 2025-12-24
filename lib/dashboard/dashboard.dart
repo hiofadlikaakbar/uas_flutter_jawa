@@ -50,8 +50,10 @@ class MyDashboard extends StatelessWidget {
                           color: const Color(0xFF00DDF8).withOpacity(0.2),
                           shape: BoxShape.circle,
                         ),
-                        child: SvgPicture.asset(
-                          "../../android/icons/Search.svg",
+                        child: Icon(
+                          Icons.notifications,
+                          color: Colors.white,
+                          size: 24,
                         ),
                       ),
                       const SizedBox(width: 12),
@@ -63,9 +65,7 @@ class MyDashboard extends StatelessWidget {
                           color: const Color(0xFF00DDF8).withOpacity(0.2),
                           shape: BoxShape.circle,
                         ),
-                        child: SvgPicture.asset(
-                          "../../android/icons/Filter.svg",
-                        ),
+                        child: Icon(Icons.menu, color: Colors.white, size: 24),
                       ),
                     ],
                   ),
@@ -89,8 +89,10 @@ class MyDashboard extends StatelessWidget {
                     ),
                     child: TextField(
                       decoration: InputDecoration(
-                        icon: SvgPicture.asset(
-                          "../../android/icons/Search.svg",
+                        icon: Icon(
+                          Icons.search,
+                          color: const Color.fromARGB(255, 0, 0, 0),
+                          size: 24,
                         ),
                         hintText: "Cari Kursus",
                         border: InputBorder.none,
