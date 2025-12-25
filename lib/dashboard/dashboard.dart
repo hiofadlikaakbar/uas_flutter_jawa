@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:uas_flutter_jawa/detail/C++.dart';
 import 'package:uas_flutter_jawa/widget/bottom_nav_bar.dart';
 
 class MyDashboard extends StatelessWidget {
@@ -74,10 +75,15 @@ class MyDashboard extends StatelessWidget {
                       Title: "C++",
                       image: '../../images/c++.png',
                       desc: "Bahasa yang mudah dipelajari untuk pemula.",
-                      lesson: "... Pelajaran",
+                      lesson: "24 Pelajaran",
                       level: "Pemula",
                       levelColor: Colors.green,
-                      icon: Icons.code,
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const CPP()),
+                        );
+                      },
                     ),
                   ],
                 ),
@@ -96,11 +102,74 @@ class MyDashboard extends StatelessWidget {
     required String lesson,
     required String level,
     required MaterialColor levelColor,
-    required IconData icon,
+    required VoidCallback onTap,
   }) {
-    return Container(
-      margin: ,
-    )
+    return InkWell(
+      onTap: onTap,
+      child: Container(
+        margin: const EdgeInsets.only(bottom: 15),
+        padding: const EdgeInsets.all(15),
+        decoration: BoxDecoration(
+          color: Colors.white10,
+          borderRadius: BorderRadius.circular(12),
+        ),
+        child: Row(
+          children: [
+            Image.asset(image, width: 60, height: 60),
+            const SizedBox(width: 15),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    Title,
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const SizedBox(height: 5),
+                  Text(desc, style: const TextStyle(color: Colors.white70)),
+                  const SizedBox(height: 10),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        lesson,
+                        style: const TextStyle(color: Colors.white54),
+                      ),
+                      Container(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 10,
+                          vertical: 5,
+                        ),
+                        decoration: BoxDecoration(
+                          color: levelColor.shade700,
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: Row(
+                          children: [
+                            const SizedBox(width: 5),
+                            Text(
+                              level,
+                              style: const TextStyle(
+                                color: Colors.white,
+                                fontSize: 12,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
 
