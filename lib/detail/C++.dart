@@ -109,6 +109,18 @@ class CPP extends StatelessWidget {
                             Icon(Icons.copy, color: Colors.white70),
                           ],
                         ),
+
+                        const SizedBox(height: 12),
+                        const Text(
+                          "include <iostream>"
+                          "using namespace std;\n\n"
+                          "int main() {\n"
+                          "  cout << \"Hello, World!\" << endl;\n"
+                          "  cout << \"Selamat belajar C++!\";\n"
+                          "  return 0;\n"
+                          "}",
+                          style: TextStyle(color: Colors.white, fontSize: 14),
+                        ),
                       ],
                     ),
                   ),
