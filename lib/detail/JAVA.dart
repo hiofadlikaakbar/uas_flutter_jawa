@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:uas_flutter_jawa/dashboard/dashboard.dart';
 
-class CPP extends StatelessWidget {
-  const CPP({super.key});
+class Java extends StatelessWidget {
+  const Java({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -49,12 +49,12 @@ class CPP extends StatelessWidget {
                           ),
 
                           Image(
-                            image: AssetImage('../../images/c++.png'),
+                            image: AssetImage('../../images/JAVA.png'),
                             height: 40,
                           ),
                           SizedBox(width: 10),
                           Text(
-                            'C++',
+                            'Java',
                             style: TextStyle(
                               color: Colors.white,
                               fontSize: 28,

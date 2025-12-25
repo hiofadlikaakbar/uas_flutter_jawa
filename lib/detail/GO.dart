@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:uas_flutter_jawa/dashboard/dashboard.dart';
 
-class CPP extends StatelessWidget {
-  const CPP({super.key});
+class Go extends StatelessWidget {
+  const Go({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -49,12 +49,12 @@ class CPP extends StatelessWidget {
                           ),
 
                           Image(
-                            image: AssetImage('../../images/c++.png'),
+                            image: AssetImage('../../images/GO.png'),
                             height: 40,
                           ),
                           SizedBox(width: 10),
                           Text(
-                            'C++',
+                            'GO',
                             style: TextStyle(
                               color: Colors.white,
                               fontSize: 28,
