@@ -92,6 +92,18 @@ class CPP extends StatelessWidget {
   }
 }
 
+Widget _card({required Widget child}) {
+  return Container(
+    width: double.infinity,
+    padding: const EdgeInsets.all(16),
+    decoration: BoxDecoration(
+      color: Color(0xFF1E2A38),
+      borderRadius: BorderRadius.circular(16),
+    ),
+    child: child,
+  );
+}
+
 Widget _sectionTitle(String title) {
   return Padding(
     padding: const EdgeInsets.only(bottom: 8),
