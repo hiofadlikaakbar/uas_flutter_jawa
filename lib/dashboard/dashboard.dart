@@ -42,6 +42,13 @@ class MyDashboard extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
+              const SizedBox(height: 10),
+              const Text(
+                'Mulai perjalanan coding kamu dengan memilih bahasa yang ingin dipelajari.\n'
+                "Setiap bahasa memiliki kelebihan dan kegunaannya masing-masing.",
+                style: TextStyle(color: Colors.white54, fontSize: 14),
+              ),
+              const SizedBox(height: 25),
               
             ],
           ),
