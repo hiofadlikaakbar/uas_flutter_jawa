@@ -124,6 +124,35 @@ class CPP extends StatelessWidget {
                       ],
                     ),
                   ),
+
+                  const SizedBox(height: 16),
+
+                  _card(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: const [
+                        Text(
+                          "Penjelasan Kode",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                          ),
+                        ),
+                        SizedBox(height: 8),
+                        Text(
+                          "C++ adalah bahasa pemrograman yang banyak digunakan untuk pengembangan perangkat lunak, "
+                          "aplikasi sistem, game, dan banyak lagi. "
+                          "Kode di atas adalah program sederhana yang mencetak "
+                          "'Hello, World!' dan 'Selamat belajar C++!' ke layar.",
+                          style: TextStyle(color: Colors.white70, fontSize: 14),
+                        ),
+                      ],
+                    ),
+                  ),
+
+                  const SizedBox(height: 30),
+                  
                 ],
               ),
             ),
