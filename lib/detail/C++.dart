@@ -39,6 +39,15 @@ class CPP extends StatelessWidget {
                             image: AssetImage('../../images/c++.png'),
                             height: 40,
                           ),
+                          SizedBox(width: 10),
+                          Text(
+                            'C++',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 28,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
                         ],
                       ),
                     ],
