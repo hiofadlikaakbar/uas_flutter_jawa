@@ -136,7 +136,7 @@ class CPP extends StatelessWidget {
                           style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
-                            fontSize: 16,
+                            fontSize: 20,
                           ),
                         ),
                         SizedBox(height: 8),
@@ -145,13 +145,13 @@ class CPP extends StatelessWidget {
                           "aplikasi sistem, game, dan banyak lagi. "
                           "Kode di atas adalah program sederhana yang mencetak "
                           "'Hello, World!' dan 'Selamat belajar C++!' ke layar.",
-                          style: TextStyle(color: Colors.white70, fontSize: 14),
+                          style: TextStyle(color: Colors.white70, fontSize: 16),
                         ),
                       ],
                     ),
                   ),
 
-                  const SizedBox(height: 30),
+                  const SizedBox(height: 75),
 
                   SizedBox(
                     width: double.infinity,
