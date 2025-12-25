@@ -5,8 +5,30 @@ class CPP extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Scaffold(
-      
+      backgroundColor: Color(0xFF0B1623),
+      body: Stack(
+        children: [
+          Container(
+            height: size.height * 0.32,
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+                  Color(0xFF0F2027),
+                  Color(0xFF203A43),
+                  Color(0xFF2C5364),
+                ],
+              ),
+            ),
+          ),
+          SafeArea(
+            child: SingleChildScrollView(padding: const EdgeInsets.all(20)),
+          ),
+        ],
+      ),
     );
   }
 }
