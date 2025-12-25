@@ -49,6 +49,14 @@ class MyDashboard extends StatelessWidget {
                 style: TextStyle(color: Colors.white54, fontSize: 14),
               ),
               const SizedBox(height: 25),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                _infobox("170+", "Pelajaran"),
+                _infobox("25K", "Pengguna"),
+                _infobox("15", "Languages"),
+                ],
+              ),
               
             ],
           ),
@@ -56,4 +64,28 @@ class MyDashboard extends StatelessWidget {
       ),
     );
   }
+}
+
+Widget _infobox(String value, String label) {
+  return Container(
+    width: 100,
+    padding: const EdgeInsets.symmetric( vertical: 15),
+    decoration: BoxDecoration(
+      color: Colors.white10,
+      borderRadius: BorderRadius.circular(12),
+    ),
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Text(
+          value,
+          style: const TextStyle(color: Colors.white, fontSize: 24, fontWeight: FontWeight.bold),
+        ),
+        Text(
+          label,
+          style: const TextStyle(color: Colors.white70, fontSize: 14),
+        ),
+      ],
+    ),
+  );
 }
