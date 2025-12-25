@@ -85,6 +85,76 @@ class MyDashboard extends StatelessWidget {
                         );
                       },
                     ),
+                    _courseCard(
+                      Title: "Python",
+                      image: '../../images/PY.png',
+                      desc: "Bahasa yang mudah dipelajari untuk pemula.",
+                      lesson: "24 Pelajaran",
+                      level: "Pemula",
+                      levelColor: Colors.green,
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const ()),
+                        );
+                      },
+                    ),
+                    _courseCard(
+                      Title: "JavaScript",
+                      image: '../../images/JS.png',
+                      desc: "Bahasa yang mudah dipelajari untuk pemula.",
+                      lesson: "24 Pelajaran",
+                      level: "Pemula",
+                      levelColor: Colors.green,
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const ()),
+                        );
+                      },
+                    ),
+                    _courseCard(
+                      Title: "Java",
+                      image: '../../images/JAVA.png',
+                      desc: "Bahasa yang mudah dipelajari untuk pemula.",
+                      lesson: "24 Pelajaran",
+                      level: "Pemula",
+                      levelColor: Colors.green,
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const ()),
+                        );
+                      },
+                    ),
+                    _courseCard(
+                      Title: "Go",
+                      image: '../../images/GO.png',
+                      desc: "Bahasa yang mudah dipelajari untuk pemula.",
+                      lesson: "24 Pelajaran",
+                      level: "Pemula",
+                      levelColor: Colors.green,
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const ()),
+                        );
+                      },
+                    ),
+                    _courseCard(
+                      Title: "Rust",
+                      image: '../../images/Rust.png',
+                      desc: "Bahasa yang mudah dipelajari untuk pemula.",
+                      lesson: "24 Pelajaran",
+                      level: "Pemula",
+                      levelColor: Colors.green,
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const ()),
+                        );
+                      },
+                    ),
                   ],
                 ),
               ),
