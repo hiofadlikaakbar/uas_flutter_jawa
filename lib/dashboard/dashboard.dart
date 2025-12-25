@@ -66,11 +66,41 @@ class MyDashboard extends StatelessWidget {
                   _infobox("6", "Languages"),
                 ],
               ),
+              const SizedBox(height: 25),
+              Expanded(
+                child: ListView(
+                  children: [
+                    _courseCard(
+                      Title: "C++",
+                      image: '../../images/c++.png',
+                      desc: "Bahasa yang mudah dipelajari untuk pemula.",
+                      lesson: "... Pelajaran",
+                      level: "Pemula",
+                      levelColor: Colors.green,
+                      icon: Icons.code,
+                    ),
+                  ],
+                ),
+              ),
             ],
           ),
         ),
       ),
     );
+  }
+
+  Widget _courseCard({
+    required String Title,
+    required String image,
+    required String desc,
+    required String lesson,
+    required String level,
+    required MaterialColor levelColor,
+    required IconData icon,
+  }) {
+    return Container(
+      margin: ,
+    )
   }
 }
 
