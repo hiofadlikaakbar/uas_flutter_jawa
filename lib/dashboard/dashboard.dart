@@ -33,6 +33,16 @@ class MyDashboard extends StatelessWidget {
                   ),
                 ],
               ),
+              const SizedBox(height: 20),
+              const Text(
+                'Pilih Bahasa\nPemrograman',
+                style: TextStyle(
+                  color: Colors.white70,
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              
             ],
           ),
         ),
