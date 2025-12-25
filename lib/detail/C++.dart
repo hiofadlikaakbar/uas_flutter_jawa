@@ -25,7 +25,27 @@ class CPP extends StatelessWidget {
             ),
           ),
           SafeArea(
-            child: SingleChildScrollView(padding: const EdgeInsets.all(20)),
+            child: SingleChildScrollView(
+              padding: const EdgeInsets.all(20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(
+                        children: const [
+                          Image(
+                            image: AssetImage('../../images/c++.png'),
+                            height: 40,
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
           ),
         ],
       ),
