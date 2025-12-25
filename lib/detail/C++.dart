@@ -50,38 +50,47 @@ class CPP extends StatelessWidget {
                           ),
                         ],
                       ),
-                      const Text("0/1 Selesai",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 16,
-                          )
-                        ),
-                      ],
-                    ),
-                    
+                      const Text(
+                        "0/1 Selesai",
+                        style: TextStyle(color: Colors.white, fontSize: 16),
+                      ),
+                    ],
+                  ),
+
                   const SizedBox(height: 20),
 
                   _sectionTitle('Daftar Pelajaran'),
                   _card(
-                    child : ListTile(
+                    child: ListTile(
                       leading: const CircleAvatar(
                         backgroundColor: Color(0xFF203A43),
-                        child: Text("1",
-                          style: TextStyle(color: Colors.white)),
+                        child: Text("1", style: TextStyle(color: Colors.white)),
                       ),
-                      title: const Text("Hello World",
-                        style: TextStyle(color: Colors.white,
-                        fontWeight: FontWeight.bold),
+                      title: const Text(
+                        "Hello World",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
                         ),
-                      subtitle: const Text("Program pertama dalam C++",
+                      ),
+                      subtitle: const Text(
+                        "Program pertama dalam C++",
                         style: TextStyle(color: Colors.white70),
-                        ),
-                        trailing: const Icon(Icons.chevron_right,
-                          color: Colors.white),
+                      ),
+                      trailing: const Icon(
+                        Icons.chevron_right,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
 
                   const SizedBox(height: 16),
+
+                  _sectionTitle("Heloo World"),
+                  _subtitle("Program pertama dalam C++"),
+
+                  const SizedBox(height: 16),
+                  
                 ],
               ),
             ),
@@ -90,6 +99,16 @@ class CPP extends StatelessWidget {
       ),
     );
   }
+}
+
+Widget _subtitle(String text) {
+  return Text(
+    text,
+    style: const TextStyle(
+      color: Colors.white70,
+      fontSize: 14,
+    ),
+  );
 }
 
 Widget _card({required Widget child}) {
