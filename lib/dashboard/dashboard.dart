@@ -17,7 +17,6 @@ class MyDashboard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   const Text(
                     'Dashboard',
@@ -27,6 +26,16 @@ class MyDashboard extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
+                  const Spacer(),
+                  Row(
+                    children: [
+                      CircleAvatar(
+                        backgroundColor: Colors.white24,
+                        child: Icon(Icons.notifications, color: Colors.white),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(width: 10),
                   CircleAvatar(
                     backgroundColor: Colors.white24,
                     child: Icon(Icons.person, color: Colors.white),
@@ -52,12 +61,11 @@ class MyDashboard extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                _infobox("170+", "Pelajaran"),
-                _infobox("25K", "Pengguna"),
-                _infobox("15", "Languages"),
+                  _infobox("170+", "Pelajaran"),
+                  _infobox("25K", "Pengguna"),
+                  _infobox("6", "Languages"),
                 ],
               ),
-              
             ],
           ),
         ),
@@ -69,22 +77,23 @@ class MyDashboard extends StatelessWidget {
 Widget _infobox(String value, String label) {
   return Container(
     width: 100,
-    padding: const EdgeInsets.symmetric( vertical: 15),
+    padding: const EdgeInsets.symmetric(vertical: 15),
     decoration: BoxDecoration(
       color: Colors.white10,
       borderRadius: BorderRadius.circular(12),
     ),
     child: Column(
-      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
           value,
-          style: const TextStyle(color: Colors.white, fontSize: 24, fontWeight: FontWeight.bold),
+          style: const TextStyle(
+            color: Colors.white,
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+          ),
         ),
-        Text(
-          label,
-          style: const TextStyle(color: Colors.white70, fontSize: 14),
-        ),
+        SizedBox(height: 5),
+        Text(label, style: const TextStyle(color: Colors.white70)),
       ],
     ),
   );
