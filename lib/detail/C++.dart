@@ -90,7 +90,28 @@ class CPP extends StatelessWidget {
                   _subtitle("Program pertama dalam C++"),
 
                   const SizedBox(height: 16),
-                  
+
+                  _card(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: const [
+                            Text(
+                              "Code C++",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16,
+                              ),
+                            ),
+                            Icon(Icons.copy, color: Colors.white70),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -104,10 +125,7 @@ class CPP extends StatelessWidget {
 Widget _subtitle(String text) {
   return Text(
     text,
-    style: const TextStyle(
-      color: Colors.white70,
-      fontSize: 14,
-    ),
+    style: const TextStyle(color: Colors.white70, fontSize: 14),
   );
 }
 
