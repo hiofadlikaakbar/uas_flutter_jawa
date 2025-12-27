@@ -29,8 +29,8 @@ class SplashScreen4 extends StatelessWidget {
                   opacity: 0.9,
                   child: Image.asset(
                     "images/jawa.gif",
-                    width: 220,
-                    height: 220,
+                    width: 600,
+                    height: 500,
                     fit: BoxFit.contain,
                   ),
                 ),
@@ -53,7 +53,7 @@ class SplashScreen4 extends StatelessWidget {
                     ),
                     SizedBox(height: 6),
                     Text(
-                      "Tap anywhere to continue",
+                      "Klik dimana saja untuk melanjutkan",
                       style: TextStyle(fontSize: 13, color: Colors.white54),
                     ),
                   ],
