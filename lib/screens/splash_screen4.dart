@@ -16,21 +16,16 @@ class SplashScreen4 extends StatelessWidget {
           height: double.infinity,
           decoration: const BoxDecoration(
             gradient: LinearGradient(
-              colors: [Color(0xFF0F2027), Color(0xFF203A43)],
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
+              colors: [Color(0xFF0F2027), Color(0xFF203A43), Color(0xFF2C5364)],
             ),
           ),
           child: Stack(
             children: [
-              Center(
-                child: Image.asset(
-                  "images/jawa.gif",
-                  width: double.infinity,
-                  height: double.infinity,
-                  fit: BoxFit.cover,
-                ),
-              ),
+              // GIF utama (tidak full screen)
+
+              // Branding bawa
             ],
           ),
         ),
