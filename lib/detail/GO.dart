@@ -247,6 +247,7 @@ Widget _subtitle(String text) {
   );
 }
 
+// kartu konten
 Widget _card({required Widget child}) {
   return Container(
     width: double.infinity,
