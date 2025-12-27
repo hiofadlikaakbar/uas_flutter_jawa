@@ -331,7 +331,7 @@ Widget _subtitle(String text) {
   );
 }
 
-// Card reusable
+// kartu konten
 Widget _card({required Widget child}) {
   return Container(
     width: double.infinity,
