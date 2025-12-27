@@ -37,6 +37,28 @@ class SplashScreen4 extends StatelessWidget {
               ),
 
               // Branding bawa
+              Positioned(
+                bottom: 80,
+                left: 0,
+                right: 0,
+                child: Column(
+                  children: const [
+                    Text(
+                      "JawaKode",
+                      style: TextStyle(
+                        fontSize: 22,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.cyanAccent,
+                      ),
+                    ),
+                    SizedBox(height: 6),
+                    Text(
+                      "Tap anywhere to continue",
+                      style: TextStyle(fontSize: 13, color: Colors.white54),
+                    ),
+                  ],
+                ),
+              ),
             ],
           ),
         ),
