@@ -24,6 +24,17 @@ class SplashScreen4 extends StatelessWidget {
           child: Stack(
             children: [
               // GIF utama (tidak full screen)
+              Center(
+                child: Opacity(
+                  opacity: 0.9,
+                  child: Image.asset(
+                    "images/jawa.gif",
+                    width: 220,
+                    height: 220,
+                    fit: BoxFit.contain,
+                  ),
+                ),
+              ),
 
               // Branding bawa
             ],
