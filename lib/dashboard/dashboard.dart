@@ -172,3 +172,109 @@ class MyDashboard extends StatelessWidget {
     );
   }
 }
+
+// komponen
+class CourseCard extends StatelessWidget {
+  final String title;
+  final String image;
+  final String level;
+  final Color levelColor;
+  final VoidCallback onTap;
+
+  const CourseCard({
+    super.key,
+    required this.title,
+    required this.image,
+    required this.level,
+    required this.levelColor,
+    required this.onTap,
+  });
+
+  // komponen kontainer bahasa pemrograman
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      borderRadius: BorderRadius.circular(16),
+      onTap: onTap,
+      child: Container(
+        margin: const EdgeInsets.only(bottom: 14),
+        padding: const EdgeInsets.all(16),
+        decoration: BoxDecoration(
+          color: Colors.white10,
+          borderRadius: BorderRadius.circular(16),
+        ),
+        child: Row(
+          children: [
+            Image.asset(image, width: 54),
+            const SizedBox(width: 16),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    title,
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const SizedBox(height: 6),
+                  const Text(
+                    "24 Pelajaran",
+                    style: TextStyle(color: Colors.white60),
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+              decoration: BoxDecoration(
+                color: levelColor,
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: Text(
+                level,
+                style: const TextStyle(color: Colors.white, fontSize: 12),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+// komponen infobox kontainer
+class InfoBox extends StatelessWidget {
+  final String value;
+  final String label;
+
+  const InfoBox({super.key, required this.value, required this.label});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 100,
+      padding: const EdgeInsets.symmetric(vertical: 14),
+      decoration: BoxDecoration(
+        color: Colors.white10,
+        borderRadius: BorderRadius.circular(14),
+      ),
+      child: Column(
+        children: [
+          Text(
+            value,
+            style: const TextStyle(
+              color: Colors.white,
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          const SizedBox(height: 4),
+          Text(label, style: const TextStyle(color: Colors.white60)),
+        ],
+      ),
+    );
+  }
+}
