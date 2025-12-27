@@ -78,8 +78,7 @@ class MyDashboard extends StatelessWidget {
           ),
           SizedBox(height: 8),
           Text(
-            'Mulai perjalanan coding kamu dengan memilih bahasa yang ingin dipelajari. '
-            'Setiap bahasa memiliki kelebihan dan kegunaannya masing-masing.',
+            'Buka skill baru mu dengan belajar di CodeJawa 😎 semua materi pemrograman dari pemula sampai lanjutan ada disini',
             maxLines: 3,
             softWrap: true,
             overflow: TextOverflow.ellipsis,
@@ -96,9 +95,9 @@ class MyDashboard extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: const [
-        InfoBox(value: "170+", label: "Pelajaran"),
-        InfoBox(value: "25K", label: "Pengguna"),
-        InfoBox(value: "6", label: "Bahasa"),
+        InfoBox(value: "50+", label: "Pelajaran"),
+        InfoBox(value: "1K", label: "Pengguna"),
+        InfoBox(value: "10", label: "Bahasa"),
       ],
     );
   }
