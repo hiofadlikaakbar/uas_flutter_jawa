@@ -124,3 +124,77 @@ else:
     );
   }
 
+  //  widget materi
+  Widget _header(BuildContext context) {
+    return Row(
+      children: [
+        // Tombol kembali
+        IconButton(
+          icon: const Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () => Navigator.pop(context),
+        ),
+
+        // Logo Python
+        Image.asset("../../images/PY.png", height: 36),
+
+        const SizedBox(width: 10),
+
+        // Judul halaman
+        const Text(
+          "Python",
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 26,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+
+        const Spacer(),
+
+        // Progress materi (contoh: 1/3)
+        Text(
+          "${selectedIndex + 1}/${lessons.length}",
+          style: const TextStyle(color: Colors.white70),
+        ),
+      ],
+    );
+  }
+
+  // list materi
+  Widget _lessonList() {
+    return _card(
+      child: Column(
+        children: List.generate(lessons.length, (index) {
+          // Mengecek apakah item ini aktif
+          final active = index == selectedIndex;
+
+          return ListTile(
+            dense: true,
+
+            // Ketika materi diklik
+            onTap: () {
+              setState(() {
+                selectedIndex = index;
+              });
+            },
+
+            // Icon berbeda untuk materi aktif
+            leading: Icon(
+              active ? Icons.play_circle : Icons.circle_outlined,
+              color: active ? const Color(0xFF00DDF8) : Colors.white38,
+            ),
+
+            // Judul materi
+            title: Text(
+              lessons[index]["title"]!,
+              style: TextStyle(
+                color: active ? Colors.white : Colors.white70,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+          );
+        }),
+      ),
+    );
+  }
+
