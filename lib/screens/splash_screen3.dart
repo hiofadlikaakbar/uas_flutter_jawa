@@ -36,6 +36,35 @@ class SplashScreen3 extends StatelessWidget {
                 ),
 
                 const SizedBox(height: 32),
+
+                // judul
+                const Text(
+                  "Belajar Pemrograman\nDengan Mudah & Jelas",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 22,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.white,
+                    height: 1.3,
+                  ),
+                ),
+
+                const SizedBox(height: 12),
+
+                // paragraf
+                const Text(
+                  "JawaKode menjadi media pembelajaran dasar "
+                  "pemrograman dengan materi terstruktur, "
+                  "contoh kode yang jelas dan latihan interaktif.",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 15,
+                    color: Colors.white70,
+                    height: 1.6,
+                  ),
+                ),
+
+                const SizedBox(height: 40),
               ],
             ),
           ),
