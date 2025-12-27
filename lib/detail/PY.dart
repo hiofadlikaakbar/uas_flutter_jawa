@@ -198,3 +198,148 @@ else:
     );
   }
 
+  // blok kode python
+  Widget _codeBox(String code) {
+    return _card(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          // Header kode
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              const Text(
+                "Kode Python",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+
+              // Tombol copy kode
+              IconButton(
+                icon: const Icon(Icons.copy, color: Colors.white70),
+                onPressed: () {
+                  Clipboard.setData(ClipboardData(text: code));
+                  ScaffoldMessenger.of(
+                    context,
+                  ).showSnackBar(const SnackBar(content: Text("Kode disalin")));
+                },
+              ),
+            ],
+          ),
+
+          const SizedBox(height: 10),
+
+          // Background kode
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.all(16),
+            decoration: BoxDecoration(
+              color: const Color(0xFF121B26),
+              borderRadius: BorderRadius.circular(12),
+            ),
+            child: SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Text(
+                code,
+                style: const TextStyle(
+                  color: Color(0xFF00DDF8),
+                  fontFamily: 'monospace',
+                  fontSize: 14,
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  // penjelasan materi
+  Widget _explainBox(String text) {
+    return _card(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text(
+            "Penjelasan",
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          const SizedBox(height: 8),
+          Text(
+            text,
+            style: const TextStyle(color: Colors.white70, fontSize: 15),
+          ),
+        ],
+      ),
+    );
+  }
+
+  // tombol kelar belajar
+  Widget _finishButton() {
+    return SizedBox(
+      width: double.infinity,
+      height: 52,
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: const Color(0xFF00DDF8),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(30),
+          ),
+        ),
+        onPressed: () {
+          // simpan progress
+        },
+        child: const Text(
+          "Tandai Selesai",
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+// Judul section
+Widget _sectionTitle(String title) {
+  return Padding(
+    padding: const EdgeInsets.only(bottom: 8),
+    child: Text(
+      title,
+      style: const TextStyle(
+        color: Colors.white,
+        fontSize: 20,
+        fontWeight: FontWeight.bold,
+      ),
+    ),
+  );
+}
+
+// Subtitle kecil
+Widget _subtitle(String text) {
+  return Text(
+    text,
+    style: const TextStyle(color: Colors.white70, fontSize: 14),
+  );
+}
+
+// Card reusable
+Widget _card({required Widget child}) {
+  return Container(
+    width: double.infinity,
+    padding: const EdgeInsets.all(16),
+    decoration: BoxDecoration(
+      color: const Color(0xFF1E2A38),
+      borderRadius: BorderRadius.circular(16),
+    ),
+    child: child,
+  );
+}
