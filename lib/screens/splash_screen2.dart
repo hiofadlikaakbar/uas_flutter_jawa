@@ -52,9 +52,45 @@ class SplashScreen2 extends StatelessWidget {
                 const SizedBox(height: 12),
 
                 // paragraf
+                const Text(
+                  "JawaKode membantu pengguna memahami dasar "
+                  "bahasa pemrograman melalui materi terstruktur, "
+                  "contoh kode, dan latihan interaktif.",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 15,
+                    color: Colors.white70,
+                    height: 1.6,
+                  ),
+                ),
+
                 const SizedBox(height: 40),
 
                 // tombol (disamakan dengan Splash 1)
+                SizedBox(
+                  width: double.infinity,
+                  height: 54,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.cyanAccent,
+                      elevation: 0,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(28),
+                      ),
+                    ),
+                    onPressed: () {
+                      Navigator.pushReplacementNamed(context, '/splash3');
+                    },
+                    child: const Text(
+                      "Lanjutkan",
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ),
+                ),
               ],
             ),
           ),
