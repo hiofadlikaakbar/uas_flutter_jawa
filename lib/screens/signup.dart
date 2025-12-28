@@ -17,6 +17,38 @@ class _SignupState extends State<SignupPage> {
   final passwordController = TextEditingController();
   final confirmPasswordController = TextEditingController();
 
+  Future<void> signup() async {
+    if (passwordController.text != confirmPasswordController.text) {
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(const SnackBar(content: Text('Password tidak sama')));
+      return;
+    }
+
+    try {
+      final client = Supabase.instance.client;
+
+      final res = await client.auth.signUp(
+        email: emailController.text.trim(),
+        password: passwordController.text,
+      );
+
+      final user = res.user;
+      if (user == null) return;
+
+      await client.from('profiles').insert({
+        'id': user.id,
+        'name': nameController.text,
+      });
+
+      Navigator.pushReplacementNamed(context, '/login');
+    } on AuthException catch (e) {
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text(e.message)));
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
