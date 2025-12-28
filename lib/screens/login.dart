@@ -186,7 +186,9 @@ class _LoginState extends State<LoginPage> {
                           style: TextStyle(color: Colors.white70),
                         ),
                         TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pushNamed(context, '/signup');
+                          },
                           child: const Text(
                             "Daftar sekarang",
                             style: TextStyle(
