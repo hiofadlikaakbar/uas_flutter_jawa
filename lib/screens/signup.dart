@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 class SignupPage extends StatefulWidget {
   const SignupPage({super.key});
@@ -10,6 +11,11 @@ class SignupPage extends StatefulWidget {
 class _SignupState extends State<SignupPage> {
   bool obscurePassword = true;
   bool obscureConfirmPassword = true;
+
+  final nameController = TextEditingController();
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+  final confirmPasswordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -76,6 +82,7 @@ class _SignupState extends State<SignupPage> {
                   ),
                   const SizedBox(height: 6),
                   TextField(
+                    controller: nameController,
                     style: const TextStyle(color: Colors.white),
                     decoration: InputDecoration(
                       hintText: "Nama lengkap",
@@ -102,6 +109,7 @@ class _SignupState extends State<SignupPage> {
                   ),
                   const SizedBox(height: 6),
                   TextField(
+                    controller: emailController,
                     keyboardType: TextInputType.emailAddress,
                     style: const TextStyle(color: Colors.white),
                     decoration: InputDecoration(
@@ -129,6 +137,7 @@ class _SignupState extends State<SignupPage> {
                   ),
                   const SizedBox(height: 6),
                   TextField(
+                    controller: passwordController,
                     obscureText: obscurePassword,
                     style: const TextStyle(color: Colors.white),
                     decoration: InputDecoration(
@@ -169,6 +178,7 @@ class _SignupState extends State<SignupPage> {
                   ),
                   const SizedBox(height: 6),
                   TextField(
+                    controller: confirmPasswordController,
                     obscureText: obscureConfirmPassword,
                     style: const TextStyle(color: Colors.white),
                     decoration: InputDecoration(
