@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+class SignupPage extends StatefulWidget {
+  const SignupPage({super.key});
 
   @override
-  State<LoginPage> createState() => _LoginState();
+  State<SignupPage> createState() => _SignupState();
 }
 
-class _LoginState extends State<LoginPage> {
-  bool rememberMe = false;
+class _SignupState extends State<SignupPage> {
   bool obscurePassword = true;
+  bool obscureConfirmPassword = true;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,6 @@ class _LoginState extends State<LoginPage> {
             colors: [Color(0xFF0F2027), Color(0xFF203A43), Color(0xFF2C5364)],
           ),
         ),
-
         child: Center(
           child: SingleChildScrollView(
             child: Padding(
@@ -33,6 +32,7 @@ class _LoginState extends State<LoginPage> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const SizedBox(height: 20),
+
                   Center(
                     child: Container(
                       padding: const EdgeInsets.all(18),
@@ -41,16 +41,17 @@ class _LoginState extends State<LoginPage> {
                         shape: BoxShape.circle,
                       ),
                       child: const Icon(
-                        Icons.code,
+                        Icons.person_add,
                         size: 40,
                         color: Colors.cyanAccent,
                       ),
                     ),
                   ),
+
                   const SizedBox(height: 16),
                   const Center(
                     child: Text(
-                      "CodeLearnJawa",
+                      "Daftar Akun",
                       style: TextStyle(
                         fontSize: 26,
                         fontWeight: FontWeight.bold,
@@ -61,11 +62,40 @@ class _LoginState extends State<LoginPage> {
                   const SizedBox(height: 6),
                   const Center(
                     child: Text(
-                      "Masuk untuk mulai belajar",
+                      "Buat akun baru untuk mulai belajar",
                       style: TextStyle(color: Colors.white70, fontSize: 14),
                     ),
                   ),
+
                   const SizedBox(height: 32),
+
+                  // nama
+                  const Text(
+                    "Nama Lengkap",
+                    style: TextStyle(color: Colors.white70, fontSize: 14),
+                  ),
+                  const SizedBox(height: 6),
+                  TextField(
+                    style: const TextStyle(color: Colors.white),
+                    decoration: InputDecoration(
+                      hintText: "Nama lengkap",
+                      hintStyle: const TextStyle(color: Colors.white54),
+                      prefixIcon: const Icon(
+                        Icons.person_outline,
+                        color: Colors.white70,
+                      ),
+                      filled: true,
+                      fillColor: Colors.white.withOpacity(0.08),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(14),
+                        borderSide: BorderSide.none,
+                      ),
+                    ),
+                  ),
+
+                  const SizedBox(height: 16),
+
+                  // email
                   const Text(
                     "Email",
                     style: TextStyle(color: Colors.white70, fontSize: 14),
@@ -89,7 +119,10 @@ class _LoginState extends State<LoginPage> {
                       ),
                     ),
                   ),
+
                   const SizedBox(height: 16),
+
+                  // password
                   const Text(
                     "Password",
                     style: TextStyle(color: Colors.white70, fontSize: 14),
@@ -126,40 +159,56 @@ class _LoginState extends State<LoginPage> {
                       ),
                     ),
                   ),
-                  Row(
-                    children: [
-                      Checkbox(
-                        value: rememberMe,
-                        onChanged: (value) {
+
+                  const SizedBox(height: 16),
+
+                  // konfirmasi password
+                  const Text(
+                    "Konfirmasi Password",
+                    style: TextStyle(color: Colors.white70, fontSize: 14),
+                  ),
+                  const SizedBox(height: 6),
+                  TextField(
+                    obscureText: obscureConfirmPassword,
+                    style: const TextStyle(color: Colors.white),
+                    decoration: InputDecoration(
+                      hintText: "Ulangi password",
+                      hintStyle: const TextStyle(color: Colors.white54),
+                      prefixIcon: const Icon(
+                        Icons.lock_outline,
+                        color: Colors.white70,
+                      ),
+                      suffixIcon: IconButton(
+                        icon: Icon(
+                          obscureConfirmPassword
+                              ? Icons.visibility_off
+                              : Icons.visibility,
+                          color: Colors.white54,
+                        ),
+                        onPressed: () {
                           setState(() {
-                            rememberMe = value!;
+                            obscureConfirmPassword = !obscureConfirmPassword;
                           });
                         },
-                        side: const BorderSide(color: Colors.white54),
-                        activeColor: Colors.cyanAccent,
                       ),
-                      const Text(
-                        "Ingat saya",
-                        style: TextStyle(color: Colors.white70),
+                      filled: true,
+                      fillColor: Colors.white.withOpacity(0.08),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(14),
+                        borderSide: BorderSide.none,
                       ),
-                      const Spacer(),
-                      TextButton(
-                        onPressed: () {},
-                        child: const Text(
-                          "Lupa password?",
-                          style: TextStyle(color: Colors.cyanAccent),
-                        ),
-                      ),
-                    ],
+                    ),
                   ),
-                  const SizedBox(height: 20),
 
+                  const SizedBox(height: 24),
+
+                  // tombol daftar
                   SizedBox(
                     width: double.infinity,
                     height: 52,
                     child: ElevatedButton(
                       onPressed: () {
-                        Navigator.pushReplacementNamed(context, '/dashboard');
+                        Navigator.pushReplacementNamed(context, '/login');
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.cyanAccent,
@@ -168,7 +217,7 @@ class _LoginState extends State<LoginPage> {
                         ),
                       ),
                       child: const Text(
-                        "Masuk",
+                        "Daftar",
                         style: TextStyle(
                           color: Colors.black,
                           fontSize: 16,
@@ -177,20 +226,24 @@ class _LoginState extends State<LoginPage> {
                       ),
                     ),
                   ),
+
+                  const SizedBox(height: 12),
+
+                  // link login
                   Center(
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         const Text(
-                          "Belum punya akun? ",
+                          "Sudah punya akun? ",
                           style: TextStyle(color: Colors.white70),
                         ),
                         TextButton(
                           onPressed: () {
-                            Navigator.pushNamed(context, '/signup');
+                            Navigator.pop(context);
                           },
                           child: const Text(
-                            "Daftar sekarang",
+                            "Masuk",
                             style: TextStyle(
                               color: Colors.cyanAccent,
                               fontWeight: FontWeight.w600,
