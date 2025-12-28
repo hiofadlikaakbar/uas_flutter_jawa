@@ -200,7 +200,60 @@ class _SignupState extends State<SignupPage> {
                     ),
                   ),
 
-            
+                  const SizedBox(height: 24),
+
+                  // tombol daftar
+                  SizedBox(
+                    width: double.infinity,
+                    height: 52,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.pushReplacementNamed(context, '/login');
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.cyanAccent,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(14),
+                        ),
+                      ),
+                      child: const Text(
+                        "Daftar",
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ),
+                  ),
+
+                  const SizedBox(height: 12),
+
+                  // link login
+                  Center(
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        const Text(
+                          "Sudah punya akun? ",
+                          style: TextStyle(color: Colors.white70),
+                        ),
+                        TextButton(
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                          child: const Text(
+                            "Masuk",
+                            style: TextStyle(
+                              color: Colors.cyanAccent,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
               ),
             ),
           ),
