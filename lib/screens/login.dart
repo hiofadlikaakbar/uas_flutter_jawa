@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -10,6 +11,9 @@ class LoginPage extends StatefulWidget {
 class _LoginState extends State<LoginPage> {
   bool rememberMe = false;
   bool obscurePassword = true;
+
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -72,6 +76,7 @@ class _LoginState extends State<LoginPage> {
                   ),
                   const SizedBox(height: 6),
                   TextField(
+                    controller: emailController,
                     keyboardType: TextInputType.emailAddress,
                     style: const TextStyle(color: Colors.white),
                     decoration: InputDecoration(
@@ -96,6 +101,7 @@ class _LoginState extends State<LoginPage> {
                   ),
                   const SizedBox(height: 6),
                   TextField(
+                    controller: passwordController,
                     obscureText: obscurePassword,
                     style: const TextStyle(color: Colors.white),
                     decoration: InputDecoration(
