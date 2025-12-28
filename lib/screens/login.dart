@@ -15,6 +15,25 @@ class _LoginState extends State<LoginPage> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
 
+  Future<void> login() async {
+    try {
+      await Supabase.instance.client.auth.signInWithPassword(
+        email: emailController.text.trim(),
+        password: passwordController.text,
+      );
+
+      Navigator.pushReplacementNamed(context, '/dashboard');
+    } on AuthException catch (e) {
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text(e.message)));
+    } catch (e) {
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(const SnackBar(content: Text('Login gagal')));
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -165,7 +184,7 @@ class _LoginState extends State<LoginPage> {
                     height: 52,
                     child: ElevatedButton(
                       onPressed: () {
-                        Navigator.pushReplacementNamed(context, '/dashboard');
+                        login();
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.cyanAccent,
