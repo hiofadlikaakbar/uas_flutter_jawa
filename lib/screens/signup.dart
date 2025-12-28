@@ -41,7 +41,7 @@ class _SignupState extends State<SignupPage> {
         'name': nameController.text,
       });
 
-      Navigator.pushReplacementNamed(context, '/login');
+      Navigator.pushReplacementNamed(context, '/dashboard');
     } on AuthException catch (e) {
       ScaffoldMessenger.of(
         context,
