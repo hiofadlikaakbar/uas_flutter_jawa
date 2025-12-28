@@ -24,6 +24,27 @@ class _MyDashboardState extends State<MyDashboard> {
     fetchUserName();
   }
 
+  Future<void> fetchUserName() async {
+    final client = Supabase.instance.client;
+    final user = client.auth.currentUser;
+
+    if (user == null) {
+      Navigator.pushReplacementNamed(context, '/login');
+      return;
+    }
+
+    final res = await client
+        .from('profiles')
+        .select('name')
+        .eq('id', user.id)
+        .single();
+
+    setState(() {
+      userName = res['name'];
+      isLoading = false;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -82,22 +103,25 @@ class _MyDashboardState extends State<MyDashboard> {
       constraints: const BoxConstraints(maxWidth: 520),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: const [
-          Text(
-            'Pilih Bahasa Pemrograman',
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 22,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          SizedBox(height: 8),
-          Text(
+        children: [
+          isLoading
+              ? const Text(
+                  'Loading...',
+                  style: TextStyle(color: Colors.white70),
+                )
+              : Text(
+                  'Piye kabare, $userName 👋',
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+          const SizedBox(height: 8),
+          const Text(
             'Buka skill baru mu dengan belajar di CodeJawa 😎 semua materi pemrograman dari pemula sampai lanjutan ada disini',
             maxLines: 3,
-            softWrap: true,
             overflow: TextOverflow.ellipsis,
-            textAlign: TextAlign.start,
             style: TextStyle(color: Colors.white60, fontSize: 14, height: 1.5),
           ),
         ],
