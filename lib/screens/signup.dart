@@ -250,7 +250,7 @@ class _SignupState extends State<SignupPage> {
                     height: 52,
                     child: ElevatedButton(
                       onPressed: () {
-                        Navigator.pushReplacementNamed(context, '/login');
+                        signup();
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.cyanAccent,
