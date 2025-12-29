@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 class SignupPage extends StatefulWidget {
   const SignupPage({super.key});
@@ -10,6 +11,43 @@ class SignupPage extends StatefulWidget {
 class _SignupState extends State<SignupPage> {
   bool obscurePassword = true;
   bool obscureConfirmPassword = true;
+
+  final nameController = TextEditingController();
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+  final confirmPasswordController = TextEditingController();
+
+  Future<void> signup() async {
+    if (passwordController.text != confirmPasswordController.text) {
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(const SnackBar(content: Text('Password tidak sama')));
+      return;
+    }
+
+    try {
+      final client = Supabase.instance.client;
+
+      final res = await client.auth.signUp(
+        email: emailController.text.trim(),
+        password: passwordController.text,
+      );
+
+      final user = res.user;
+      if (user == null) return;
+
+      await client.from('profiles').insert({
+        'id': user.id,
+        'name': nameController.text,
+      });
+
+      Navigator.pushReplacementNamed(context, '/dashboard');
+    } on AuthException catch (e) {
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text(e.message)));
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -76,6 +114,7 @@ class _SignupState extends State<SignupPage> {
                   ),
                   const SizedBox(height: 6),
                   TextField(
+                    controller: nameController,
                     style: const TextStyle(color: Colors.white),
                     decoration: InputDecoration(
                       hintText: "Nama lengkap",
@@ -102,6 +141,7 @@ class _SignupState extends State<SignupPage> {
                   ),
                   const SizedBox(height: 6),
                   TextField(
+                    controller: emailController,
                     keyboardType: TextInputType.emailAddress,
                     style: const TextStyle(color: Colors.white),
                     decoration: InputDecoration(
@@ -129,6 +169,7 @@ class _SignupState extends State<SignupPage> {
                   ),
                   const SizedBox(height: 6),
                   TextField(
+                    controller: passwordController,
                     obscureText: obscurePassword,
                     style: const TextStyle(color: Colors.white),
                     decoration: InputDecoration(
@@ -169,6 +210,7 @@ class _SignupState extends State<SignupPage> {
                   ),
                   const SizedBox(height: 6),
                   TextField(
+                    controller: confirmPasswordController,
                     obscureText: obscureConfirmPassword,
                     style: const TextStyle(color: Colors.white),
                     decoration: InputDecoration(
@@ -208,7 +250,7 @@ class _SignupState extends State<SignupPage> {
                     height: 52,
                     child: ElevatedButton(
                       onPressed: () {
-                        Navigator.pushReplacementNamed(context, '/login');
+                        signup();
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.cyanAccent,

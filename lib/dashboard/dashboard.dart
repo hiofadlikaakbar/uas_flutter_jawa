@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:uas_flutter_jawa/detail/C++.dart';
 import 'package:uas_flutter_jawa/detail/GO.dart';
 import 'package:uas_flutter_jawa/detail/JAVA.dart';
@@ -6,8 +7,43 @@ import 'package:uas_flutter_jawa/detail/JS.dart';
 import 'package:uas_flutter_jawa/detail/PY.dart';
 import 'package:uas_flutter_jawa/detail/RUST.dart';
 
-class MyDashboard extends StatelessWidget {
+class MyDashboard extends StatefulWidget {
   const MyDashboard({super.key});
+
+  @override
+  State<MyDashboard> createState() => _MyDashboardState();
+}
+
+class _MyDashboardState extends State<MyDashboard> {
+  String? userName;
+  bool isLoading = true;
+
+  @override
+  void initState() {
+    super.initState();
+    fetchUserName();
+  }
+
+  Future<void> fetchUserName() async {
+    final client = Supabase.instance.client;
+    final user = client.auth.currentUser;
+
+    if (user == null) {
+      Navigator.pushReplacementNamed(context, '/login');
+      return;
+    }
+
+    final res = await client
+        .from('profiles')
+        .select('name')
+        .eq('id', user.id)
+        .single();
+
+    setState(() {
+      userName = res['name'];
+      isLoading = false;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -67,22 +103,25 @@ class MyDashboard extends StatelessWidget {
       constraints: const BoxConstraints(maxWidth: 520),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: const [
-          Text(
-            'Pilih Bahasa Pemrograman',
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 22,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          SizedBox(height: 8),
-          Text(
+        children: [
+          isLoading
+              ? const Text(
+                  'Loading...',
+                  style: TextStyle(color: Colors.white70),
+                )
+              : Text(
+                  'Piye kabare, $userName 👋',
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+          const SizedBox(height: 8),
+          const Text(
             'Buka skill baru mu dengan belajar di CodeJawa 😎 semua materi pemrograman dari pemula sampai lanjutan ada disini',
             maxLines: 3,
-            softWrap: true,
             overflow: TextOverflow.ellipsis,
-            textAlign: TextAlign.start,
             style: TextStyle(color: Colors.white60, fontSize: 14, height: 1.5),
           ),
         ],
