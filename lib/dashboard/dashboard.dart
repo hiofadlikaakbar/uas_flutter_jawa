@@ -83,12 +83,10 @@ class _MyDashboardState extends State<MyDashboard> {
       ),
       const Spacer(),
 
-      // icon notifikasi (belum ada aksi)
       _circleIcon(Icons.notifications),
 
       const SizedBox(width: 10),
 
-      // icon profile → redirect ke dashboard profile
       _circleIcon(
         Icons.person,
         onTap: () {
