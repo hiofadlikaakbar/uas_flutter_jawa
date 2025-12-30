@@ -89,13 +89,17 @@ class _MyDashboardState extends State<MyDashboard> {
     );
   }
 
-  Widget _circleIcon(IconData icon) {
-    return CircleAvatar(
+  Widget _circleIcon(IconData icon, {VoidCallback? onTap}) {
+  return InkWell(
+    borderRadius: BorderRadius.circular(50),
+    onTap: onTap,
+    child: CircleAvatar(
       radius: 22,
       backgroundColor: Colors.white10,
       child: Icon(icon, color: Colors.white),
-    );
-  }
+    ),
+  );
+}
 
   // intro text
   Widget _introText() {
