@@ -8,7 +8,7 @@ class DashboardProfile extends StatelessWidget {
     final List<Map<String, String>> teamMembers = [
       {
         "name": "Ihza Anasrulloh",
-        "role": "Frontend Developer",
+        "role": "JAWA 1",
         "image": "",
       },
       ];
