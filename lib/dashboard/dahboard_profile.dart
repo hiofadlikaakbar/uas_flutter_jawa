@@ -5,6 +5,13 @@ class DashboardProfile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final List<Map<String, String>> teamMembers = [
+      {
+        "name": "Ihza Anasrulloh",
+        "role": "Frontend Developer",
+        "image": "",
+      },
+      ];
     return const Placeholder();
   }
 }
