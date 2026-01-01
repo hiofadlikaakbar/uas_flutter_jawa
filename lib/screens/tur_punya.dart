@@ -47,6 +47,28 @@ class Tur extends StatelessWidget {
                     end: Alignment.bottomRight,
                   ),
                 ),
+                child: Column(
+                  children: [
+                    const Text(
+                      "Muhammad Turtusi Afrizal Perdana",
+                      style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    const SizedBox(height: 8),
+                    const Text(
+                      "NIM: 1123150012\n"
+                      "Kelas: TI SE 23 P1\n"
+                      "Prodi: Teknik Informatika\n"
+                      "Fakultas: Teknik dan Ilmu Komputer\n"
+                      "Jurusan: Software Engineering\n"
+                      "Kampus: Global Intitute of Technology & Business",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(fontSize: 16),
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
