@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
+import 'package:uas_flutter_jawa/dashboard/dahboard_profile.dart';
 import 'package:uas_flutter_jawa/dashboard/dashboard.dart';
 import 'package:uas_flutter_jawa/screens/login.dart';
 import 'package:uas_flutter_jawa/screens/signup.dart';
@@ -38,6 +39,7 @@ class MyApp extends StatelessWidget {
         '/login': (context) => const LoginPage(),
         '/signup': (context) => const SignupPage(),
         '/dashboard': (context) => const MyDashboard(),
+        '/dashboard_profile': (context) => const DashboardProfile(),
       },
     );
   }
