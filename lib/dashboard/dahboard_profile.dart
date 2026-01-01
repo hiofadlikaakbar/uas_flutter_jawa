@@ -51,7 +51,19 @@ class DashboardProfile extends StatelessWidget {
           ),
           itemBuilder: (context, index) {
             final member = teamMembers[index];
-          },
+          
+          child: Container(
+                decoration: BoxDecoration(
+                  color: const Color(0xFF162238),
+                  borderRadius: BorderRadius.circular(18),
+                ),
+                padding: const EdgeInsets.all(14),
+                child: Column(
+                  children: [
+                  ],
+                ),
+          );
+          },         
         ),
       ),
     );
