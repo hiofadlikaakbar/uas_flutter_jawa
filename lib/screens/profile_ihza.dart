@@ -47,7 +47,12 @@ class ProfileIhza extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                
+                Container(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 14,
+                    vertical: 6,  
+                  ),  
+                ),
               ],
             ),
           ),
