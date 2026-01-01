@@ -51,6 +51,17 @@ class ProfileIhza extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(
                     horizontal: 14,
                     vertical: 6,  
+                  ),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: const Text(
+                    "THE ALIGATOR",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.w600,
+                    ),
                   ),  
                 ),
               ],
