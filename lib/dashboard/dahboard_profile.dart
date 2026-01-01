@@ -27,6 +27,18 @@ class DashboardProfile extends StatelessWidget {
         "image": "ihza.jpg",
       },
       ];
-    return const Placeholder();
+
+    return Scaffold(
+      backgroundColor: const Color(0xFF0B1623),
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        centerTitle: true,
+        title: const Text(
+          "Profil Tim",
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+      ),
+    );
   }
 }
