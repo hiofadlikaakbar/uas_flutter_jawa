@@ -11,6 +11,21 @@ class DashboardProfile extends StatelessWidget {
         "role": "JAWA 1",
         "image": "ihza.jpg",
       },
+      {
+        "name": "Hio Fadlika",
+        "role": "KETUA PARA JAWA",
+        "image": "ihza.jpg",
+      },
+      {
+        "name": "Turtusi",
+        "role": "JAWA 3",
+        "image": "ihza.jpg",
+      },
+      {
+        "name": "Afnan Dani",
+        "role": "JAWA 4",
+        "image": "ihza.jpg",
+      },
       ];
     return const Placeholder();
   }
