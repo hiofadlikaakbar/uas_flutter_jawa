@@ -1,23 +1,66 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class ProfileIhza extends StatelessWidget {
-  final String imagePath;
-  final String name;
+class ProfileIhza extends StatefulWidget {
+  const ProfileIhza({super.key});
 
-  const ProfileIhza({
-    super.key,
-    required this.imagePath,
-    required this.name,
-  });
+  @override
+  State<ProfileIhza> createState() => _ProfileIhzaState();
+}
+
+class _ProfileIhzaState extends State<ProfileIhza>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _controller;
+  late Animation<double> _fade;
+  late Animation<Offset> _slide;
+
+  @override
+  void initState() {
+    super.initState();
+
+    _controller = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 800),
+    );
+
+    _fade = CurvedAnimation(
+      parent: _controller,
+      curve: Curves.easeOut,
+    );
+
+    _slide = Tween<Offset>(
+      begin: const Offset(0, 0.06),
+      end: Offset.zero,
+    ).animate(_fade);
+
+    _controller.forward();
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  Widget _animated(Widget child) {
+    return FadeTransition(
+      opacity: _fade,
+      child: SlideTransition(
+        position: _slide,
+        child: child,
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
+
     return Scaffold(
       backgroundColor: const Color(0xFF0B1623),
       body: Stack(
         children: [
+          /// BACKGROUND TEXT
           Positioned(
             top: 90,
             left: 20,
@@ -32,9 +75,11 @@ class ProfileIhza extends StatelessWidget {
               ),
             ),
           ),
+
+          /// HERO IMAGE
           Positioned.fill(
-            child: Transform.scale(
-              scale: 1,
+            child: Hero(
+              tag: "ihza-photo",
               child: Image.asset(
                 "images/ihzawa.png",
                 fit: BoxFit.cover,
@@ -42,50 +87,66 @@ class ProfileIhza extends StatelessWidget {
               ),
             ),
           ),
+
+          /// GRADIENT
           Positioned.fill(
             child: Container(
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
-                  colors: [Colors.transparent, Colors.black.withOpacity(0.85)],
+                  colors: [
+                    Colors.transparent,
+                    Colors.black.withOpacity(0.85),
+                  ],
                 ),
               ),
             ),
           ),
 
-          Positioned(top: 380, left: 20, child: _searchTag()),
+          /// BACK BUTTON
+          Positioned(
+            top: 40,
+            left: 16,
+            child: IconButton(
+              icon: const Icon(Icons.arrow_back, color: Colors.white),
+              onPressed: () => Navigator.pop(context),
+            ),
+          ),
 
-          Positioned(top: 280, right: 20, child: _followTag()),
-          
+          Positioned(top: 380, left: 20, child: _animated(_searchTag())),
+          Positioned(top: 280, right: 20, child: _animated(_followTag())),
+
           Positioned(
             top: size.height * 0.60,
             left: 20,
-            child: _photoProfile(),
+            child: _animated(_photoProfile()),
           ),
 
           Positioned(
             top: size.height * 0.50,
             right: 20,
-            child: _keahliaan(),
+            child: _animated(_keahliaan()),
           ),
 
           Positioned(
             top: size.height * 0.68,
             right: 20,
-            child: _bornInfo(),
+            child: _animated(_bornInfo()),
           ),
 
           Positioned(
             bottom: 50,
             left: 0,
             right: 0,
-            child: _bottomName(),
+            child: _animated(_bottomName()),
           ),
         ],
       ),
     );
   }
+
+  // ================= WIDGET =================
 
   Widget _searchTag() {
     return Container(
@@ -100,7 +161,8 @@ class ProfileIhza extends StatelessWidget {
           const SizedBox(width: 6),
           Text(
             "The Aligator",
-            style: GoogleFonts.inter(fontWeight: FontWeight.w600, fontSize: 13),
+            style: GoogleFonts.inter(
+                fontWeight: FontWeight.w600, fontSize: 13),
           ),
         ],
       ),
@@ -108,31 +170,24 @@ class ProfileIhza extends StatelessWidget {
   }
 
   Widget _infoCard({required String title, required String content}) {
-    return Expanded(
-      child: Container(
-        padding: const EdgeInsets.all(14),
-        decoration: BoxDecoration(
-          color: const Color(0xFF162238),
-          borderRadius: BorderRadius.circular(16),
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              title,
-              style: GoogleFonts.inter(color: Colors.white60, fontSize: 12),
-            ),
-            const SizedBox(height: 8),
-            Text(
-              content,
+    return Container(
+      width: 190,
+      padding: const EdgeInsets.all(14),
+      decoration: BoxDecoration(
+        color: const Color(0xFF162238),
+        borderRadius: BorderRadius.circular(16),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(title,
               style: GoogleFonts.inter(
-                color: Colors.white,
-                fontSize: 13,
-                height: 1.4,
-              ),
-            ),
-          ],
-        ),
+                  color: Colors.white60, fontSize: 12)),
+          const SizedBox(height: 8),
+          Text(content,
+              style: GoogleFonts.inter(
+                  color: Colors.white, fontSize: 13)),
+        ],
       ),
     );
   }
@@ -148,13 +203,15 @@ class ProfileIhza extends StatelessWidget {
           ),
           child: Text(
             "Follow Me!",
-            style: GoogleFonts.inter(fontWeight: FontWeight.w700, fontSize: 14),
+            style: GoogleFonts.inter(
+                fontWeight: FontWeight.w700, fontSize: 14),
           ),
         ),
         const SizedBox(width: 10),
         Text(
           "@onlyyyzaa",
-          style: GoogleFonts.inter(color: Colors.white70, fontSize: 13),
+          style:
+              GoogleFonts.inter(color: Colors.white70, fontSize: 13),
         ),
       ],
     );
@@ -191,11 +248,12 @@ class ProfileIhza extends StatelessWidget {
       ),
     );
   }
+
   Widget _keahliaan() {
     return _infoCard(
       title: "Keahlian",
       content:
-          "FLUTTER - LARAVEL - PHP\nHTML - CSS - MYSQL \nSUPABASE",
+          "FLUTTER - LARAVEL - PHP\nHTML - CSS - MYSQL\nSUPABASE",
     );
   }
 
