@@ -32,6 +32,14 @@ class ProfileIhza extends StatelessWidget {
               ),
             ),
           ),
+          Positioned(
+            top: 40,
+            left: 16,
+            child: IconButton(
+              icon: const Icon(Icons.arrow_back, color: Colors.white),
+              onPressed: () => Navigator.pop(context),
+            ),
+          ),
         ],
       ),
     );
