@@ -67,7 +67,18 @@ class ProfileIhza extends StatelessWidget {
                     ),
                   ),
                 ),
-                
+                const SizedBox(height: 14),
+
+                Row(
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 18,
+                        vertical: 8,
+                      ),
+                    ),
+                  ],
+                ),
               ],
             ),
           ),
