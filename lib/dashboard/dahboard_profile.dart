@@ -39,6 +39,21 @@ class DashboardProfile extends StatelessWidget {
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
       ),
+      body: Padding(
+        padding: const EdgeInsets.all(20),
+        child: GridView.builder(
+          itemCount: teamMembers.length,
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            crossAxisSpacing: 16,
+            mainAxisSpacing: 16,
+            childAspectRatio: 0.72,
+          ),
+          itemBuilder: (context, index) {
+            final member = teamMembers[index];
+          },
+        ),
+      ),
     );
   }
 }
