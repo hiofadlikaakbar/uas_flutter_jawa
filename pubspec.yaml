@@ -67,6 +67,7 @@ flutter:
     - images/jawa.gif
     - images/ihza.jpg
     - images/ihzawa.png
+    - images/Tur.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

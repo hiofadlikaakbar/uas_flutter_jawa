@@ -30,6 +30,10 @@ class Tur extends StatelessWidget {
                   ],
                 ),
               ),
+              const CircleAvatar(
+                radius: 60,
+                backgroundImage: AssetImage('images/Tur.jpg'),
+              ),
             ],
           ),
         ),
