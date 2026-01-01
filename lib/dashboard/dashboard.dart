@@ -71,31 +71,43 @@ class _MyDashboardState extends State<MyDashboard> {
 
   // header
   Widget _header() {
-    return Row(
-      children: [
-        const Text(
-          'Dashboard',
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 28,
-            fontWeight: FontWeight.bold,
-          ),
+  return Row(
+    children: [
+      const Text(
+        'Dashboard',
+        style: TextStyle(
+          color: Colors.white,
+          fontSize: 28,
+          fontWeight: FontWeight.bold,
         ),
-        const Spacer(),
-        _circleIcon(Icons.notifications),
-        const SizedBox(width: 10),
-        _circleIcon(Icons.person),
-      ],
-    );
-  }
+      ),
+      const Spacer(),
 
-  Widget _circleIcon(IconData icon) {
-    return CircleAvatar(
+      _circleIcon(Icons.notifications),
+
+      const SizedBox(width: 10),
+
+      _circleIcon(
+        Icons.person,
+        onTap: () {
+          Navigator.pushNamed(context, '/dashboard_profile');
+        },
+      ),
+    ],
+  );
+}
+
+  Widget _circleIcon(IconData icon, {VoidCallback? onTap}) {
+  return InkWell(
+    borderRadius: BorderRadius.circular(50),
+    onTap: onTap,
+    child: CircleAvatar(
       radius: 22,
       backgroundColor: Colors.white10,
       child: Icon(icon, color: Colors.white),
-    );
-  }
+    ),
+  );
+}
 
   // intro text
   Widget _introText() {
