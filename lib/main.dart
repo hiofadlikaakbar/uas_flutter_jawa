@@ -40,7 +40,6 @@ class MyApp extends StatelessWidget {
         '/login': (context) => const LoginPage(),
         '/signup': (context) => const SignupPage(),
         '/dashboard': (context) => const MyDashboard(),
-        '/profile_ihza': (context) => const ProfileIhza(),
       },
       onGenerateRoute: (settings) {
         if (settings.name == '/dashboard_profile') {
@@ -69,6 +68,12 @@ class MyApp extends StatelessWidget {
                 ),
               );
             },
+          );
+        }
+        if (settings.name == '/profile_ihza') {
+          return MaterialPageRoute(
+            builder: (_) => const ProfileIhza(),
+            settings: settings, // ⬅️ WAJIB untuk Hero + arguments
           );
         }
       },
