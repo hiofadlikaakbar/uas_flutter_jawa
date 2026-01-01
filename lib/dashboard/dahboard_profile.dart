@@ -80,6 +80,14 @@ class DashboardProfile extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
+                    const SizedBox(height: 6),
+                    Text(
+                      member['role']!,
+                      style: const TextStyle(
+                        color: Colors.white60,
+                        fontSize: 13,
+                      ),
+                    ),
                   ],
                 ),
           );
