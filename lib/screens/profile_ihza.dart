@@ -56,61 +56,11 @@ class ProfileIhza extends StatelessWidget {
           ),
 
           Positioned(
-            bottom: 40,
-            left: 20,
+            top: 120,
             right: 20,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 14,
-                    vertical: 6,
-                  ),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  child: Text(
-                    "The Aligator",
-                    style: GoogleFonts.inter(
-                      fontWeight: FontWeight.w600,
-                      fontSize: 13,
-                      color: Colors.black,
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 14),
-
-                Row(
-                  children: [
-                    Container(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 18,
-                        vertical: 8,
-                      ),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      child: Text(
-                        "Follow Me!",
-                        style: GoogleFonts.inter(
-                          fontWeight: FontWeight.w700,
-                          fontSize: 14,
-                        ),
-                      ),
-                    ),
-                    const SizedBox(width: 12),
-                    Text(
-                      "@onlyyyzaa",
-                      style: GoogleFonts.inter(
-                        color: Colors.white70,
-                        fontSize: 13,
-                      ),
-                    ),
-                  ],
-                ),
+            child: _followTag(),
+          ),
+          
                 const SizedBox(height: 20),
                 Row(
                   children: [
@@ -147,10 +97,7 @@ class ProfileIhza extends StatelessWidget {
                 ),
               ],
             ),
-          ),
-        ],
-      ),
-    );
+          );
   }
   Widget _searchTag() {
     return Container(
@@ -204,6 +151,34 @@ class ProfileIhza extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+  Widget _followTag() {
+    return Row(
+      children: [
+        Container(
+          padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 8),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(20),
+          ),
+          child: Text(
+            "Follow Me!",
+            style: GoogleFonts.inter(
+              fontWeight: FontWeight.w700,
+              fontSize: 14,
+            ),
+          ),
+        ),
+        const SizedBox(width: 10),
+        Text(
+          "@onlyyyzaa",
+          style: GoogleFonts.inter(
+            color: Colors.white70,
+            fontSize: 13,
+          ),
+        ),
+      ],
     );
   }
 }
