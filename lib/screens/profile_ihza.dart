@@ -49,12 +49,12 @@ class ProfileIhza extends StatelessWidget {
             ),
           ),
 
-          /// SEARCH TAG (KIRI ATAS)
           Positioned(
             top: 120,
             left: 20,
             child: _searchTag(),
           ),
+
           Positioned(
             bottom: 40,
             left: 20,
@@ -152,7 +152,28 @@ class ProfileIhza extends StatelessWidget {
       ),
     );
   }
-
+  Widget _searchTag() {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(20),
+      ),
+      child: Row(
+        children: [
+          const Icon(Icons.search, size: 14),
+          const SizedBox(width: 6),
+          Text(
+            "The daddy seiyuu",
+            style: GoogleFonts.inter(
+              fontWeight: FontWeight.w600,
+              fontSize: 13,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
   Widget _infoCard({required String title, required String content}) {
     return Expanded(
       child: Container(
