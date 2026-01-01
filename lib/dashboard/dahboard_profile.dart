@@ -21,13 +21,10 @@ class DashboardProfile extends StatelessWidget {
         "name": "Turtusi",
         "role": "JAWA 3",
         "image": "images/ihza.jpg",
+        "route": "/tur_punya",
       },
-      {
-        "name": "Afnan Dani",
-        "role": "JAWA 4",
-        "image": "images/ihza.jpg",
-      },
-      ];
+      {"name": "Afnan Dani", "role": "JAWA 4", "image": "images/ihza.jpg"},
+    ];
 
     return Scaffold(
       backgroundColor: const Color(0xFF0B1623),
@@ -52,8 +49,8 @@ class DashboardProfile extends StatelessWidget {
           ),
           itemBuilder: (context, index) {
             final member = teamMembers[index];
-          
-          return InkWell(
+
+            return InkWell(
               borderRadius: BorderRadius.circular(18),
               onTap: () {
                 Navigator.pushNamed(
@@ -62,7 +59,7 @@ class DashboardProfile extends StatelessWidget {
                   arguments: member, // 🔥 PENTING
                 );
               },
-          child: Container(
+              child: Container(
                 decoration: BoxDecoration(
                   color: const Color(0xFF162238),
                   borderRadius: BorderRadius.circular(18),
@@ -101,9 +98,9 @@ class DashboardProfile extends StatelessWidget {
                     ),
                   ],
                 ),
-          ),
-          );
-          },         
+              ),
+            );
+          },
         ),
       ),
     );

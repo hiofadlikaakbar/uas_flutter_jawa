@@ -7,6 +7,7 @@ import 'package:uas_flutter_jawa/screens/profile_ihza.dart';
 import 'package:uas_flutter_jawa/screens/signup.dart';
 import 'package:uas_flutter_jawa/screens/splash_screen3.dart';
 import 'package:uas_flutter_jawa/screens/splash_screen4.dart';
+import 'package:uas_flutter_jawa/screens/tur_punya.dart';
 import 'screens/splash_screen.dart';
 import 'screens/splash_screen2.dart';
 
@@ -39,6 +40,7 @@ class MyApp extends StatelessWidget {
         '/splash4': (context) => const SplashScreen4(),
         '/login': (context) => const LoginPage(),
         '/signup': (context) => const SignupPage(),
+        '/tur_punya': (context) => const Tur(),
         '/dashboard': (context) => const MyDashboard(),
       },
       onGenerateRoute: (settings) {
@@ -50,24 +52,22 @@ class MyApp extends StatelessWidget {
             },
             transitionsBuilder:
                 (context, animation, secondaryAnimation, child) {
-              final slide = Tween<Offset>(
-                begin: const Offset(0, 0.1),
-                end: Offset.zero,
-              ).animate(
-                CurvedAnimation(
-                  parent: animation,
-                  curve: Curves.easeOut,
-                ),
-              );
+                  final slide =
+                      Tween<Offset>(
+                        begin: const Offset(0, 0.1),
+                        end: Offset.zero,
+                      ).animate(
+                        CurvedAnimation(
+                          parent: animation,
+                          curve: Curves.easeOut,
+                        ),
+                      );
 
-              return FadeTransition(
-                opacity: animation,
-                child: SlideTransition(
-                  position: slide,
-                  child: child,
-                ),
-              );
-            },
+                  return FadeTransition(
+                    opacity: animation,
+                    child: SlideTransition(position: slide, child: child),
+                  );
+                },
           );
         }
         if (settings.name == '/profile_ihza') {
