@@ -56,6 +56,25 @@ class ProfileIhza extends StatelessWidget {
             left: 20,
             child: _photoProfile(),
           ),
+
+          Positioned(
+            top: size.height * 0.50,
+            right: 20,
+            child: _keahliaan(),
+          ),
+
+          Positioned(
+            top: size.height * 0.68,
+            right: 20,
+            child: _bornInfo(),
+          ),
+
+          Positioned(
+            bottom: 50,
+            left: 0,
+            right: 0,
+            child: _bottomName(),
+          ),
         ],
       ),
     );
@@ -163,6 +182,53 @@ class ProfileIhza extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+  Widget _keahliaan() {
+    return _infoCard(
+      title: "Keahlian",
+      content:
+          "FLUTTER - LARAVEL - PHP\nHTML - CSS - MYSQL \nSUPABASE",
+    );
+  }
+
+  Widget _bornInfo() {
+    return _infoCard(
+      title: "Born",
+      content: "05 September 2005 (age 20)\nPurbalingga, Indo",
+    );
+  }
+
+  Widget _bottomName() {
+    return Column(
+      children: [
+        Text(
+          "津田 健次郎",
+          style: GoogleFonts.inter(
+            color: Colors.white70,
+            fontSize: 14,
+          ),
+        ),
+        const SizedBox(height: 6),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(width: 40, height: 1, color: Colors.white),
+            const SizedBox(width: 12),
+            Text(
+              "IHZA ANASRULLOH",
+              style: GoogleFonts.inter(
+                fontSize: 28,
+                fontWeight: FontWeight.w800,
+                letterSpacing: 1.5,
+                color: Colors.white,
+              ),
+            ),
+            const SizedBox(width: 12),
+            Container(width: 40, height: 1, color: Colors.white),
+          ],
+        ),
+      ],
     );
   }
 }
