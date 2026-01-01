@@ -71,6 +71,15 @@ class DashboardProfile extends StatelessWidget {
                         fit: BoxFit.cover,
                       ),
                     ),
+                    Text(
+                      member['name']!,
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
                   ],
                 ),
           );
