@@ -60,7 +60,6 @@ class _ProfileIhzaState extends State<ProfileIhza>
       backgroundColor: const Color(0xFF0B1623),
       body: Stack(
         children: [
-          /// BACKGROUND TEXT
           Positioned(
             top: 90,
             left: 20,
@@ -76,7 +75,6 @@ class _ProfileIhzaState extends State<ProfileIhza>
             ),
           ),
 
-          /// HERO IMAGE
           Positioned.fill(
             child: Hero(
               tag: "ihza-photo",
@@ -88,7 +86,6 @@ class _ProfileIhzaState extends State<ProfileIhza>
             ),
           ),
 
-          /// GRADIENT
           Positioned.fill(
             child: Container(
               decoration: BoxDecoration(
@@ -104,7 +101,6 @@ class _ProfileIhzaState extends State<ProfileIhza>
             ),
           ),
 
-          /// BACK BUTTON
           Positioned(
             top: 40,
             left: 16,
@@ -146,7 +142,6 @@ class _ProfileIhzaState extends State<ProfileIhza>
     );
   }
 
-  // ================= WIDGET =================
 
   Widget _searchTag() {
     return Container(
@@ -240,7 +235,7 @@ class _ProfileIhzaState extends State<ProfileIhza>
             borderRadius: BorderRadius.circular(12),
             child: Image.asset(
               "images/ihza.jpg",
-              height: 110,
+              height: 120,
               fit: BoxFit.cover,
             ),
           ),
