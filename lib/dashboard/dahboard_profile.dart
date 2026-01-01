@@ -56,6 +56,7 @@ class DashboardProfile extends StatelessWidget {
           return InkWell(
               borderRadius: BorderRadius.circular(18),
               onTap: () {
+                Navigator.pushNamed(context, member['route']!);
               },
           child: Container(
                 decoration: BoxDecoration(
