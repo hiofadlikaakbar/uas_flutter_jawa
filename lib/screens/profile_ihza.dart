@@ -115,7 +115,14 @@ class ProfileIhza extends StatelessWidget {
                 ),
                 const SizedBox(height: 24),
 
-                
+                Text(
+                  "津田 健次郎",
+                  style: GoogleFonts.inter(
+                    color: Colors.white60,
+                    fontSize: 14,
+                    letterSpacing: 1,
+                  ),
+                ),
               ],
             ),
           ),
