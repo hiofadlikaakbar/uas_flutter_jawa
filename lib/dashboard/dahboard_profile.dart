@@ -9,7 +9,7 @@ class DashboardProfile extends StatelessWidget {
       {
         "name": "Ihza Anasrulloh",
         "role": "JAWA 1",
-        "image": "",
+        "image": "ihza.jpg",
       },
       ];
     return const Placeholder();
