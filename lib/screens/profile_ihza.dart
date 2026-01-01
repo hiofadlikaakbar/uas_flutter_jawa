@@ -129,6 +129,27 @@ class ProfileIhza extends StatelessWidget {
           color: const Color(0xFF162238),
           borderRadius: BorderRadius.circular(16),
         ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              title,
+              style: GoogleFonts.inter(
+                color: Colors.white60,
+                fontSize: 12,
+              ),
+            ),
+            const SizedBox(height: 8),
+            Text(
+              content,
+              style: GoogleFonts.inter(
+                color: Colors.white,
+                fontSize: 13,
+                height: 1.4,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
