@@ -49,7 +49,7 @@ class ProfileIhza extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                 Container(
+                Container(
                   padding: const EdgeInsets.symmetric(
                     horizontal: 14,
                     vertical: 6,
@@ -98,10 +98,37 @@ class ProfileIhza extends StatelessWidget {
                     ),
                   ],
                 ),
+                const SizedBox(height: 20),
+                Row(
+                  children: [
+                    _infoCard(
+                      title: "Famous roles",
+                      content:
+                          "Seto Kaiba (Yu-Gi-Oh!)\nNanami Kento (Jujutsu Kaisen)\nOverhaul (My Hero Academia)",
+                    ),
+                    const SizedBox(width: 12),
+                    _infoCard(
+                      title: "Born",
+                      content: "11 June 1971\nOsaka Prefecture\nJapan",
+                    ),
+                  ],
+                ),
               ],
             ),
           ),
         ],
+      ),
+    );
+  }
+
+  Widget _infoCard({required String title, required String content}) {
+    return Expanded(
+      child: Container(
+        padding: const EdgeInsets.all(14),
+        decoration: BoxDecoration(
+          color: const Color(0xFF162238),
+          borderRadius: BorderRadius.circular(16),
+        ),
       ),
     );
   }
