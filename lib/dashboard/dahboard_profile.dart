@@ -52,6 +52,10 @@ class DashboardProfile extends StatelessWidget {
           itemBuilder: (context, index) {
             final member = teamMembers[index];
           
+          return InkWell(
+              borderRadius: BorderRadius.circular(18),
+              onTap: () {
+              },
           child: Container(
                 decoration: BoxDecoration(
                   color: const Color(0xFF162238),
@@ -91,6 +95,7 @@ class DashboardProfile extends StatelessWidget {
                     ),
                   ],
                 ),
+          ),
           );
           },         
         ),
