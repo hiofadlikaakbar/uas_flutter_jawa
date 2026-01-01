@@ -56,17 +56,12 @@ class Tur extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    const SizedBox(height: 8),
+                    const SizedBox(height: 4),
                     const Text(
-                      "NIM: 1123150012\n"
-                      "Kelas: TI SE 23 P1\n"
-                      "Prodi: Teknik Informatika\n"
-                      "Fakultas: Teknik dan Ilmu Komputer\n"
-                      "Jurusan: Software Engineering\n"
-                      "Kampus: Global Intitute of Technology & Business",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(fontSize: 16),
+                      "123200045",
+                      style: TextStyle(fontSize: 16, color: Colors.black54),
                     ),
+                    const SizedBox(height: 20),
                   ],
                 ),
               ),
