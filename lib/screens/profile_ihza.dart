@@ -123,6 +123,15 @@ class ProfileIhza extends StatelessWidget {
                     letterSpacing: 1,
                   ),
                 ),
+                Text(
+                  "IHZA ANASRULLOH",
+                  style: GoogleFonts.inter(
+                    fontSize: 30,
+                    fontWeight: FontWeight.w800,
+                    letterSpacing: 1.5,
+                    color: Colors.white,
+                  ),
+                ),
               ],
             ),
           ),
