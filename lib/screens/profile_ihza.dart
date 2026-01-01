@@ -102,14 +102,14 @@ class ProfileIhza extends StatelessWidget {
                 Row(
                   children: [
                     _infoCard(
-                      title: "Famous roles",
+                      title: "JAWARA 1",
                       content:
-                          "Seto Kaiba (Yu-Gi-Oh!)\nNanami Kento (Jujutsu Kaisen)\nOverhaul (My Hero Academia)",
+                          "WEB DEVELOPER\nFLUTTER\nPYTHON\nLARAVEL\nPHP\nMYSQL",
                     ),
                     const SizedBox(width: 12),
                     _infoCard(
                       title: "Born",
-                      content: "11 June 1971\nOsaka Prefecture\nJapan",
+                      content: "5 September 2005\nPurbalingga\nIndonesia",
                     ),
                   ],
                 ),
