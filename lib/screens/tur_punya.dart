@@ -62,6 +62,14 @@ class Tur extends StatelessWidget {
                       style: TextStyle(fontSize: 16, color: Colors.black54),
                     ),
                     const SizedBox(height: 20),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: const [
+                        W1(title: "Following", value: "542"),
+                        W1(title: "Followers", value: "98K"),
+                        W1(title: "Likes", value: "100K"),
+                      ],
+                    ),
                   ],
                 ),
               ),
@@ -69,6 +77,30 @@ class Tur extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+}
+
+class W1 extends StatelessWidget {
+  final String title;
+  final String value;
+
+  const W1({super.key, required this.title, required this.value});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Text(
+          value,
+          style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+        ),
+        const SizedBox(height: 4),
+        Text(
+          title,
+          style: const TextStyle(fontSize: 16, color: Colors.black54),
+        ),
+      ],
     );
   }
 }
