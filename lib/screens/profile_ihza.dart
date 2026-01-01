@@ -40,6 +40,17 @@ class ProfileIhza extends StatelessWidget {
               onPressed: () => Navigator.pop(context),
             ),
           ),
+          Positioned(
+            bottom: 40,
+            left: 20,
+            right: 20,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                
+              ],
+            ),
+          ),
         ],
       ),
     );
