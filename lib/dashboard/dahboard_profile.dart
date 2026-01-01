@@ -7,13 +7,13 @@ class DashboardProfile extends StatelessWidget {
   Widget build(BuildContext context) {
     final List<Map<String, String>> teamMembers = [
       {
-        "name": "Ihza Anasrulloh",
-        "role": "JAWA 1",
+        "name": "Hio Fadlika",
+        "role": "KETUA PARA JAWA",
         "image": "images/ihza.jpg",
       },
       {
-        "name": "Hio Fadlika",
-        "role": "KETUA PARA JAWA",
+        "name": "Ihza Anasrulloh",
+        "role": "JAWA 2",
         "image": "images/ihza.jpg",
       },
       {
