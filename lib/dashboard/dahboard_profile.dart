@@ -71,6 +71,7 @@ class DashboardProfile extends StatelessWidget {
                         fit: BoxFit.cover,
                       ),
                     ),
+                    const SizedBox(height: 12),
                     Text(
                       member['name']!,
                       textAlign: TextAlign.center,
