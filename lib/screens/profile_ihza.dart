@@ -34,13 +34,26 @@ class ProfileIhza extends StatelessWidget {
               ),
             ),
           ),
-          Positioned(
-            top: 40,
-            left: 16,
-            child: IconButton(
-              icon: const Icon(Icons.arrow_back, color: Colors.white),
-              onPressed: () => Navigator.pop(context),
+          Positioned.fill(
+            child: Container(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [
+                    Colors.transparent,
+                    Colors.black.withOpacity(0.85),
+                  ],
+                ),
+              ),
             ),
+          ),
+
+          /// SEARCH TAG (KIRI ATAS)
+          Positioned(
+            top: 120,
+            left: 20,
+            child: _searchTag(),
           ),
           Positioned(
             bottom: 40,
