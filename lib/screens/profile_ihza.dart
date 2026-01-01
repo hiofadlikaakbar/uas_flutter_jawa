@@ -2,7 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ProfileIhza extends StatelessWidget {
-  const ProfileIhza({super.key});
+  final String imagePath;
+  final String name;
+
+  const ProfileIhza({
+    super.key,
+    required this.imagePath,
+    required this.name,
+  });
 
   @override
   Widget build(BuildContext context) {
