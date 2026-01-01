@@ -22,6 +22,14 @@ class ProfileIhza extends StatelessWidget {
               ),
             ),
           ),
+          Align(
+            alignment: Alignment.center,
+            child: Image.asset(
+              "images/ihza.jpg",
+              height: MediaQuery.of(context).size.height * 0.65,
+              fit: BoxFit.cover,
+            ),
+          ),
         ],
       ),
     );
