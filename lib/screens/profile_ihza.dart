@@ -50,7 +50,7 @@ class ProfileIhza extends StatelessWidget {
           ),
 
           Positioned(
-            top: 120,
+            top: 300,
             left: 20,
             child: _searchTag(),
           ),
@@ -164,7 +164,7 @@ class ProfileIhza extends StatelessWidget {
           const Icon(Icons.search, size: 14),
           const SizedBox(width: 6),
           Text(
-            "The daddy seiyuu",
+            "The Aligator",
             style: GoogleFonts.inter(
               fontWeight: FontWeight.w600,
               fontSize: 13,
