@@ -12,14 +12,15 @@ class ProfileIhza extends StatelessWidget {
         children: [
           Positioned(
             top: 120,
-            left: 20,
+            left: 16,
             child: Text(
-              "IHZA\nANASRULLOH",
-              style: TextStyle(
-                fontSize: 72,
-                height: 0.9,
+              "Ihza\nGanteng",
+              style: GoogleFonts.inter(
+                fontSize: 76,
+                height: 0.95,
                 fontWeight: FontWeight.w900,
-                color: Colors.white.withOpacity(0.08),
+                letterSpacing: -2,
+                color: Colors.white.withOpacity(0.07),
               ),
             ),
           ),
