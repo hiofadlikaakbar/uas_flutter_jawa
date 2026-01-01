@@ -76,6 +76,17 @@ class ProfileIhza extends StatelessWidget {
                         horizontal: 18,
                         vertical: 8,
                       ),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Text(
+                        "Follow Me!",
+                        style: GoogleFonts.inter(
+                          fontWeight: FontWeight.w700,
+                          fontSize: 14,
+                        ),
+                      ),
                     ),
                   ],
                 ),
