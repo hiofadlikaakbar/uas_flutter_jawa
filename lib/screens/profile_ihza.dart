@@ -6,6 +6,7 @@ class ProfileIhza extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: const Color(0xFF0B1623),
       body: Stack(
@@ -40,65 +41,26 @@ class ProfileIhza extends StatelessWidget {
                 gradient: LinearGradient(
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
-                  colors: [
-                    Colors.transparent,
-                    Colors.black.withOpacity(0.85),
-                  ],
+                  colors: [Colors.transparent, Colors.black.withOpacity(0.85)],
                 ),
               ),
             ),
           ),
 
-          Positioned(
-            top: 300,
-            left: 20,
-            child: _searchTag(),
-          ),
+          Positioned(top: 380, left: 20, child: _searchTag()),
 
-          Positioned(
-            top: 120,
-            right: 20,
-            child: _followTag(),
-          ),
+          Positioned(top: 280, right: 20, child: _followTag()),
           
-                const SizedBox(height: 20),
-                Row(
-                  children: [
-                    _infoCard(
-                      title: "JAWARA 1",
-                      content:
-                          "WEB DEVELOPER\nFLUTTER\nPYTHON\nLARAVEL\nPHP\nMYSQL",
-                    ),
-                    const SizedBox(width: 12),
-                    _infoCard(
-                      title: "Born",
-                      content: "5 September 2005\nPurbalingga\nIndonesia",
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 24),
-
-                Text(
-                  "津田 健次郎",
-                  style: GoogleFonts.inter(
-                    color: Colors.white60,
-                    fontSize: 14,
-                    letterSpacing: 1,
-                  ),
-                ),
-                Text(
-                  "IHZA ANASRULLOH",
-                  style: GoogleFonts.inter(
-                    fontSize: 30,
-                    fontWeight: FontWeight.w800,
-                    letterSpacing: 1.5,
-                    color: Colors.white,
-                  ),
-                ),
-              ],
-            ),
-          );
+          Positioned(
+            top: size.height * 0.60,
+            left: 20,
+            child: _photoProfile(),
+          ),
+        ],
+      ),
+    );
   }
+
   Widget _searchTag() {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
@@ -112,15 +74,13 @@ class ProfileIhza extends StatelessWidget {
           const SizedBox(width: 6),
           Text(
             "The Aligator",
-            style: GoogleFonts.inter(
-              fontWeight: FontWeight.w600,
-              fontSize: 13,
-            ),
+            style: GoogleFonts.inter(fontWeight: FontWeight.w600, fontSize: 13),
           ),
         ],
       ),
     );
   }
+
   Widget _infoCard({required String title, required String content}) {
     return Expanded(
       child: Container(
@@ -134,10 +94,7 @@ class ProfileIhza extends StatelessWidget {
           children: [
             Text(
               title,
-              style: GoogleFonts.inter(
-                color: Colors.white60,
-                fontSize: 12,
-              ),
+              style: GoogleFonts.inter(color: Colors.white60, fontSize: 12),
             ),
             const SizedBox(height: 8),
             Text(
@@ -153,6 +110,7 @@ class ProfileIhza extends StatelessWidget {
       ),
     );
   }
+
   Widget _followTag() {
     return Row(
       children: [
@@ -164,21 +122,47 @@ class ProfileIhza extends StatelessWidget {
           ),
           child: Text(
             "Follow Me!",
-            style: GoogleFonts.inter(
-              fontWeight: FontWeight.w700,
-              fontSize: 14,
-            ),
+            style: GoogleFonts.inter(fontWeight: FontWeight.w700, fontSize: 14),
           ),
         ),
         const SizedBox(width: 10),
         Text(
           "@onlyyyzaa",
-          style: GoogleFonts.inter(
-            color: Colors.white70,
-            fontSize: 13,
-          ),
+          style: GoogleFonts.inter(color: Colors.white70, fontSize: 13),
         ),
       ],
+    );
+  }
+
+  Widget _photoProfile() {
+    return Container(
+      width: 150,
+      padding: const EdgeInsets.all(10),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(16),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            "PHOTO PROFIL",
+            style: GoogleFonts.inter(
+              fontSize: 11,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+          const SizedBox(height: 8),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(12),
+            child: Image.asset(
+              "images/ihza.jpg",
+              height: 110,
+              fit: BoxFit.cover,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
