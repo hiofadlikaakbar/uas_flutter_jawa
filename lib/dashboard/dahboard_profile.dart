@@ -9,22 +9,22 @@ class DashboardProfile extends StatelessWidget {
       {
         "name": "Ihza Anasrulloh",
         "role": "JAWA 1",
-        "image": "ihza.jpg",
+        "image": "images/ihza.jpg",
       },
       {
         "name": "Hio Fadlika",
         "role": "KETUA PARA JAWA",
-        "image": "ihza.jpg",
+        "image": "images/ihza.jpg",
       },
       {
         "name": "Turtusi",
         "role": "JAWA 3",
-        "image": "ihza.jpg",
+        "image": "images/ihza.jpg",
       },
       {
         "name": "Afnan Dani",
         "role": "JAWA 4",
-        "image": "ihza.jpg",
+        "image": "images/ihza.jpg",
       },
       ];
 
@@ -63,6 +63,12 @@ class DashboardProfile extends StatelessWidget {
                     ClipRRect(
                       borderRadius: const BorderRadius.vertical(
                         top: Radius.circular(18),
+                      ),
+                      child: Image.asset(
+                        member['image']!,
+                        height: 140,
+                        width: double.infinity,
+                        fit: BoxFit.cover,
                       ),
                     ),
                   ],
