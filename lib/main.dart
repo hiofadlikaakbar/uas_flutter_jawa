@@ -3,6 +3,7 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:uas_flutter_jawa/dashboard/dahboard_profile.dart';
 import 'package:uas_flutter_jawa/dashboard/dashboard.dart';
 import 'package:uas_flutter_jawa/screens/login.dart';
+import 'package:uas_flutter_jawa/screens/profile_ihza.dart';
 import 'package:uas_flutter_jawa/screens/signup.dart';
 import 'package:uas_flutter_jawa/screens/splash_screen3.dart';
 import 'package:uas_flutter_jawa/screens/splash_screen4.dart';
@@ -67,6 +68,12 @@ class MyApp extends StatelessWidget {
                 ),
               );
             },
+          );
+        }
+        if (settings.name == '/profile_ihza') {
+          return MaterialPageRoute(
+            builder: (_) => const ProfileIhza(),
+            settings: settings,
           );
         }
       },

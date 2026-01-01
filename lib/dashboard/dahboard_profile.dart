@@ -15,6 +15,7 @@ class DashboardProfile extends StatelessWidget {
         "name": "Ihza Anasrulloh",
         "role": "JAWA 2",
         "image": "images/ihza.jpg",
+        "route": "/profile_ihza",
       },
       {
         "name": "Turtusi",
@@ -55,6 +56,11 @@ class DashboardProfile extends StatelessWidget {
           return InkWell(
               borderRadius: BorderRadius.circular(18),
               onTap: () {
+                Navigator.pushNamed(
+                  context,
+                  member['route']!,
+                  arguments: member, // 🔥 PENTING
+                );
               },
           child: Container(
                 decoration: BoxDecoration(
