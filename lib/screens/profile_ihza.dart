@@ -49,22 +49,23 @@ class ProfileIhza extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Container(
+                 Container(
                   padding: const EdgeInsets.symmetric(
                     horizontal: 14,
-                    vertical: 6,  
+                    vertical: 6,
                   ),
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(20),
                   ),
-                  child: const Text(
-                    "THE ALIGATOR",
-                    style: TextStyle(
-                      color: Colors.black,
+                  child: Text(
+                    "The Aligator",
+                    style: GoogleFonts.inter(
                       fontWeight: FontWeight.w600,
+                      fontSize: 13,
+                      color: Colors.black,
                     ),
-                  ),  
+                  ),
                 ),
                 
               ],
