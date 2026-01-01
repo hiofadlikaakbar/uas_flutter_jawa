@@ -60,6 +60,11 @@ class DashboardProfile extends StatelessWidget {
                 padding: const EdgeInsets.all(14),
                 child: Column(
                   children: [
+                    ClipRRect(
+                      borderRadius: const BorderRadius.vertical(
+                        top: Radius.circular(18),
+                      ),
+                    ),
                   ],
                 ),
           );
