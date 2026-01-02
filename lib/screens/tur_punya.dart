@@ -14,6 +14,17 @@ class Tur extends StatelessWidget {
             width: size.width,
             child: Image.asset('images/Tur.jpg', fit: BoxFit.cover),
           ),
+          SafeArea(
+            child: Padding(
+              padding: const EdgeInsets.all(16),
+              child: Row(
+                children: const [
+                  Icon(Icons.arrow_back, color: Colors.black),
+                  SizedBox(width: 8),
+                ],
+              ),
+            ),
+          ),
         ],
       ),
     );
