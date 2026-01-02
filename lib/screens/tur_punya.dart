@@ -65,20 +65,56 @@ class Tur extends StatelessWidget {
                   ),
                   SizedBox(height: 8),
                   Text(
-                    "JAWA 3",
-                    style: TextStyle(fontSize: 18, color: Colors.grey),
+                    "1123150012",
+                    style: TextStyle(fontSize: 18, color: Colors.white),
                   ),
-                  SizedBox(height: 16),
-                  Text(
-                    "tusi",
-                    style: TextStyle(fontSize: 16, color: Colors.black87),
-                  ),
+
+                  SizedBox(height: 20),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      W1(title: "Followers", value: "150"),
+                      W1(title: "Following", value: "200"),
+                      W1(title: "Projects", value: "10"),
+                    ],
+                  )
                 ],
               ),
             ),
           ),
         ],
       ),
+    );
+  }
+}
+
+class W1 extends StatelessWidget {
+  final String title;
+  final String value;
+
+  const W1({
+    super.key,
+    required this.title,
+    required this.value,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Text(
+          value,
+          style: const TextStyle(
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        const SizedBox(height: 4),
+        Text(
+          title,
+          style: const TextStyle(color: Colors.black54),
+        ),
+      ],
     );
   }
 }
