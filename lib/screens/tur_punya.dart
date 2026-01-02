@@ -10,7 +10,7 @@ class Tur extends StatelessWidget {
       body: Stack(
         children: [
           SizedBox(
-            height: size.height * 0.4,
+            height: size.height,
             width: size.width,
             child: Image.asset('images/Tur.jpg', fit: BoxFit.cover),
           ),
