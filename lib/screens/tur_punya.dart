@@ -77,9 +77,9 @@ class Tur extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      W1(title: "Followers", value: "150"),
-                      W1(title: "Following", value: "200"),
-                      W1(title: "Projects", value: "10"),
+                      W1(title: "Followers", value: "1K"),
+                      W1(title: "Following", value: "2K"),
+                      W1(title: "Projects", value: "2"),
                     ],
                   ),
                   Spacer(),
