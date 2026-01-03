@@ -79,26 +79,95 @@ class MyAfnan extends StatelessWidget {
                   ),
                 ],
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 10),
               Divider(color: Colors.black),
               Card(
+                color: const Color.fromARGB(255, 0, 0, 0),
                 elevation: 1,
-                child: Padding(padding: const EdgeInsets.all(20.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Text("Keahlian Saya",
-                      style: TextStyle(
-                        fontSize: 10.0,
-                        fontWeight: FontWeight.bold,
-                        fontFamily: "Outfit"
+                child: Padding(
+                  padding: const EdgeInsets.all(5.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        "Keahlian",
+                        style: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: "Outfit",
+                          color: Colors.white,
+                        ),
                       ),
-                    ),
-                    const SizedBox(height: 12,),
-                   
-                  ],
-                ),),
-              )
+                    ],
+                  ),
+                ),
+              ),
+              Card(
+                color: const Color.fromARGB(255, 0, 8, 255),
+                elevation: 1,
+                child: Padding(
+                  padding: const EdgeInsets.all(4.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        "Flutter Basic",
+                        style: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: "Outfit",
+                          color: Colors.white,
+                        ),
+                      ),
+                      const SizedBox(height: 5),
+                    ],
+                  ),
+                ),
+              ),
+              Card(
+                color: const Color.fromARGB(255, 255, 0, 0),
+                elevation: 1,
+                child: Padding(
+                  padding: const EdgeInsets.all(4.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        "Firebase",
+                        style: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: "Outfit",
+                          color: Colors.white,
+                        ),
+                      ),
+                      const SizedBox(height: 5),
+                    ],
+                  ),
+                ),
+              ),
+              Card(
+                color: const Color.fromARGB(255, 4, 255, 0),
+                elevation: 1,
+                child: Padding(
+                  padding: const EdgeInsets.all(4.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        "Supabase",
+                        style: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: "Outfit",
+                          color: Colors.white,
+                        ),
+                      ),
+                      const SizedBox(height: 5),
+                    ],
+                  ),
+                ),
+              ),
             ],
           ),
         ),
