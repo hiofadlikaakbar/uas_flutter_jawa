@@ -23,6 +23,18 @@ class MyAfnan extends StatelessWidget {
                   fontFamily: "Outfit"
                 ),
               ),
+
+              const SizedBox(height: 16),
+
+              Stack(
+                alignment: Alignment.center,
+                children: [
+                  Transform.rotate(angle: -0.05,
+                  child: Container(
+                    
+                  ),)
+                ],
+              )
             ],
           ),
         ),
