@@ -90,6 +90,40 @@ class LayoutFinalPage extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
+                      const SizedBox(height: 7),
+                      const Text(
+                        "Hello! I'm Muhammad Turtusi Afrizal Perdana, a passionate "
+                        "mobile developer with a knack for creating seamless and "
+                        "engaging user experiences. With a strong foundation in "
+                        "Flutter and Dart, I specialize in building cross-platform "
+                        "applications that are both functional and visually appealing. "
+                        "Let's connect and create something amazing together!",
+                        style: TextStyle(
+                          color: Colors.white70,
+                          fontSize: 14,
+                          fontFamily: 'RobotoMono',
+                        ),
+                      ),
+                      const SizedBox(height: 24),
+                      const Text(
+                        "Projects",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontFamily: 'RobotoMono',
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const SizedBox(height: 7),
+                      const Text(
+                        "- First Project  : A social media app with real-time chat features.\n"
+                        "- Second Project : An e-commerce platform with integrated payment gateway.\n",
+                        style: TextStyle(
+                          color: Colors.white70,
+                          fontSize: 14,
+                          fontFamily: 'RobotoMono',
+                        ),
+                      ),
                     ],
                   ),
                 ),
