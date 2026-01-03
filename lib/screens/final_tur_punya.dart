@@ -151,11 +151,11 @@ class LayoutFinalPage extends StatelessWidget {
                       ),
                       const SizedBox(height: 7),
                       const Text(
-                        "- First Project   : A Web Profile brand 'PHD Trans' .\n"
+                        "- First Project       : A Web Profile brand 'PHD Trans' .\n"
                         "- Second Project  : A Website for E-Commerce\n"
-                        "- Third Project   : A Faculty Web .\n"
-                        "- Fourth Project  : A Website brand 'Nona Market' for Online Shopping .\n"
-                        "- Fifth Project   : An e-commerce platform with integrated payment gateway.\n",
+                        "- Third Project      : A Faculty Web .\n"
+                        "- Fourth Project    : A Website brand 'Nona Market' for Online Shopping .\n"
+                        "- Fifth Project       : An e-commerce platform with integrated payment gateway.\n",
                         style: TextStyle(
                           color: Colors.white70,
                           fontSize: 14,
