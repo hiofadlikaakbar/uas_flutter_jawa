@@ -25,7 +25,27 @@ class MyAfnan extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 2),
-              
+              const Text(
+                "1123150074",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 10.0,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                  fontFamily: "Outfit",
+                ),
+              ),
+              const SizedBox(height: 2),
+              const Text(
+                "Kelas = TI SE 23 P1",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 10.0,
+                  fontWeight: FontWeight.w400,
+                  color: Colors.black,
+                  fontFamily: "Outfit",
+                ),
+              ),
               const SizedBox(height: 16),
               Stack(
                 alignment: Alignment.center,
