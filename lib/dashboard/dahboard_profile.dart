@@ -9,7 +9,8 @@ class DashboardProfile extends StatelessWidget {
       {
         "name": "Hio Fadlika Akbar",
         "role": "KETUA PARA JAWA",
-        "image": "images/ihza.jpg",
+        "image": "images/hio.jpeg",
+        "route": "/profile_hio",
       },
       {
         "name": "Ihza Anasrulloh",
@@ -37,11 +38,15 @@ class DashboardProfile extends StatelessWidget {
         backgroundColor: Colors.transparent,
         elevation: 0,
         centerTitle: true,
+        iconTheme: const IconThemeData(
+          color: Colors.white, // warna icon back
+        ),
         title: const Text(
           "Profil Tim",
-          style: TextStyle(fontWeight: FontWeight.bold),
+          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
         ),
       ),
+
       body: Padding(
         padding: const EdgeInsets.all(20),
         child: GridView.builder(
@@ -61,7 +66,7 @@ class DashboardProfile extends StatelessWidget {
                 Navigator.pushNamed(
                   context,
                   member['route']!,
-                  arguments: member, // 🔥 PENTING
+                  arguments: member,
                 );
               },
               child: Container(
