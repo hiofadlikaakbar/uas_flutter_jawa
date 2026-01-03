@@ -55,35 +55,6 @@ class Tur extends StatelessWidget {
               ),
               child: Column(
                 children: [
-                  GestureDetector(
-                    onVerticalDragUpdate: (details) {
-                      if (details.delta.dy < -8) {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const LayoutFinalPage(),
-                          ),
-                        );
-                      }
-                    },
-                    child: Container(
-                      width: 160,
-                      height: 42,
-                      decoration: BoxDecoration(
-                        color: Colors.black,
-                        borderRadius: BorderRadius.circular(30),
-                      ),
-                      alignment: Alignment.center,
-                      child: const Text(
-                        "Swipe Up",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                    ),
-                  ),
-
                   Text(
                     "Muhammad Turtusi Afrizal Perdana",
                     textAlign: TextAlign.center,
@@ -121,6 +92,37 @@ class Tur extends StatelessWidget {
                       SizedBox(width: 12),
                       Icon(Icons.alternate_email, color: Colors.white),
                     ],
+                  ),
+                  SizedBox(height: 24),
+                  GestureDetector(
+                    onVerticalDragUpdate: (details) {
+                      if (details.delta.dy < -8) {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const LayoutFinalPage(),
+                          ),
+                        );
+                      }
+                    },
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: const [
+                        Icon(
+                          Icons.keyboard_arrow_up,
+                          size: 36,
+                          color: Colors.white,
+                        ),
+                        Text(
+                          "Swipe Up",
+                          style: TextStyle(
+                            color: Colors.white70,
+                            fontSize: 12,
+                            fontFamily: 'RobotoMono',
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),
