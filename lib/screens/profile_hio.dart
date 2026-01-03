@@ -176,3 +176,36 @@ class ProfileHio extends StatelessWidget {
     );
   }
 }
+
+/// SKILL CHIP
+class _SkillChip extends StatelessWidget {
+  final String label;
+  const _SkillChip(this.label);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(20),
+        gradient: const LinearGradient(
+          colors: [Colors.cyanAccent, Colors.purpleAccent],
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.purpleAccent.withOpacity(0.4),
+            blurRadius: 10,
+          ),
+        ],
+      ),
+      child: Text(
+        label,
+        style: const TextStyle(
+          color: Colors.black,
+          fontWeight: FontWeight.bold,
+          fontSize: 12,
+        ),
+      ),
+    );
+  }
+}
