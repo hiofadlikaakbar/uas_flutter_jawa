@@ -7,7 +7,7 @@ class DashboardProfile extends StatelessWidget {
   Widget build(BuildContext context) {
     final List<Map<String, String>> teamMembers = [
       {
-        "name": "Hio Fadlika",
+        "name": "Hio Fadlika Akbar",
         "role": "KETUA PARA JAWA",
         "image": "images/ihza.jpg",
       },
@@ -23,8 +23,9 @@ class DashboardProfile extends StatelessWidget {
         "image": "images/1.4.jpeg",
         "route": "/tur_punya",
       },
-      {"name": "Afnan Dani",
-       "role": "JAWA 4",
+      {
+        "name": "Afnan Dani",
+        "role": "JAWA 4",
         "image": "images/afnan.jpeg",
         "route": "/profile_afnan",
       },
