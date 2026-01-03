@@ -15,7 +15,7 @@ class MyAfnan extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               const Text(
-                "Afnan Dani",
+                "Afnan Dani Alaudin",
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 20.0,
@@ -24,9 +24,9 @@ class MyAfnan extends StatelessWidget {
                   fontFamily: "Outfit",
                 ),
               ),
-
+              const SizedBox(height: 2),
+              
               const SizedBox(height: 16),
-
               Stack(
                 alignment: Alignment.center,
                 children: [
@@ -59,6 +59,9 @@ class MyAfnan extends StatelessWidget {
                   ),
                 ],
               ),
+              const SizedBox(height: 20),
+              Divider(color: Colors.black),
+              
             ],
           ),
         ),
