@@ -7,6 +7,9 @@ class MyAfnan extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.amber,
+      appBar: AppBar(
+        
+      ),
       body: Center(
         child: Container(
           width: 300,
