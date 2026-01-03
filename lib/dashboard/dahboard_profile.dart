@@ -26,6 +26,7 @@ class DashboardProfile extends StatelessWidget {
       {"name": "Afnan Dani",
        "role": "JAWA 4",
         "image": "images/ihza.jpg",
+        "route": "/profile_afnan",
       },
     ];
 
