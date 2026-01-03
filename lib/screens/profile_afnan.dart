@@ -8,6 +8,8 @@ class MyAfnan extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.amber,
       appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
         
       ),
       body: Center(
