@@ -38,12 +38,17 @@ class DashboardProfile extends StatelessWidget {
         backgroundColor: Colors.transparent,
         elevation: 0,
         centerTitle: true,
-        iconTheme: const IconThemeData(color: Colors.white),
+        leading: IconButton(
+          tooltip: '',
+          icon: const Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () => Navigator.pop(context),
+        ),
         title: const Text(
           "Profil Tim",
           style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
         ),
       ),
+
       body: Padding(
         padding: const EdgeInsets.all(20),
         child: GridView.builder(

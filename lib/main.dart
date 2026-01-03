@@ -74,6 +74,7 @@ class MyApp extends StatelessWidget {
                 },
           );
         }
+
         if (settings.name == '/profile_ihza') {
           return MaterialPageRoute(
             builder: (_) => const ProfileIhza(),

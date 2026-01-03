@@ -39,7 +39,7 @@ class ProfileHio extends StatelessWidget {
               ),
               child: const CircleAvatar(
                 radius: 70,
-                backgroundImage: AssetImage("images/hio.jpeg"),
+                backgroundImage: AssetImage("images/jawa_leader.png"),
               ),
             ),
 
@@ -47,7 +47,7 @@ class ProfileHio extends StatelessWidget {
 
             /// NAME
             const Text(
-              "HIO FADLIKA\nAKBAR",
+              "HIO FADLIKA AKBAR",
               textAlign: TextAlign.center,
               style: TextStyle(
                 color: Colors.cyanAccent,
