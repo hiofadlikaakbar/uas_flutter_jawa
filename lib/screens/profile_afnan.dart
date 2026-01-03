@@ -81,7 +81,24 @@ class MyAfnan extends StatelessWidget {
               ),
               const SizedBox(height: 20),
               Divider(color: Colors.black),
-              
+              Card(
+                elevation: 1,
+                child: Padding(padding: const EdgeInsets.all(20.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text("Keahlian Saya",
+                      style: TextStyle(
+                        fontSize: 10.0,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: "Outfit"
+                      ),
+                    ),
+                    const SizedBox(height: 12,),
+                   
+                  ],
+                ),),
+              )
             ],
           ),
         ),
