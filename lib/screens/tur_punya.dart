@@ -81,23 +81,37 @@ class Tur extends StatelessWidget {
                   ),
                   Spacer(),
 
-                  SizedBox(
-                    width: 160,
-                    height: 42,
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.black,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(30),
+                  GestureDetector(
+                    onVerticalDragEnd: (details) {
+                      if (details.primaryVelocity! < 0) {
+                        // swipe ke atas
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const LayoutFinalPage(),
+                          ),
+                        );
+                      }
+                    },
+                    child: SizedBox(
+                      width: 160,
+                      height: 42,
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.black,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(30),
+                          ),
                         ),
-                      ),
-                      onPressed: () {},
-                      child: Text(
-                        "Hire Me",
-                        style: TextStyle(color: Colors.white),
+                        onPressed: null,
+                        child: const Text(
+                          "Swipe Up",
+                          style: TextStyle(color: Colors.white),
+                        ),
                       ),
                     ),
                   ),
+
                   SizedBox(height: 12),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
