@@ -19,7 +19,7 @@ class DashboardProfile extends StatelessWidget {
         "route": "/profile_ihza",
       },
       {
-        "name": "Turtusi",
+        "name": "Muhammad Turtusi Afrizal",
         "role": "JAWA 3",
         "image": "images/1.4.jpeg",
         "route": "/tur_punya",
@@ -38,8 +38,10 @@ class DashboardProfile extends StatelessWidget {
         backgroundColor: Colors.transparent,
         elevation: 0,
         centerTitle: true,
-        iconTheme: const IconThemeData(
-          color: Colors.white, // warna icon back
+        leading: IconButton(
+          tooltip: '',
+          icon: const Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () => Navigator.pop(context),
         ),
         title: const Text(
           "Profil Tim",
@@ -55,7 +57,7 @@ class DashboardProfile extends StatelessWidget {
             crossAxisCount: 2,
             crossAxisSpacing: 16,
             mainAxisSpacing: 16,
-            childAspectRatio: 0.72,
+            childAspectRatio: 0.65, // 🔧 FIX
           ),
           itemBuilder: (context, index) {
             final member = teamMembers[index];
@@ -76,31 +78,39 @@ class DashboardProfile extends StatelessWidget {
                 ),
                 padding: const EdgeInsets.all(14),
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    ClipRRect(
-                      borderRadius: const BorderRadius.vertical(
-                        top: Radius.circular(18),
-                      ),
-                      child: Image.asset(
-                        member['image']!,
-                        height: 140,
-                        width: double.infinity,
-                        fit: BoxFit.cover,
+                    // IMAGE
+                    Expanded(
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(14),
+                        child: Image.asset(member['image']!, fit: BoxFit.cover),
                       ),
                     ),
+
                     const SizedBox(height: 12),
+
+                    // NAME
                     Text(
                       member['name']!,
                       textAlign: TextAlign.center,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
                       style: const TextStyle(
                         color: Colors.white,
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
+
                     const SizedBox(height: 6),
+
+                    // ROLE
                     Text(
                       member['role']!,
+                      textAlign: TextAlign.center,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
                       style: const TextStyle(
                         color: Colors.white60,
                         fontSize: 13,

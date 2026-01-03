@@ -60,13 +60,15 @@ class Tur extends StatelessWidget {
                   Text(
                     "Muhammad Turtusi Afrizal Perdana",
                     textAlign: TextAlign.center,
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
                     style: TextStyle(
-                      fontSize: 40,
+                      fontSize: 26, // 🔧 dari 40 → 26
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
-                      fontFamily: 'RobotoMono',
                     ),
                   ),
+
                   SizedBox(height: 8),
                   Text(
                     "1123150012",

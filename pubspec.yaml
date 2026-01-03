@@ -71,6 +71,7 @@ flutter:
     - images/1.4.jpeg
     - images/afnan.jpeg
     - images/hio.jpeg
+    - images/jawa_leader.png
   fonts:
     - family: RobotoMono
       fonts:
