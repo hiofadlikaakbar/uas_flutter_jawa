@@ -19,9 +19,11 @@ class Tur extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.all(16),
               child: Row(
-                children: const [
-                  Icon(Icons.arrow_back, color: Colors.black),
-                  SizedBox(width: 8),
+                children: [
+                  IconButton(
+                    onPressed: () => Navigator.pop(context),
+                    icon: Icon(Icons.arrow_back_ios_new, color: Colors.black),
+                  ),
                   Text(
                     "Profil Tim",
                     style: TextStyle(

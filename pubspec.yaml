@@ -74,6 +74,11 @@ flutter:
         - asset: font/RobotoMono-Regular.ttf
         - asset: font/RobotoMono-Bold.ttf
           weight: 700
+        - asset: font/Poppins-Italic.ttf
+          style: italic
+        - asset: font/Poppins-Bold.ttf
+          weight: 700
+        - asset: font/Poppins-Regular.ttf
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
 
