@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:uas_flutter_jawa/screens/final_tur_punya.dart';
 
 class Tur extends StatelessWidget {
   const Tur({super.key});
@@ -54,6 +55,35 @@ class Tur extends StatelessWidget {
               ),
               child: Column(
                 children: [
+                  GestureDetector(
+                    onVerticalDragUpdate: (details) {
+                      if (details.delta.dy < -8) {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const LayoutFinalPage(),
+                          ),
+                        );
+                      }
+                    },
+                    child: Container(
+                      width: 160,
+                      height: 42,
+                      decoration: BoxDecoration(
+                        color: Colors.black,
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                      alignment: Alignment.center,
+                      child: const Text(
+                        "Swipe Up",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ),
+                  ),
+
                   Text(
                     "Muhammad Turtusi Afrizal Perdana",
                     textAlign: TextAlign.center,
@@ -80,37 +110,6 @@ class Tur extends StatelessWidget {
                     ],
                   ),
                   Spacer(),
-
-                  GestureDetector(
-                    onVerticalDragEnd: (details) {
-                      if (details.primaryVelocity! < 0) {
-                        // swipe ke atas
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const LayoutFinalPage(),
-                          ),
-                        );
-                      }
-                    },
-                    child: SizedBox(
-                      width: 160,
-                      height: 42,
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.black,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(30),
-                          ),
-                        ),
-                        onPressed: null,
-                        child: const Text(
-                          "Swipe Up",
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ),
-                    ),
-                  ),
 
                   SizedBox(height: 12),
                   Row(
