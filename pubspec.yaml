@@ -80,6 +80,13 @@ flutter:
         - asset: font/Poppins-Bold.ttf
           weight: 700
         - asset: font/Poppins-Regular.ttf
+    - family: Outfit
+      fonts:
+        - asset: font/Outfit-Regular.ttf
+        - asset: font/Outfit-SemiBold.ttf
+        - asset: font/Outfit-Medium.ttf
+
+        
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
 
