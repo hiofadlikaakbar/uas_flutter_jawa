@@ -9,6 +9,7 @@ import 'package:uas_flutter_jawa/screens/signup.dart';
 import 'package:uas_flutter_jawa/screens/splash_screen3.dart';
 import 'package:uas_flutter_jawa/screens/splash_screen4.dart';
 import 'package:uas_flutter_jawa/screens/tur_punya.dart';
+import 'package:uas_flutter_jawa/screens/profile_hio.dart';
 import 'screens/splash_screen.dart';
 import 'screens/splash_screen2.dart';
 
@@ -44,6 +45,7 @@ class MyApp extends StatelessWidget {
         '/tur_punya': (context) => const Tur(),
         '/profile_afnan': (context) => const MyAfnan(),
         '/dashboard': (context) => const MyDashboard(),
+        '/profile_hio': (context) => const ProfileHio(),
       },
       onGenerateRoute: (settings) {
         if (settings.name == '/dashboard_profile') {
