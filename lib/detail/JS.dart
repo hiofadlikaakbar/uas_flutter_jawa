@@ -291,6 +291,34 @@ console.log(buah[0]);
     );
   }
 
+  Widget _lessonList() {
+    return _card(
+      child: Column(
+        children: List.generate(lessons.length, (index) {
+          final active = index == selectedIndex;
+          final done = completedLessons.contains(index);
+
+          return ListTile(
+            dense: true,
+            onTap: () => setState(() => selectedIndex = index),
+            leading: Icon(
+              done
+                  ? Icons.check_circle
+                  : (active ? Icons.play_circle : Icons.circle_outlined),
+              color: done ? Colors.greenAccent : const Color(0xFF00DDF8),
+            ),
+            title: Text(
+              lessons[index]["title"]!,
+              style: TextStyle(
+                color: active ? Colors.white : Colors.white70,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+          );
+        }),
+      ),
+    );
+  }
 
  
 
