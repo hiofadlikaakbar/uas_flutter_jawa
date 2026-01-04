@@ -25,8 +25,8 @@ class _CPPState extends State<CPP> {
 using namespace std;
 
 int main() {
-  cout << "Hello World" << endl;
-  return 0;
+    cout << "Hello, World!" << endl;
+    return 0;
 }
 ''',
       "explain":
@@ -34,38 +34,56 @@ int main() {
     },
     {
       "title": "Variabel",
-      "subtitle": "Menyimpan data",
+      "subtitle": "Menyimpan data dalam variabel",
       "code": '''
-int umur = 20;
-string nama = "CodeJawa";
+#include <iostream>
+using namespace std;
 
-cout << nama << endl;
-cout << umur << endl;
+int main() {
+    string nama = "CodeJawa";
+    int umur = 20;
+
+    cout << nama << endl;
+    cout << umur << endl;
+    return 0;
+}
 ''',
       "explain":
           "Variabel digunakan untuk menyimpan data seperti angka dan teks.",
     },
     {
       "title": "Input Output",
-      "subtitle": "Mengambil input user",
+      "subtitle": "Mengambil input dari user",
       "code": '''
-int angka;
-cin >> angka;
-cout << angka;
+#include <iostream>
+using namespace std;
+
+int main() {
+    int angka;
+    cin >> angka;
+    cout << angka;
+    return 0;
+}
 ''',
       "explain":
-          "cin digunakan untuk mengambil input dari user melalui keyboard.",
+          "cin digunakan untuk menerima input dari user melalui keyboard.",
     },
     {
       "title": "If Else",
       "subtitle": "Percabangan logika",
       "code": '''
-int nilai = 80;
+#include <iostream>
+using namespace std;
 
-if (nilai >= 75) {
-  cout << "Lulus";
-} else {
-  cout << "Tidak Lulus";
+int main() {
+    int nilai = 80;
+
+    if (nilai >= 75) {
+        cout << "Lulus";
+    } else {
+        cout << "Tidak Lulus";
+    }
+    return 0;
 }
 ''',
       "explain":
@@ -73,14 +91,20 @@ if (nilai >= 75) {
     },
     {
       "title": "Loop For",
-      "subtitle": "Perulangan",
+      "subtitle": "Perulangan dalam C++",
       "code": '''
-for (int i = 1; i <= 5; i++) {
-  cout << i << endl;
+#include <iostream>
+using namespace std;
+
+int main() {
+    for (int i = 1; i <= 5; i++) {
+        cout << i << endl;
+    }
+    return 0;
 }
 ''',
       "explain":
-          "Perulangan for digunakan untuk mengeksekusi kode berulang kali.",
+          "Perulangan for digunakan untuk menjalankan kode secara berulang.",
     },
   ];
 
@@ -122,95 +146,20 @@ for (int i = 1; i <= 5; i++) {
 
     setState(() => isCompleted = true);
 
-    ScaffoldMessenger.of(
-      context,
-    ).showSnackBar(const SnackBar(content: Text("Materi C++ selesai ✅")));
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(content: Text("Materi C++ ditandai selesai ✅")),
+    );
   }
 
   @override
-  Widget build(BuildContext context) {
-    final lesson = lessons[selectedIndex];
-
-    return Scaffold(
-      backgroundColor: const Color(0xFF0B1623),
-      body: SafeArea(
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              // ===== HEADER =====
-              Container(
-                padding: const EdgeInsets.all(20),
-                decoration: const BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: [
-                      Color(0xFF0F2027),
-                      Color(0xFF203A43),
-                      Color(0xFF2C5364),
-                    ],
-                  ),
-                ),
-                child: Row(
-                  children: [
-                    IconButton(
-                      icon: const Icon(Icons.arrow_back, color: Colors.white),
-                      onPressed: () => Navigator.pop(context),
-                    ),
-                    Image.asset('../../images/c++.png', height: 36),
-                    const SizedBox(width: 10),
-                    const Text(
-                      "C++",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 26,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    const Spacer(),
-                    Text(
-                      "${selectedIndex + 1}/${lessons.length}",
-                      style: const TextStyle(color: Colors.white70),
-                    ),
-                  ],
-                ),
-              ),
-
-              // ===== CONTENT =====
-              Container(
-                padding: const EdgeInsets.all(20),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    _sectionTitle("Daftar Pelajaran"),
-                    _lessonList(),
-
-                    const SizedBox(height: 24),
-
-                    _sectionTitle(lesson["title"]!),
-                    _subtitle(lesson["subtitle"]!),
-
-                    const SizedBox(height: 16),
-                    _codeBox(lesson["code"]!),
-
-                    const SizedBox(height: 16),
-                    _explainBox(lesson["explain"]!),
-
-                    const SizedBox(height: 32),
-                    _finishButton(),
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
+  
 
   Widget _lessonList() {
     return _card(
       child: Column(
         children: List.generate(lessons.length, (index) {
           final active = index == selectedIndex;
+
           return ListTile(
             dense: true,
             onTap: () {
@@ -236,23 +185,25 @@ for (int i = 1; i <= 5; i++) {
     );
   }
 
-  Widget _codeBox(String code) {
-    return _card(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const Text(
-            "Kode C++",
-            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+            ],
           ),
           const SizedBox(height: 10),
-          SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: Text(
-              code,
-              style: const TextStyle(
-                color: Color(0xFF00DDF8),
-                fontFamily: 'monospace',
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.all(16),
+            decoration: BoxDecoration(
+              color: const Color(0xFF121B26),
+              borderRadius: BorderRadius.circular(12),
+            ),
+            child: SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Text(
+                code,
+                style: const TextStyle(
+                  color: Color(0xFF00DDF8),
+                  fontFamily: 'monospace',
+                  fontSize: 14,
+                ),
               ),
             ),
           ),
@@ -263,7 +214,24 @@ for (int i = 1; i <= 5; i++) {
 
   Widget _explainBox(String text) {
     return _card(
-      child: Text(text, style: const TextStyle(color: Colors.white70)),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text(
+            "Penjelasan",
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          const SizedBox(height: 8),
+          Text(
+            text,
+            style: const TextStyle(color: Colors.white70, fontSize: 15),
+          ),
+        ],
+      ),
     );
   }
 
@@ -274,38 +242,53 @@ for (int i = 1; i <= 5; i++) {
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
           backgroundColor: isCompleted ? Colors.green : const Color(0xFF00DDF8),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(30),
+          ),
         ),
         onPressed: isCompleted ? null : _markCompleted,
         child: Text(
           isCompleted ? "Sudah Selesai ✔" : "Tandai Selesai",
-          style: const TextStyle(color: Colors.black),
+          style: const TextStyle(
+            color: Colors.black,
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+          ),
         ),
       ),
     );
   }
 }
 
-Widget _sectionTitle(String title) => Padding(
-  padding: const EdgeInsets.only(bottom: 8),
-  child: Text(
-    title,
-    style: const TextStyle(
-      color: Colors.white,
-      fontSize: 20,
-      fontWeight: FontWeight.bold,
+Widget _sectionTitle(String title) {
+  return Padding(
+    padding: const EdgeInsets.only(bottom: 8),
+    child: Text(
+      title,
+      style: const TextStyle(
+        color: Colors.white,
+        fontSize: 20,
+        fontWeight: FontWeight.bold,
+      ),
     ),
-  ),
-);
+  );
+}
 
-Widget _subtitle(String text) =>
-    Text(text, style: const TextStyle(color: Colors.white70));
+Widget _subtitle(String text) {
+  return Text(
+    text,
+    style: const TextStyle(color: Colors.white70, fontSize: 14),
+  );
+}
 
-Widget _card({required Widget child}) => Container(
-  margin: const EdgeInsets.only(bottom: 12),
-  padding: const EdgeInsets.all(16),
-  decoration: BoxDecoration(
-    color: const Color(0xFF1E2A38),
-    borderRadius: BorderRadius.circular(16),
-  ),
-  child: child,
-);
+Widget _card({required Widget child}) {
+  return Container(
+    width: double.infinity,
+    padding: const EdgeInsets.all(16),
+    decoration: BoxDecoration(
+      color: const Color(0xFF1E2A38),
+      borderRadius: BorderRadius.circular(16),
+    ),
+    child: child,
+  );
+}
