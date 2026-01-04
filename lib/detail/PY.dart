@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 class Python extends StatefulWidget {
   const Python({super.key});
@@ -10,6 +11,9 @@ class Python extends StatefulWidget {
 
 class _PythonState extends State<Python> {
   int selectedIndex = 0;
+  bool isCompleted = false;
+
+  final supabase = Supabase.instance.client;
 
   // list materi python
   final List<Map<String, String>> lessons = [
@@ -57,89 +61,15 @@ else:
   ];
 
   @override
-  Widget build(BuildContext context) {
-    final lesson = lessons[selectedIndex];
-    return Scaffold(
-      backgroundColor: const Color(0xFF0B1623),
-      body: SafeArea(
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              // header
-              Container(
-                width: double.infinity,
-                padding: const EdgeInsets.all(20),
-                decoration: const BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                    colors: [
-                      Color(0xFF0F2027),
-                      Color(0xFF203A43),
-                      Color(0xFF2C5364),
-                    ],
-                  ),
-                ),
-                child: _header(context),
-              ),
-
-              // materi
-              Container(
-                width: double.infinity,
-                padding: const EdgeInsets.all(20),
-                color: const Color(0xFF0B1623),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    _sectionTitle("Daftar Pelajaran"),
-                    _lessonList(),
-
-                    const SizedBox(height: 24),
-
-                    // Judul materi yang dipilih
-                    _sectionTitle(lesson["title"]!),
-                    _subtitle(lesson["subtitle"]!),
-
-                    const SizedBox(height: 16),
-
-                    // Kotak kode Python
-                    _codeBox(lesson["code"]!),
-
-                    const SizedBox(height: 16),
-
-                    // Penjelasan materi
-                    _explainBox(lesson["explain"]!),
-
-                    const SizedBox(height: 32),
-
-                    // Tombol tandai selesai
-                    _finishButton(),
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-
-  //  widget materi
   Widget _header(BuildContext context) {
     return Row(
       children: [
-        // Tombol kembali
         IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () => Navigator.pop(context),
         ),
-
-        // Logo Python
         Image.asset("../../images/PY.png", height: 36),
-
         const SizedBox(width: 10),
-
-        // Judul halaman
         const Text(
           "Python",
           style: TextStyle(
@@ -148,10 +78,7 @@ else:
             fontWeight: FontWeight.bold,
           ),
         ),
-
         const Spacer(),
-
-        // Progress materi (contoh: 1/3)
         Text(
           "${selectedIndex + 1}/${lessons.length}",
           style: const TextStyle(color: Colors.white70),
@@ -160,31 +87,26 @@ else:
     );
   }
 
-  // list materi
   Widget _lessonList() {
     return _card(
       child: Column(
         children: List.generate(lessons.length, (index) {
-          // Mengecek apakah item ini aktif
           final active = index == selectedIndex;
 
           return ListTile(
             dense: true,
-
-            // Ketika materi diklik
             onTap: () {
               setState(() {
                 selectedIndex = index;
               });
+              _checkProgress();
             },
-
-            // Icon berbeda untuk materi aktif
             leading: Icon(
-              active ? Icons.play_circle : Icons.circle_outlined,
-              color: active ? const Color(0xFF00DDF8) : Colors.white38,
+              active
+                  ? (isCompleted ? Icons.check_circle : Icons.play_circle)
+                  : Icons.circle_outlined,
+              color: isCompleted ? Colors.greenAccent : const Color(0xFF00DDF8),
             ),
-
-            // Judul materi
             title: Text(
               lessons[index]["title"]!,
               style: TextStyle(
@@ -198,13 +120,11 @@ else:
     );
   }
 
-  // blok kode python
   Widget _codeBox(String code) {
     return _card(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Header kode
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -215,8 +135,6 @@ else:
                   fontWeight: FontWeight.bold,
                 ),
               ),
-
-              // Tombol copy kode
               IconButton(
                 icon: const Icon(Icons.copy, color: Colors.white70),
                 onPressed: () {
@@ -228,10 +146,7 @@ else:
               ),
             ],
           ),
-
           const SizedBox(height: 10),
-
-          // Background kode
           Container(
             width: double.infinity,
             padding: const EdgeInsets.all(16),
@@ -256,7 +171,6 @@ else:
     );
   }
 
-  // penjelasan materi
   Widget _explainBox(String text) {
     return _card(
       child: Column(
@@ -280,24 +194,21 @@ else:
     );
   }
 
-  // tombol kelar belajar
   Widget _finishButton() {
     return SizedBox(
       width: double.infinity,
       height: 52,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          backgroundColor: const Color(0xFF00DDF8),
+          backgroundColor: isCompleted ? Colors.green : const Color(0xFF00DDF8),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(30),
           ),
         ),
-        onPressed: () {
-          // simpan progress
-        },
-        child: const Text(
-          "Tandai Selesai",
-          style: TextStyle(
+        onPressed: isCompleted ? null : _markCompleted,
+        child: Text(
+          isCompleted ? "Sudah Selesai ✔" : "Tandai Selesai",
+          style: const TextStyle(
             color: Colors.black,
             fontSize: 16,
             fontWeight: FontWeight.bold,
@@ -308,7 +219,8 @@ else:
   }
 }
 
-// Judul section
+// ================== WIDGET HELPER ==================
+
 Widget _sectionTitle(String title) {
   return Padding(
     padding: const EdgeInsets.only(bottom: 8),
@@ -323,7 +235,6 @@ Widget _sectionTitle(String title) {
   );
 }
 
-// Subtitle kecil
 Widget _subtitle(String text) {
   return Text(
     text,
@@ -331,7 +242,6 @@ Widget _subtitle(String text) {
   );
 }
 
-// kartu konten
 Widget _card({required Widget child}) {
   return Container(
     width: double.infinity,
