@@ -128,6 +128,59 @@ for (int i = 1; i <= 5; i++) {
   }
 
   @override
+  Widget build(BuildContext context) {
+    final lesson = lessons[selectedIndex];
+
+    return Scaffold(
+      backgroundColor: const Color(0xFF0B1623),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              // ===== HEADER =====
+              Container(
+                padding: const EdgeInsets.all(20),
+                decoration: const BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [
+                      Color(0xFF0F2027),
+                      Color(0xFF203A43),
+                      Color(0xFF2C5364),
+                    ],
+                  ),
+                ),
+                child: Row(
+                  children: [
+                    IconButton(
+                      icon: const Icon(Icons.arrow_back, color: Colors.white),
+                      onPressed: () => Navigator.pop(context),
+                    ),
+                    Image.asset('../../images/c++.png', height: 36),
+                    const SizedBox(width: 10),
+                    const Text(
+                      "C++",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 26,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    const Spacer(),
+                    Text(
+                      "${selectedIndex + 1}/${lessons.length}",
+                      style: const TextStyle(color: Colors.white70),
+                    ),
+                  ],
+                ),
+              ),
+
+            
+          ),
+        ),
+      ),
+    );
+  }
+
   Widget _lessonList() {
     return _card(
       child: Column(
