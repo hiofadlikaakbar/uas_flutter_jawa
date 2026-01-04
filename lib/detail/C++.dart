@@ -152,8 +152,6 @@ int main() {
   }
 
   @override
-  
-
   Widget _lessonList() {
     return _card(
       child: Column(
@@ -185,6 +183,30 @@ int main() {
     );
   }
 
+  Widget _codeBox(String code) {
+    return _card(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              const Text(
+                "Kode C++",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              IconButton(
+                icon: const Icon(Icons.copy, color: Colors.white70),
+                onPressed: () {
+                  Clipboard.setData(ClipboardData(text: code));
+                  ScaffoldMessenger.of(
+                    context,
+                  ).showSnackBar(const SnackBar(content: Text("Kode disalin")));
+                },
+              ),
             ],
           ),
           const SizedBox(height: 10),
