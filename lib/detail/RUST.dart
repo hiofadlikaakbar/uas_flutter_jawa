@@ -88,6 +88,31 @@ fn main() {
     });
   }
 
+  // ===== SIMPAN PROGRESS =====
+  Future<void> _markCompleted() async {
+    final user = supabase.auth.currentUser;
+    if (user == null) return;
+
+    setState(() => isSaving = true);
+
+    await supabase.from('lesson_progress').upsert({
+      'user_id': user.id,
+      'language': 'rust',
+      'lesson_index': selectedIndex,
+      'completed': true,
+    });
+
+    if (!mounted) return;
+
+    setState(() {
+      completedLessons.add(selectedIndex);
+      isSaving = false;
+    });
+
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(content: Text("Materi Rust selesai ✅")),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
