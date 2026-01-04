@@ -143,4 +143,67 @@ fn main() {
                 child: _header(context),
               ),
 
+              // ===== KONTEN =====
+              Container(
+                width: double.infinity,
+                padding: const EdgeInsets.all(20),
+                color: const Color(0xFF0B1623),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    _sectionTitle("Daftar Pelajaran"),
+                    _lessonList(),
+
+                    const SizedBox(height: 24),
+
+                    _sectionTitle(lesson["title"]!),
+                    _subtitle(lesson["subtitle"]!),
+
+                    const SizedBox(height: 16),
+
+                    _codeBox(lesson["code"]!),
+
+                    const SizedBox(height: 16),
+
+                    _explainBox(lesson["explain"]!),
+
+                    const SizedBox(height: 32),
+
+                    _finishButton(isCompleted),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  // ===== UI =====
+  Widget _header(BuildContext context) {
+    return Row(
+      children: [
+        IconButton(
+          icon: const Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () => Navigator.pop(context),
+        ),
+        Image.asset('../../images/RUST.png', height: 36),
+        const SizedBox(width: 10),
+        const Text(
+          "Rust",
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 26,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        const Spacer(),
+        Text(
+          "${selectedIndex + 1}/${lessons.length}",
+          style: const TextStyle(color: Colors.white70),
+        ),
+      ],
+    );
+  }
 
