@@ -83,8 +83,7 @@ fn main() {
     if (!mounted) return;
 
     setState(() {
-      completedLessons =
-          res.map<int>((e) => e['lesson_index'] as int).toSet();
+      completedLessons = res.map<int>((e) => e['lesson_index'] as int).toSet();
     });
   }
 
@@ -109,9 +108,9 @@ fn main() {
       isSaving = false;
     });
 
-    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text("Materi Rust selesai ✅")),
-    );
+    ScaffoldMessenger.of(
+      context,
+    ).showSnackBar(const SnackBar(content: Text("Materi Rust selesai ✅")));
   }
 
   @override
@@ -221,9 +220,7 @@ fn main() {
               done
                   ? Icons.check_circle
                   : (active ? Icons.play_circle : Icons.circle_outlined),
-              color: done
-                  ? Colors.greenAccent
-                  : const Color(0xFF00DDF8),
+              color: done ? Colors.greenAccent : const Color(0xFF00DDF8),
             ),
             title: Text(
               lessons[index]["title"]!,
@@ -257,9 +254,9 @@ fn main() {
                 icon: const Icon(Icons.copy, color: Colors.white70),
                 onPressed: () {
                   Clipboard.setData(ClipboardData(text: code));
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(content: Text("Kode disalin")),
-                  );
+                  ScaffoldMessenger.of(
+                    context,
+                  ).showSnackBar(const SnackBar(content: Text("Kode disalin")));
                 },
               ),
             ],
@@ -288,5 +285,54 @@ fn main() {
     );
   }
 
- 
+  Widget _explainBox(String text) {
+    return _card(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text(
+            "Penjelasan",
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          const SizedBox(height: 8),
+          Text(
+            text,
+            style: const TextStyle(color: Colors.white70, fontSize: 15),
+          ),
+        ],
+      ),
+    );
+  }
 
+  Widget _finishButton(bool isCompleted) {
+    return SizedBox(
+      width: double.infinity,
+      height: 52,
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: isCompleted
+              ? Colors.grey.shade600
+              : const Color(0xFF00DDF8),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(30),
+          ),
+        ),
+        onPressed: (isCompleted || isSaving) ? null : _markCompleted,
+        child: isSaving
+            ? const CircularProgressIndicator(color: Colors.black)
+            : Text(
+                isCompleted ? "Sudah Selesai ✔" : "Tandai Selesai",
+                style: const TextStyle(
+                  color: Colors.black,
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+      ),
+    );
+  }
+}
