@@ -393,6 +393,31 @@ console.log(buah[0]);
     );
   }
 
-
-
-
+  Widget _finishButton(bool isCompleted) {
+    return SizedBox(
+      width: double.infinity,
+      height: 52,
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: isCompleted
+              ? Colors.grey.shade600
+              : const Color(0xFF00DDF8),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(30),
+          ),
+        ),
+        onPressed: (isCompleted || isSaving) ? null : _markCompleted,
+        child: isSaving
+            ? const CircularProgressIndicator(color: Colors.black)
+            : Text(
+                isCompleted ? "Sudah Selesai ✔" : "Tandai Selesai",
+                style: const TextStyle(
+                  color: Colors.black,
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+      ),
+    );
+  }
+}
