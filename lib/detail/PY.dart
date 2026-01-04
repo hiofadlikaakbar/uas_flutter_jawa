@@ -61,6 +61,51 @@ else:
   ];
 
   @override
+  void initState() {
+    super.initState();
+    _checkProgress();
+  }
+
+  /// CEK apakah materi sudah ditandai selesai
+  Future<void> _checkProgress() async {
+    final user = supabase.auth.currentUser;
+    if (user == null) return;
+
+    final res = await supabase
+        .from('lesson_progress')
+        .select()
+        .eq('user_id', user.id)
+        .eq('language', 'python')
+        .eq('lesson_index', selectedIndex)
+        .maybeSingle();
+
+    setState(() {
+      isCompleted = res != null && res['completed'] == true;
+    });
+  }
+
+  /// SIMPAN PROGRESS KE DATABASE
+  Future<void> _markCompleted() async {
+    final user = supabase.auth.currentUser;
+    if (user == null) return;
+
+    await supabase.from('lesson_progress').upsert({
+      'user_id': user.id,
+      'language': 'python',
+      'lesson_index': selectedIndex,
+      'completed': true,
+    });
+
+    setState(() {
+      isCompleted = true;
+    });
+
+    ScaffoldMessenger.of(
+      context,
+    ).showSnackBar(const SnackBar(content: Text("Materi ditandai selesai ✅")));
+  }
+
+  @override
   Widget _header(BuildContext context) {
     return Row(
       children: [
