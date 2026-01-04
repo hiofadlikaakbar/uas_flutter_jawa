@@ -421,3 +421,28 @@ console.log(buah[0]);
     );
   }
 }
+
+Widget _sectionTitle(String title) => Padding(
+  padding: const EdgeInsets.only(bottom: 8),
+  child: Text(
+    title,
+    style: const TextStyle(
+      color: Colors.white,
+      fontSize: 20,
+      fontWeight: FontWeight.bold,
+    ),
+  ),
+);
+
+Widget _subtitle(String text) =>
+    Text(text, style: const TextStyle(color: Colors.white70, fontSize: 14));
+
+Widget _card({required Widget child}) => Container(
+  width: double.infinity,
+  padding: const EdgeInsets.all(16),
+  decoration: BoxDecoration(
+    color: const Color(0xFF1E2A38),
+    borderRadius: BorderRadius.circular(16),
+  ),
+  child: child,
+);
