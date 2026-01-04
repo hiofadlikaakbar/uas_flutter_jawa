@@ -18,6 +18,18 @@ class _MyDashboardState extends State<MyDashboard> {
   String? userName;
   bool isLoading = true;
 
+  // ===== JUMLAH MATERI TIAP BAHASA =====
+  final Map<String, int> lessonCount = {
+    'C++': 5,
+    'Python': 5,
+    'JavaScript': 10,
+    'Java': 5,
+    'Go': 3,
+    'Rust': 3,
+  };
+
+  int get totalLessons => lessonCount.values.fold(0, (sum, item) => sum + item);
+
   @override
   void initState() {
     super.initState();
@@ -72,7 +84,7 @@ class _MyDashboardState extends State<MyDashboard> {
     );
   }
 
-  // header
+  // ===== HEADER =====
   Widget _header() {
     return Row(
       children: [
@@ -85,16 +97,11 @@ class _MyDashboardState extends State<MyDashboard> {
           ),
         ),
         const Spacer(),
-
         _circleIcon(Icons.notifications),
-
         const SizedBox(width: 10),
-
         _circleIcon(
           Icons.person,
-          onTap: () {
-            Navigator.pushNamed(context, '/dashboard_profile');
-          },
+          onTap: () => Navigator.pushNamed(context, '/dashboard_profile'),
         ),
       ],
     );
@@ -112,222 +119,39 @@ class _MyDashboardState extends State<MyDashboard> {
     );
   }
 
-  // intro text
+  // ===== INTRO =====
   Widget _introText() {
-    return Container(
-      constraints: const BoxConstraints(maxWidth: 520),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          isLoading
-              ? const Text(
-                  'Loading...',
-                  style: TextStyle(color: Colors.white70),
-                )
-              : Text(
-                  'Piye kabare, $userName 👋',
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 22,
-                    fontWeight: FontWeight.bold,
-                  ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        isLoading
+            ? const Text('Loading...', style: TextStyle(color: Colors.white70))
+            : Text(
+                'Piye kabare, $userName 👋',
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 22,
+                  fontWeight: FontWeight.bold,
                 ),
-          const SizedBox(height: 8),
-          const Text(
-            'Buka skill baru mu dengan belajar di CodeJawa 😎 semua materi pemrograman dari pemula sampai lanjutan ada disini',
-            maxLines: 3,
-            overflow: TextOverflow.ellipsis,
-            style: TextStyle(color: Colors.white60, fontSize: 14, height: 1.5),
-          ),
-        ],
-      ),
+              ),
+        const SizedBox(height: 8),
+        const Text(
+          'Buka skill baru mu dengan belajar di CodeJawa 😎 semua materi pemrograman dari pemula sampai lanjutan ada disini',
+          style: TextStyle(color: Colors.white60, fontSize: 14, height: 1.5),
+        ),
+      ],
     );
   }
 
-  // info
+  // ===== INFO BOX =====
   Widget _infoSection() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: const [
-        InfoBox(value: "50+", label: "Pelajaran"),
-        InfoBox(value: "1K", label: "Pengguna"),
-        InfoBox(value: "10", label: "Bahasa"),
-      ],
-    );
-  }
-
-  // List kursus
-  Widget _courseList(BuildContext context) {
-    return ListView(
-      physics: const BouncingScrollPhysics(),
       children: [
-        CourseCard(
-          title: "C++",
-          image: '../../images/C++.png',
-          level: "Lanjutan",
-          levelColor: Colors.red,
-          onTap: () => Navigator.push(
-            context,
-            MaterialPageRoute(builder: (_) => const CPP()),
-          ),
-        ),
-        CourseCard(
-          title: "Python",
-          image: '../../images/PY.png',
-          level: "Pemula",
-          levelColor: Colors.green,
-          onTap: () => Navigator.push(
-            context,
-            MaterialPageRoute(builder: (_) => const Python()),
-          ),
-        ),
-        CourseCard(
-          title: "JavaScript",
-          image: '../../images/JS.png',
-          level: "Pemula",
-          levelColor: Colors.green,
-          onTap: () => Navigator.push(
-            context,
-            MaterialPageRoute(builder: (_) => const Js()),
-          ),
-        ),
-        CourseCard(
-          title: "Java",
-          image: '../../images/JAVA.png',
-          level: "Menengah",
-          levelColor: Colors.orange,
-          onTap: () => Navigator.push(
-            context,
-            MaterialPageRoute(builder: (_) => const Java()),
-          ),
-        ),
-        CourseCard(
-          title: "Go",
-          image: '../../images/GO.png',
-          level: "Menengah",
-          levelColor: Colors.orange,
-          onTap: () => Navigator.push(
-            context,
-            MaterialPageRoute(builder: (_) => const Go()),
-          ),
-        ),
-        CourseCard(
-          title: "Rust",
-          image: '../../images/Rust.png',
-          level: "Lanjutan",
-          levelColor: Colors.red,
-          onTap: () => Navigator.push(
-            context,
-            MaterialPageRoute(builder: (_) => const Rust()),
-          ),
-        ),
+        InfoBox(value: "$totalLessons", label: "Pelajaran"),
+        const InfoBox(value: "1K+", label: "Pengguna"),
+        const InfoBox(value: "6", label: "Bahasa"),
       ],
     );
   }
-}
 
-// komponen
-class CourseCard extends StatelessWidget {
-  final String title;
-  final String image;
-  final String level;
-  final Color levelColor;
-  final VoidCallback onTap;
-
-  const CourseCard({
-    super.key,
-    required this.title,
-    required this.image,
-    required this.level,
-    required this.levelColor,
-    required this.onTap,
-  });
-
-  // komponen kontainer bahasa pemrograman
-  @override
-  Widget build(BuildContext context) {
-    return InkWell(
-      borderRadius: BorderRadius.circular(16),
-      onTap: onTap,
-      child: Container(
-        margin: const EdgeInsets.only(bottom: 14),
-        padding: const EdgeInsets.all(16),
-        decoration: BoxDecoration(
-          color: Colors.white10,
-          borderRadius: BorderRadius.circular(16),
-        ),
-        child: Row(
-          children: [
-            Image.asset(image, width: 54),
-            const SizedBox(width: 16),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    title,
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  const SizedBox(height: 6),
-                  const Text(
-                    "24 Pelajaran",
-                    style: TextStyle(color: Colors.white60),
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-              decoration: BoxDecoration(
-                color: levelColor,
-                borderRadius: BorderRadius.circular(20),
-              ),
-              child: Text(
-                level,
-                style: const TextStyle(color: Colors.white, fontSize: 12),
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-// komponen infobox kontainer
-class InfoBox extends StatelessWidget {
-  final String value;
-  final String label;
-
-  const InfoBox({super.key, required this.value, required this.label});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 100,
-      padding: const EdgeInsets.symmetric(vertical: 14),
-      decoration: BoxDecoration(
-        color: Colors.white10,
-        borderRadius: BorderRadius.circular(14),
-      ),
-      child: Column(
-        children: [
-          Text(
-            value,
-            style: const TextStyle(
-              color: Colors.white,
-              fontSize: 18,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          const SizedBox(height: 4),
-          Text(label, style: const TextStyle(color: Colors.white60)),
-        ],
-      ),
-    );
-  }
-}
