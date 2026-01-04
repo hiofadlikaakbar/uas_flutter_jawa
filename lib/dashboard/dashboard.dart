@@ -18,6 +18,18 @@ class _MyDashboardState extends State<MyDashboard> {
   String? userName;
   bool isLoading = true;
 
+  // jumlah materi
+  final Map<String, int> lessonCount = {
+    'C++': 5,
+    'Python': 5,
+    'JavaScript': 10,
+    'Java': 5,
+    'Go': 3,
+    'Rust': 3,
+  };
+
+  int get totalLessons => lessonCount.values.fold(0, (sum, item) => sum + item);
+
   @override
   void initState() {
     super.initState();
@@ -29,6 +41,7 @@ class _MyDashboardState extends State<MyDashboard> {
     final user = client.auth.currentUser;
 
     if (user == null) {
+      if (!mounted) return;
       Navigator.pushReplacementNamed(context, '/login');
       return;
     }
@@ -38,6 +51,8 @@ class _MyDashboardState extends State<MyDashboard> {
         .select('name')
         .eq('id', user.id)
         .single();
+
+    if (!mounted) return;
 
     setState(() {
       userName = res['name'];
@@ -71,89 +86,75 @@ class _MyDashboardState extends State<MyDashboard> {
 
   // header
   Widget _header() {
-  return Row(
-    children: [
-      const Text(
-        'Dashboard',
-        style: TextStyle(
-          color: Colors.white,
-          fontSize: 28,
-          fontWeight: FontWeight.bold,
-        ),
-      ),
-      const Spacer(),
-
-      _circleIcon(Icons.notifications),
-
-      const SizedBox(width: 10),
-
-      _circleIcon(
-        Icons.person,
-        onTap: () {
-          Navigator.pushNamed(context, '/dashboard_profile');
-        },
-      ),
-    ],
-  );
-}
-
-  Widget _circleIcon(IconData icon, {VoidCallback? onTap}) {
-  return InkWell(
-    borderRadius: BorderRadius.circular(50),
-    onTap: onTap,
-    child: CircleAvatar(
-      radius: 22,
-      backgroundColor: Colors.white10,
-      child: Icon(icon, color: Colors.white),
-    ),
-  );
-}
-
-  // intro text
-  Widget _introText() {
-    return Container(
-      constraints: const BoxConstraints(maxWidth: 520),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          isLoading
-              ? const Text(
-                  'Loading...',
-                  style: TextStyle(color: Colors.white70),
-                )
-              : Text(
-                  'Piye kabare, $userName 👋',
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 22,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-          const SizedBox(height: 8),
-          const Text(
-            'Buka skill baru mu dengan belajar di CodeJawa 😎 semua materi pemrograman dari pemula sampai lanjutan ada disini',
-            maxLines: 3,
-            overflow: TextOverflow.ellipsis,
-            style: TextStyle(color: Colors.white60, fontSize: 14, height: 1.5),
-          ),
-        ],
-      ),
-    );
-  }
-
-  // info
-  Widget _infoSection() {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: const [
-        InfoBox(value: "50+", label: "Pelajaran"),
-        InfoBox(value: "1K", label: "Pengguna"),
-        InfoBox(value: "10", label: "Bahasa"),
+      children: [
+        const Text(
+          'Dashboard',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 28,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        const Spacer(),
+        _circleIcon(Icons.notifications),
+        const SizedBox(width: 10),
+        _circleIcon(
+          Icons.person,
+          onTap: () => Navigator.pushNamed(context, '/dashboard_profile'),
+        ),
       ],
     );
   }
 
-  // List kursus
+  Widget _circleIcon(IconData icon, {VoidCallback? onTap}) {
+    return InkWell(
+      borderRadius: BorderRadius.circular(50),
+      onTap: onTap,
+      child: CircleAvatar(
+        radius: 22,
+        backgroundColor: Colors.white10,
+        child: Icon(icon, color: Colors.white),
+      ),
+    );
+  }
+
+  Widget _introText() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        isLoading
+            ? const Text('Loading...', style: TextStyle(color: Colors.white70))
+            : Text(
+                'Piye kabare, $userName 👋',
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 22,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+        const SizedBox(height: 8),
+        const Text(
+          'Buka skill baru mu dengan belajar di CodeJawa 😎 semua materi pemrograman dari pemula sampai lanjutan ada disini',
+          style: TextStyle(color: Colors.white60, fontSize: 14, height: 1.5),
+        ),
+      ],
+    );
+  }
+
+  //  info box
+  Widget _infoSection() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        InfoBox(value: "$totalLessons", label: "Pelajaran"),
+        const InfoBox(value: "1K+", label: "Pengguna"),
+        const InfoBox(value: "6", label: "Bahasa"),
+      ],
+    );
+  }
+
+  //  course list
   Widget _courseList(BuildContext context) {
     return ListView(
       physics: const BouncingScrollPhysics(),
@@ -163,6 +164,7 @@ class _MyDashboardState extends State<MyDashboard> {
           image: '../../images/C++.png',
           level: "Lanjutan",
           levelColor: Colors.red,
+          lessons: lessonCount['C++']!,
           onTap: () => Navigator.push(
             context,
             MaterialPageRoute(builder: (_) => const CPP()),
@@ -173,6 +175,7 @@ class _MyDashboardState extends State<MyDashboard> {
           image: '../../images/PY.png',
           level: "Pemula",
           levelColor: Colors.green,
+          lessons: lessonCount['Python']!,
           onTap: () => Navigator.push(
             context,
             MaterialPageRoute(builder: (_) => const Python()),
@@ -183,6 +186,7 @@ class _MyDashboardState extends State<MyDashboard> {
           image: '../../images/JS.png',
           level: "Pemula",
           levelColor: Colors.green,
+          lessons: lessonCount['JavaScript']!,
           onTap: () => Navigator.push(
             context,
             MaterialPageRoute(builder: (_) => const Js()),
@@ -193,6 +197,7 @@ class _MyDashboardState extends State<MyDashboard> {
           image: '../../images/JAVA.png',
           level: "Menengah",
           levelColor: Colors.orange,
+          lessons: lessonCount['Java']!,
           onTap: () => Navigator.push(
             context,
             MaterialPageRoute(builder: (_) => const Java()),
@@ -203,6 +208,7 @@ class _MyDashboardState extends State<MyDashboard> {
           image: '../../images/GO.png',
           level: "Menengah",
           levelColor: Colors.orange,
+          lessons: lessonCount['Go']!,
           onTap: () => Navigator.push(
             context,
             MaterialPageRoute(builder: (_) => const Go()),
@@ -213,6 +219,7 @@ class _MyDashboardState extends State<MyDashboard> {
           image: '../../images/Rust.png',
           level: "Lanjutan",
           levelColor: Colors.red,
+          lessons: lessonCount['Rust']!,
           onTap: () => Navigator.push(
             context,
             MaterialPageRoute(builder: (_) => const Rust()),
@@ -223,12 +230,13 @@ class _MyDashboardState extends State<MyDashboard> {
   }
 }
 
-// komponen
+// course card
 class CourseCard extends StatelessWidget {
   final String title;
   final String image;
   final String level;
   final Color levelColor;
+  final int lessons;
   final VoidCallback onTap;
 
   const CourseCard({
@@ -237,10 +245,10 @@ class CourseCard extends StatelessWidget {
     required this.image,
     required this.level,
     required this.levelColor,
+    required this.lessons,
     required this.onTap,
   });
 
-  // komponen kontainer bahasa pemrograman
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -270,9 +278,9 @@ class CourseCard extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 6),
-                  const Text(
-                    "24 Pelajaran",
-                    style: TextStyle(color: Colors.white60),
+                  Text(
+                    "$lessons Pelajaran",
+                    style: const TextStyle(color: Colors.white60),
                   ),
                 ],
               ),
@@ -295,7 +303,6 @@ class CourseCard extends StatelessWidget {
   }
 }
 
-// komponen infobox kontainer
 class InfoBox extends StatelessWidget {
   final String value;
   final String label;
