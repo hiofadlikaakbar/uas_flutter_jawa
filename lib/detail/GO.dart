@@ -191,5 +191,32 @@ func main() {
     );
   }
 
+  // ===== UI =====
+  Widget _header(BuildContext context) {
+    return Row(
+      children: [
+        IconButton(
+          icon: const Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () => Navigator.pop(context),
+        ),
+        Image.asset('../../images/GO.png', height: 36),
+        const SizedBox(width: 10),
+        const Text(
+          "Go",
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 26,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        const Spacer(),
+        Text(
+          "${selectedIndex + 1}/${lessons.length}",
+          style: const TextStyle(color: Colors.white70),
+        ),
+      ],
+    );
+  }
+
 
 
