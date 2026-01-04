@@ -18,7 +18,7 @@ class _MyDashboardState extends State<MyDashboard> {
   String? userName;
   bool isLoading = true;
 
-  // ===== JUMLAH MATERI TIAP BAHASA =====
+  // jumlah materi
   final Map<String, int> lessonCount = {
     'C++': 5,
     'Python': 5,
@@ -84,7 +84,7 @@ class _MyDashboardState extends State<MyDashboard> {
     );
   }
 
-  // ===== HEADER =====
+  // header
   Widget _header() {
     return Row(
       children: [
@@ -119,7 +119,6 @@ class _MyDashboardState extends State<MyDashboard> {
     );
   }
 
-  // ===== INTRO =====
   Widget _introText() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -143,7 +142,7 @@ class _MyDashboardState extends State<MyDashboard> {
     );
   }
 
-  // ===== INFO BOX =====
+  //  info box
   Widget _infoSection() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -155,7 +154,7 @@ class _MyDashboardState extends State<MyDashboard> {
     );
   }
 
-  // ===== COURSE LIST =====
+  //  course list
   Widget _courseList(BuildContext context) {
     return ListView(
       physics: const BouncingScrollPhysics(),
@@ -231,7 +230,7 @@ class _MyDashboardState extends State<MyDashboard> {
   }
 }
 
-// ===== COURSE CARD =====
+// course card
 class CourseCard extends StatelessWidget {
   final String title;
   final String image;
@@ -304,7 +303,6 @@ class CourseCard extends StatelessWidget {
   }
 }
 
-// ===== INFO BOX =====
 class InfoBox extends StatelessWidget {
   final String value;
   final String label;
