@@ -155,3 +155,78 @@ class _MyDashboardState extends State<MyDashboard> {
     );
   }
 
+  // ===== COURSE LIST =====
+  Widget _courseList(BuildContext context) {
+    return ListView(
+      physics: const BouncingScrollPhysics(),
+      children: [
+        CourseCard(
+          title: "C++",
+          image: '../../images/C++.png',
+          level: "Lanjutan",
+          levelColor: Colors.red,
+          lessons: lessonCount['C++']!,
+          onTap: () => Navigator.push(
+            context,
+            MaterialPageRoute(builder: (_) => const CPP()),
+          ),
+        ),
+        CourseCard(
+          title: "Python",
+          image: '../../images/PY.png',
+          level: "Pemula",
+          levelColor: Colors.green,
+          lessons: lessonCount['Python']!,
+          onTap: () => Navigator.push(
+            context,
+            MaterialPageRoute(builder: (_) => const Python()),
+          ),
+        ),
+        CourseCard(
+          title: "JavaScript",
+          image: '../../images/JS.png',
+          level: "Pemula",
+          levelColor: Colors.green,
+          lessons: lessonCount['JavaScript']!,
+          onTap: () => Navigator.push(
+            context,
+            MaterialPageRoute(builder: (_) => const Js()),
+          ),
+        ),
+        CourseCard(
+          title: "Java",
+          image: '../../images/JAVA.png',
+          level: "Menengah",
+          levelColor: Colors.orange,
+          lessons: lessonCount['Java']!,
+          onTap: () => Navigator.push(
+            context,
+            MaterialPageRoute(builder: (_) => const Java()),
+          ),
+        ),
+        CourseCard(
+          title: "Go",
+          image: '../../images/GO.png',
+          level: "Menengah",
+          levelColor: Colors.orange,
+          lessons: lessonCount['Go']!,
+          onTap: () => Navigator.push(
+            context,
+            MaterialPageRoute(builder: (_) => const Go()),
+          ),
+        ),
+        CourseCard(
+          title: "Rust",
+          image: '../../images/Rust.png',
+          level: "Lanjutan",
+          levelColor: Colors.red,
+          lessons: lessonCount['Rust']!,
+          onTap: () => Navigator.push(
+            context,
+            MaterialPageRoute(builder: (_) => const Rust()),
+          ),
+        ),
+      ],
+    );
+  }
+}
