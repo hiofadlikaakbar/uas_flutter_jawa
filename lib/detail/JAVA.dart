@@ -13,6 +13,9 @@ class _JavaState extends State<Java> {
   int selectedIndex = 0;
   bool isSaving = false;
 
+  final supabase = Supabase.instance.client;
+
+  // ===== LIST MATERI JAVA =====
   final List<Map<String, String>> lessons = [
     {
       "title": "Hello World",
@@ -75,8 +78,7 @@ public class Main {
     }
 }
 ''',
-      "explain":
-          "Loop for digunakan untuk menjalankan kode secara berulang dengan jumlah tertentu.",
+      "explain": "Loop for digunakan untuk menjalankan kode secara berulang.",
     },
     {
       "title": "Method",
@@ -94,15 +96,40 @@ public class Main {
 }
 ''',
       "explain":
-          "Method adalah kumpulan kode yang bisa dipanggil berulang kali agar program lebih rapi.",
+          "Method adalah kumpulan kode yang dapat dipanggil berulang kali.",
     },
   ];
 
-  // ================= SUPABASE =================
-  Future<void> saveProgress() async {
-    final supabase = Supabase.instance.client;
-    final user = supabase.auth.currentUser;
+  // ===== PROGRESS =====
+  Set<int> completedLessons = {};
 
+  @override
+  void initState() {
+    super.initState();
+    _loadProgress();
+  }
+
+  // load progress
+  Future<void> _loadProgress() async {
+    final user = supabase.auth.currentUser;
+    if (user == null) return;
+
+    final res = await supabase
+        .from('lesson_progress')
+        .select('lesson_index')
+        .eq('user_id', user.id)
+        .eq('language', 'java');
+
+    if (!mounted) return;
+
+    setState(() {
+      completedLessons = res.map<int>((e) => e['lesson_index'] as int).toSet();
+    });
+  }
+
+  // simpan progress
+  Future<void> _markCompleted() async {
+    final user = supabase.auth.currentUser;
     if (user == null) return;
 
     setState(() => isSaving = true);
@@ -111,21 +138,25 @@ public class Main {
       'user_id': user.id,
       'language': 'java',
       'lesson_index': selectedIndex,
+      'completed': true,
     });
 
     if (!mounted) return;
 
-    setState(() => isSaving = false);
+    setState(() {
+      completedLessons.add(selectedIndex);
+      isSaving = false;
+    });
 
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(content: Text("Materi Java ditandai selesai ✅")),
     );
   }
-  // ============================================
 
   @override
   Widget build(BuildContext context) {
     final lesson = lessons[selectedIndex];
+    final isCompleted = completedLessons.contains(selectedIndex);
 
     return Scaffold(
       backgroundColor: const Color(0xFF0B1623),
@@ -133,7 +164,7 @@ public class Main {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              // HEADER
+              // ===== HEADER =====
               Container(
                 width: double.infinity,
                 padding: const EdgeInsets.all(20),
@@ -151,7 +182,7 @@ public class Main {
                 child: _header(context),
               ),
 
-              // KONTEN
+              // konten
               Container(
                 width: double.infinity,
                 padding: const EdgeInsets.all(20),
@@ -177,7 +208,7 @@ public class Main {
 
                     const SizedBox(height: 32),
 
-                    _finishButton(),
+                    _finishButton(isCompleted),
                   ],
                 ),
               ),
@@ -188,7 +219,7 @@ public class Main {
     );
   }
 
-  // ================= UI =================
+  // ui
   Widget _header(BuildContext context) {
     return Row(
       children: [
@@ -220,14 +251,18 @@ public class Main {
       child: Column(
         children: List.generate(lessons.length, (index) {
           final active = index == selectedIndex;
+          final done = completedLessons.contains(index);
+
           return ListTile(
             dense: true,
             onTap: () {
               setState(() => selectedIndex = index);
             },
             leading: Icon(
-              active ? Icons.play_circle : Icons.circle_outlined,
-              color: active ? const Color(0xFF00DDF8) : Colors.white38,
+              done
+                  ? Icons.check_circle
+                  : (active ? Icons.play_circle : Icons.circle_outlined),
+              color: done ? Colors.greenAccent : const Color(0xFF00DDF8),
             ),
             title: Text(
               lessons[index]["title"]!,
@@ -316,23 +351,25 @@ public class Main {
     );
   }
 
-  Widget _finishButton() {
+  Widget _finishButton(bool isCompleted) {
     return SizedBox(
       width: double.infinity,
       height: 52,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          backgroundColor: const Color(0xFF00DDF8),
+          backgroundColor: isCompleted
+              ? Colors.grey.shade600
+              : const Color(0xFF00DDF8),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(30),
           ),
         ),
-        onPressed: isSaving ? null : saveProgress,
+        onPressed: (isCompleted || isSaving) ? null : _markCompleted,
         child: isSaving
             ? const CircularProgressIndicator(color: Colors.black)
-            : const Text(
-                "Tandai Selesai",
-                style: TextStyle(
+            : Text(
+                isCompleted ? "Sudah Selesai ✔" : "Tandai Selesai",
+                style: const TextStyle(
                   color: Colors.black,
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
@@ -343,7 +380,6 @@ public class Main {
   }
 }
 
-// ===== helper widgets =====
 Widget _sectionTitle(String title) => Padding(
   padding: const EdgeInsets.only(bottom: 8),
   child: Text(
