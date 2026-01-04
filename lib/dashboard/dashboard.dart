@@ -230,3 +230,22 @@ class _MyDashboardState extends State<MyDashboard> {
     );
   }
 }
+
+// ===== COURSE CARD =====
+class CourseCard extends StatelessWidget {
+  final String title;
+  final String image;
+  final String level;
+  final Color levelColor;
+  final int lessons;
+  final VoidCallback onTap;
+
+  const CourseCard({
+    super.key,
+    required this.title,
+    required this.image,
+    required this.level,
+    required this.levelColor,
+    required this.lessons,
+    required this.onTap,
+  });
