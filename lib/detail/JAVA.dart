@@ -215,6 +215,33 @@ public class Main {
     );
   }
 
+  Widget _lessonList() {
+    return _card(
+      child: Column(
+        children: List.generate(lessons.length, (index) {
+          final active = index == selectedIndex;
+          return ListTile(
+            dense: true,
+            onTap: () {
+              setState(() => selectedIndex = index);
+            },
+            leading: Icon(
+              active ? Icons.play_circle : Icons.circle_outlined,
+              color: active ? const Color(0xFF00DDF8) : Colors.white38,
+            ),
+            title: Text(
+              lessons[index]["title"]!,
+              style: TextStyle(
+                color: active ? Colors.white : Colors.white70,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+          );
+        }),
+      ),
+    );
+  }
+
   Widget _codeBox(String code) {
     return _card(
       child: Column(
