@@ -98,7 +98,6 @@ public class Main {
     },
   ];
 
-  // ================= SUPABASE =================
   Future<void> saveProgress() async {
     final supabase = Supabase.instance.client;
     final user = supabase.auth.currentUser;
@@ -121,7 +120,6 @@ public class Main {
       const SnackBar(content: Text("Materi Java ditandai selesai ✅")),
     );
   }
-  // ============================================
 
   @override
   Widget build(BuildContext context) {
@@ -184,60 +182,6 @@ public class Main {
             ],
           ),
         ),
-      ),
-    );
-  }
-
-  // ================= UI =================
-  Widget _header(BuildContext context) {
-    return Row(
-      children: [
-        IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.white),
-          onPressed: () => Navigator.pop(context),
-        ),
-        Image.asset('../../images/JAVA.png', height: 36),
-        const SizedBox(width: 10),
-        const Text(
-          "Java",
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 26,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        const Spacer(),
-        Text(
-          "${selectedIndex + 1}/${lessons.length}",
-          style: const TextStyle(color: Colors.white70),
-        ),
-      ],
-    );
-  }
-
-  Widget _lessonList() {
-    return _card(
-      child: Column(
-        children: List.generate(lessons.length, (index) {
-          final active = index == selectedIndex;
-          return ListTile(
-            dense: true,
-            onTap: () {
-              setState(() => selectedIndex = index);
-            },
-            leading: Icon(
-              active ? Icons.play_circle : Icons.circle_outlined,
-              color: active ? const Color(0xFF00DDF8) : Colors.white38,
-            ),
-            title: Text(
-              lessons[index]["title"]!,
-              style: TextStyle(
-                color: active ? Colors.white : Colors.white70,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-          );
-        }),
       ),
     );
   }
