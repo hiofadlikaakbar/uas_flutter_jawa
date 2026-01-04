@@ -303,3 +303,37 @@ class CourseCard extends StatelessWidget {
     );
   }
 }
+
+// ===== INFO BOX =====
+class InfoBox extends StatelessWidget {
+  final String value;
+  final String label;
+
+  const InfoBox({super.key, required this.value, required this.label});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 100,
+      padding: const EdgeInsets.symmetric(vertical: 14),
+      decoration: BoxDecoration(
+        color: Colors.white10,
+        borderRadius: BorderRadius.circular(14),
+      ),
+      child: Column(
+        children: [
+          Text(
+            value,
+            style: const TextStyle(
+              color: Colors.white,
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          const SizedBox(height: 4),
+          Text(label, style: const TextStyle(color: Colors.white60)),
+        ],
+      ),
+    );
+  }
+}
