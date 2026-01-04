@@ -198,7 +198,71 @@ console.log(buah[0]);
     );
   }
 
- 
+  @override
+  Widget build(BuildContext context) {
+    final lesson = lessons[selectedIndex];
+    final isCompleted = completedLessons.contains(selectedIndex);
+
+    return Scaffold(
+      backgroundColor: const Color(0xFF0B1623),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              // ===== HEADER =====
+              Container(
+                width: double.infinity,
+                padding: const EdgeInsets.all(20),
+                decoration: const BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                      Color(0xFF0F2027),
+                      Color(0xFF203A43),
+                      Color(0xFF2C5364),
+                    ],
+                  ),
+                ),
+                child: _header(context),
+              ),
+
+              // ===== KONTEN =====
+              Container(
+                width: double.infinity,
+                padding: const EdgeInsets.all(20),
+                color: const Color(0xFF0B1623),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    _sectionTitle("Daftar Pelajaran"),
+                    _lessonList(),
+
+                    const SizedBox(height: 24),
+
+                    _sectionTitle(lesson["title"]!),
+                    _subtitle(lesson["subtitle"]!),
+
+                    const SizedBox(height: 16),
+
+                    _codeBox(lesson["code"]!),
+
+                    const SizedBox(height: 16),
+
+                    _explainBox(lesson["explain"]!),
+
+                    const SizedBox(height: 32),
+
+                    _finishButton(isCompleted),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
 
  
 
