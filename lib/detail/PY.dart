@@ -326,8 +326,6 @@ else:
   }
 }
 
-// ================== WIDGET HELPER ==================
-
 Widget _sectionTitle(String title) {
   return Padding(
     padding: const EdgeInsets.only(bottom: 8),
