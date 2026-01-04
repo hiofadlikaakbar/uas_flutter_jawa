@@ -263,6 +263,7 @@ fn main() {
           ),
           const SizedBox(height: 10),
           Container(
+            width: double.infinity,
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
               color: const Color(0xFF121B26),
