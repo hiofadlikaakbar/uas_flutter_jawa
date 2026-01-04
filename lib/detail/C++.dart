@@ -174,7 +174,32 @@ for (int i = 1; i <= 5; i++) {
                 ),
               ),
 
-            
+              // ===== CONTENT =====
+              Container(
+                padding: const EdgeInsets.all(20),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    _sectionTitle("Daftar Pelajaran"),
+                    _lessonList(),
+
+                    const SizedBox(height: 24),
+
+                    _sectionTitle(lesson["title"]!),
+                    _subtitle(lesson["subtitle"]!),
+
+                    const SizedBox(height: 16),
+                    _codeBox(lesson["code"]!),
+
+                    const SizedBox(height: 16),
+                    _explainBox(lesson["explain"]!),
+
+                    const SizedBox(height: 32),
+                    _finishButton(),
+                  ],
+                ),
+              ),
+            ],
           ),
         ),
       ),
