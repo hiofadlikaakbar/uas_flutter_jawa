@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "868768545322",
+    "project_id": "uas-jawa",
+    "storage_bucket": "uas-jawa.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:868768545322:android:f159253107854a71b82153",
+        "android_client_info": {
+          "package_name": "com.example.uas_flutter_jawa"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDSIWfc9vd3Jrdm8KWwRPwFGigCoBdwY0k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
