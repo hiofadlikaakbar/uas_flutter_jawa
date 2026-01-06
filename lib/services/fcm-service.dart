@@ -34,4 +34,37 @@ Future<void> setupFcm() async {
   //permintaan token untuk test di backend
   String? token = await messaging.getToken();
   print("FCM TOKEN: $token");
+  
+  //foreground message(saat aplikasi sedang dilihat)
+  FirebaseMessaging.onMessage.listen((RemoteMessage message) {
+    print("Menerima pesan foreground: ${message.messageId}");
+
+    final notification = message.notification;
+    final android = message.notification?.android;
+
+    if (notification != null && android != null) {
+      try {
+        flutterLocalNotificationsPlugin.show(
+          notification.hashCode,
+          notification.title,
+          notification.body,
+          NotificationDetails(
+            android: AndroidNotificationDetails(
+              channel.id,
+              channel.name,
+              channelDescription: channel.description,
+              icon: android.smallIcon ?? '@mipmap/ic_launcher',
+              importance: Importance.max,
+              priority: Priority.high,
+              showWhen: true,
+            ),
+          ),
+        );
+
+        print("Notifikasi foreground ditampilkan: ${notification.title}");
+      } catch (e) {
+        print("Error saat menampilkan notifikasi foreground: $e");
+      }
+    }
+  });
 }
