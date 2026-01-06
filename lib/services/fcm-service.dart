@@ -11,10 +11,9 @@ const AndroidNotificationChannel channel = AndroidNotificationChannel(
   importance: Importance.high,
 );
 
-
-Future<void> setupFcm() async{
+Future<void> setupFcm() async {
   final messaging = FirebaseMessaging.instance;
-  
+
   NotificationSettings settings = await messaging.requestPermission(
     alert: true,
     announcement: false,
@@ -31,4 +30,8 @@ Future<void> setupFcm() async{
     print("User menolak permission notifikasi");
     return;
   }
+
+  //permintaan token untuk test di backend
+  String? token = await messaging.getToken();
+  print("FCM TOKEN: $token");
 }
