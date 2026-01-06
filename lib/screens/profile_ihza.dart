@@ -73,7 +73,7 @@ class _ProfileIhzaState extends State<ProfileIhza>
             child: Hero(
               tag: "ihza-photo",
               child: Image.asset(
-                "images/ihzawa.png",
+                "assets/images/ihzawa.png",
                 fit: BoxFit.cover,
                 alignment: Alignment.topCenter,
               ),
