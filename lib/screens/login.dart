@@ -186,7 +186,7 @@ class _LoginState extends State<LoginPage> {
                     height: 52,
                     child: ElevatedButton(
                       onPressed: () async {
-                        // contoh validasi login sederhana
+                        
                         bool loginSuccess = true;
 
                         if (loginSuccess) {
