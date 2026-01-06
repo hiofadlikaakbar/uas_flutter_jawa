@@ -72,4 +72,14 @@ Future<void> setupFcm() async {
   FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) {
     print("Klik notif dari BACKGROUND");
   });
+
+  //get initial message(notif pada saat apk sudah mati)
+Future<void> handleInitialMessage() async {
+  RemoteMessage? message =
+      await FirebaseMessaging.instance.getInitialMessage();
+
+  if (message != null && message.notification != null) {
+    print("App dibuka dari notif (TERMINATED)");
+  }
+}
 }
