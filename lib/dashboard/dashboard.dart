@@ -97,8 +97,7 @@ class _MyDashboardState extends State<MyDashboard> {
           ),
         ),
         const Spacer(),
-        _circleIcon(Icons.notifications),
-        const SizedBox(width: 10),
+
         _circleIcon(
           Icons.person,
           onTap: () => Navigator.pushNamed(context, '/dashboard_profile'),
@@ -126,7 +125,7 @@ class _MyDashboardState extends State<MyDashboard> {
         isLoading
             ? const Text('Loading...', style: TextStyle(color: Colors.white70))
             : Text(
-                'Piye kabare, $userName 👋',
+                'Piye kabare, $userName',
                 style: const TextStyle(
                   color: Colors.white,
                   fontSize: 22,
@@ -135,7 +134,7 @@ class _MyDashboardState extends State<MyDashboard> {
               ),
         const SizedBox(height: 8),
         const Text(
-          'Buka skill baru mu dengan belajar di CodeJawa 😎 semua materi pemrograman dari pemula sampai lanjutan ada disini',
+          'Buka skill baru mu dengan belajar di CodeJawa semua materi pemrograman dari pemula sampai lanjutan ada disini',
           style: TextStyle(color: Colors.white60, fontSize: 14, height: 1.5),
         ),
       ],
@@ -161,7 +160,7 @@ class _MyDashboardState extends State<MyDashboard> {
       children: [
         CourseCard(
           title: "C++",
-          image: '../../images/C++.png',
+          image: 'assets/images/C++.png',
           level: "Lanjutan",
           levelColor: Colors.red,
           lessons: lessonCount['C++']!,
@@ -172,7 +171,7 @@ class _MyDashboardState extends State<MyDashboard> {
         ),
         CourseCard(
           title: "Python",
-          image: '../../images/PY.png',
+          image: 'assets/images/PY.png',
           level: "Pemula",
           levelColor: Colors.green,
           lessons: lessonCount['Python']!,
@@ -183,7 +182,7 @@ class _MyDashboardState extends State<MyDashboard> {
         ),
         CourseCard(
           title: "JavaScript",
-          image: '../../images/JS.png',
+          image: 'assets/images/JS.png',
           level: "Pemula",
           levelColor: Colors.green,
           lessons: lessonCount['JavaScript']!,
@@ -194,7 +193,7 @@ class _MyDashboardState extends State<MyDashboard> {
         ),
         CourseCard(
           title: "Java",
-          image: '../../images/JAVA.png',
+          image: 'assets/images/JAVA.png',
           level: "Menengah",
           levelColor: Colors.orange,
           lessons: lessonCount['Java']!,
@@ -205,7 +204,7 @@ class _MyDashboardState extends State<MyDashboard> {
         ),
         CourseCard(
           title: "Go",
-          image: '../../images/GO.png',
+          image: 'assets/images/GO.png',
           level: "Menengah",
           levelColor: Colors.orange,
           lessons: lessonCount['Go']!,
@@ -216,7 +215,7 @@ class _MyDashboardState extends State<MyDashboard> {
         ),
         CourseCard(
           title: "Rust",
-          image: '../../images/Rust.png',
+          image: 'assets/images/Rust.png',
           level: "Lanjutan",
           levelColor: Colors.red,
           lessons: lessonCount['Rust']!,

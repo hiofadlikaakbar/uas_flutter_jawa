@@ -23,10 +23,7 @@ class _ProfileIhzaState extends State<ProfileIhza>
       duration: const Duration(milliseconds: 800),
     );
 
-    _fade = CurvedAnimation(
-      parent: _controller,
-      curve: Curves.easeOut,
-    );
+    _fade = CurvedAnimation(parent: _controller, curve: Curves.easeOut);
 
     _slide = Tween<Offset>(
       begin: const Offset(0, 0.06),
@@ -45,10 +42,7 @@ class _ProfileIhzaState extends State<ProfileIhza>
   Widget _animated(Widget child) {
     return FadeTransition(
       opacity: _fade,
-      child: SlideTransition(
-        position: _slide,
-        child: child,
-      ),
+      child: SlideTransition(position: _slide, child: child),
     );
   }
 
@@ -92,10 +86,7 @@ class _ProfileIhzaState extends State<ProfileIhza>
                 gradient: LinearGradient(
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
-                  colors: [
-                    Colors.transparent,
-                    Colors.black.withOpacity(0.85),
-                  ],
+                  colors: [Colors.transparent, Colors.black.withOpacity(0.85)],
                 ),
               ),
             ),
@@ -142,7 +133,6 @@ class _ProfileIhzaState extends State<ProfileIhza>
     );
   }
 
-
   Widget _searchTag() {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
@@ -156,8 +146,7 @@ class _ProfileIhzaState extends State<ProfileIhza>
           const SizedBox(width: 6),
           Text(
             "The Aligator",
-            style: GoogleFonts.inter(
-                fontWeight: FontWeight.w600, fontSize: 13),
+            style: GoogleFonts.inter(fontWeight: FontWeight.w600, fontSize: 13),
           ),
         ],
       ),
@@ -175,13 +164,15 @@ class _ProfileIhzaState extends State<ProfileIhza>
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(title,
-              style: GoogleFonts.inter(
-                  color: Colors.white60, fontSize: 12)),
+          Text(
+            title,
+            style: GoogleFonts.inter(color: Colors.white60, fontSize: 12),
+          ),
           const SizedBox(height: 8),
-          Text(content,
-              style: GoogleFonts.inter(
-                  color: Colors.white, fontSize: 13)),
+          Text(
+            content,
+            style: GoogleFonts.inter(color: Colors.white, fontSize: 13),
+          ),
         ],
       ),
     );
@@ -198,15 +189,13 @@ class _ProfileIhzaState extends State<ProfileIhza>
           ),
           child: Text(
             "Follow Me!",
-            style: GoogleFonts.inter(
-                fontWeight: FontWeight.w700, fontSize: 14),
+            style: GoogleFonts.inter(fontWeight: FontWeight.w700, fontSize: 14),
           ),
         ),
         const SizedBox(width: 10),
         Text(
           "@onlyyyzaa",
-          style:
-              GoogleFonts.inter(color: Colors.white70, fontSize: 13),
+          style: GoogleFonts.inter(color: Colors.white70, fontSize: 13),
         ),
       ],
     );
@@ -225,16 +214,13 @@ class _ProfileIhzaState extends State<ProfileIhza>
         children: [
           Text(
             "PHOTO PROFIL",
-            style: GoogleFonts.inter(
-              fontSize: 11,
-              fontWeight: FontWeight.w600,
-            ),
+            style: GoogleFonts.inter(fontSize: 11, fontWeight: FontWeight.w600),
           ),
           const SizedBox(height: 8),
           ClipRRect(
             borderRadius: BorderRadius.circular(12),
             child: Image.asset(
-              "images/ihza.jpg",
+              "assets/images/ihza.jpg",
               height: 120,
               fit: BoxFit.cover,
             ),
@@ -247,8 +233,7 @@ class _ProfileIhzaState extends State<ProfileIhza>
   Widget _keahliaan() {
     return _infoCard(
       title: "Keahlian",
-      content:
-          "FLUTTER - LARAVEL - PHP\nHTML - CSS - MYSQL\nSUPABASE",
+      content: "FLUTTER - LARAVEL - PHP\nHTML - CSS - MYSQL\nSUPABASE",
     );
   }
 
@@ -264,10 +249,7 @@ class _ProfileIhzaState extends State<ProfileIhza>
       children: [
         Text(
           "津田 健次郎",
-          style: GoogleFonts.inter(
-            color: Colors.white70,
-            fontSize: 14,
-          ),
+          style: GoogleFonts.inter(color: Colors.white70, fontSize: 14),
         ),
         const SizedBox(height: 6),
         Row(

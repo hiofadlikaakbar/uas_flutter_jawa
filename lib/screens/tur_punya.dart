@@ -13,7 +13,7 @@ class Tur extends StatelessWidget {
           SizedBox(
             height: size.height,
             width: size.width,
-            child: Image.asset('images/Tur.jpg', fit: BoxFit.cover),
+            child: Image.asset('assets/images/Tur.jpg', fit: BoxFit.cover),
           ),
           SafeArea(
             child: Padding(

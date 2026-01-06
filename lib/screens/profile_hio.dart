@@ -39,7 +39,7 @@ class ProfileHio extends StatelessWidget {
               ),
               child: const CircleAvatar(
                 radius: 70,
-                backgroundImage: AssetImage("images/jawa_leader.png"),
+                backgroundImage: AssetImage("assets/images/jawa_leader.png"),
               ),
             ),
 
@@ -61,7 +61,7 @@ class ProfileHio extends StatelessWidget {
 
             /// ROLE
             const Text(
-              "Fullstack Developer • Tech Enthusiast",
+              "Fullstack Developer | Tech Enthusiast",
               style: TextStyle(color: Colors.white70, fontSize: 14),
             ),
 
@@ -87,7 +87,7 @@ class ProfileHio extends StatelessWidget {
                   child: _neonCard(
                     title: "LOCATION",
                     child: const Text(
-                      "Indonesia 🇮🇩",
+                      "Indonesia",
                       style: TextStyle(color: Colors.white70),
                     ),
                   ),
@@ -98,7 +98,7 @@ class ProfileHio extends StatelessWidget {
                   child: _neonCard(
                     title: "FOCUS",
                     child: const Text(
-                      "Mobile Development",
+                      "Fullstack Developer",
                       style: TextStyle(color: Colors.white70),
                     ),
                   ),

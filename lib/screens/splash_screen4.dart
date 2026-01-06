@@ -28,7 +28,7 @@ class SplashScreen4 extends StatelessWidget {
                 child: Opacity(
                   opacity: 0.9,
                   child: Image.asset(
-                    "images/jawa.gif",
+                    "assets/images/jawa.gif",
                     width: 600,
                     height: 500,
                     fit: BoxFit.contain,

@@ -44,7 +44,7 @@ class SplashScreen extends StatelessWidget {
                 // gambar
                 const SizedBox(height: 40),
                 Image.asset(
-                  'images/global.png',
+                  'assets/images/global.png',
                   height: 280,
                   fit: BoxFit.contain,
                 ),

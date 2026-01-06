@@ -81,7 +81,7 @@ class MyAfnan extends StatelessWidget {
                       decoration: BoxDecoration(
                         color: Colors.grey,
                         image: const DecorationImage(
-                          image: NetworkImage('images/afnan.jpeg'),
+                          image: NetworkImage('assets/images/afnan.jpeg'),
                           fit: BoxFit.cover,
                         ),
                       ),

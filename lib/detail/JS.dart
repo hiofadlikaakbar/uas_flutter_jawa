@@ -272,7 +272,7 @@ console.log(buah[0]);
           icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () => Navigator.pop(context),
         ),
-        Image.asset('../../images/JS.png', height: 36),
+        Image.asset('assets/images/JS.png', height: 36),
         const SizedBox(width: 10),
         const Text(
           "JavaScript",

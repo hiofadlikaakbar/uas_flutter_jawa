@@ -227,7 +227,7 @@ public class Main {
           icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () => Navigator.pop(context),
         ),
-        Image.asset('../../images/JAVA.png', height: 36),
+        Image.asset('assets/images/JAVA.png', height: 36),
         const SizedBox(width: 10),
         const Text(
           "Java",

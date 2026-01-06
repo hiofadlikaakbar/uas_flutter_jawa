@@ -199,7 +199,7 @@ func main() {
           icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () => Navigator.pop(context),
         ),
-        Image.asset('../../images/GO.png', height: 36),
+        Image.asset('assets/images/GO.png', height: 36),
         const SizedBox(width: 10),
         const Text(
           "Go",

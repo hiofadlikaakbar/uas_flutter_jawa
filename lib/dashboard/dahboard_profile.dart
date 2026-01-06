@@ -9,25 +9,25 @@ class DashboardProfile extends StatelessWidget {
       {
         "name": "Hio Fadlika Akbar",
         "role": "KETUA PARA JAWA",
-        "image": "images/hio.jpeg",
+        "image": "assets/images/hio.jpeg",
         "route": "/profile_hio",
       },
       {
         "name": "Ihza Anasrulloh",
         "role": "JAWA 2",
-        "image": "images/ihza.jpg",
+        "image": "assets/images/ihza.jpg",
         "route": "/profile_ihza",
       },
       {
         "name": "Muhammad Turtusi Afrizal",
         "role": "JAWA 3",
-        "image": "images/1.4.jpeg",
+        "image": "assets/images/1.4.jpeg",
         "route": "/tur_punya",
       },
       {
         "name": "Afnan Dani",
         "role": "JAWA 4",
-        "image": "images/afnan.jpeg",
+        "image": "assets/images/afnan.jpeg",
         "route": "/profile_afnan",
       },
     ];

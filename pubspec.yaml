@@ -61,17 +61,23 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - images/global.png
-    - images/ftik.png
-    - images/se1.jpg
-    - images/jawa.gif
-    - images/ihza.jpg
-    - images/ihzawa.png
-    - images/Tur.jpg
-    - images/1.4.jpeg
-    - images/afnan.jpeg
-    - images/hio.jpeg
-    - images/jawa_leader.png
+    - assets/images/global.png
+    - assets/images/ftik.png
+    - assets/images/se1.jpg
+    - assets/images/jawa.gif
+    - assets/images/ihza.jpg
+    - assets/images/ihzawa.png
+    - assets/images/C++.png
+    - assets/images/PY.png
+    - assets/images/JS.png
+    - assets/images/JAVA.png
+    - assets/images/GO.png
+    - assets/images/Rust.png
+    - assets/images/Tur.jpg
+    - assets/images/1.4.jpeg
+    - assets/images/afnan.jpeg
+    - assets/images/hio.jpeg
+    - assets/images/jawa_leader.png
   fonts:
     - family: RobotoMono
       fonts:
