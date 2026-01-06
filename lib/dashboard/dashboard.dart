@@ -6,6 +6,7 @@ import 'package:uas_flutter_jawa/detail/JAVA.dart';
 import 'package:uas_flutter_jawa/detail/JS.dart';
 import 'package:uas_flutter_jawa/detail/PY.dart';
 import 'package:uas_flutter_jawa/detail/RUST.dart';
+import 'package:uas_flutter_jawa/services/fcm-service.dart';
 
 class MyDashboard extends StatefulWidget {
   const MyDashboard({super.key});
@@ -34,6 +35,11 @@ class _MyDashboardState extends State<MyDashboard> {
   void initState() {
     super.initState();
     fetchUserName();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      setupFcm();
+      handleInitialMessage();
+
+    });
   }
 
   Future<void> fetchUserName() async {
