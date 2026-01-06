@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
+import 'package:uas_flutter_jawa/dashboard/dashboard.dart';
+import 'package:uas_flutter_jawa/services/notification-service.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -183,8 +185,36 @@ class _LoginState extends State<LoginPage> {
                     width: double.infinity,
                     height: 52,
                     child: ElevatedButton(
-                      onPressed: () {
-                        login();
+                      onPressed: () async {
+                        // contoh validasi login sederhana
+                        bool loginSuccess = true;
+
+                        if (loginSuccess) {
+                          final client = Supabase.instance.client;
+
+                          await client.auth.signInWithPassword(
+                            email: emailController.text.trim(),
+                            password: passwordController.text,
+                          );
+
+                          final user = client.auth.currentUser!;
+                          final profile = await client
+                              .from('profiles')
+                              .select('name')
+                              .eq('id', user.id)
+                              .single();
+
+                          await NotificationService.showLoginSuccess(
+                            profile['name'],
+                          );
+
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => const MyDashboard(),
+                            ),
+                          );
+                        }
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.cyanAccent,
