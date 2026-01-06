@@ -179,25 +179,36 @@ class _ProfileIhzaState extends State<ProfileIhza>
   }
 
   Widget _followTag() {
-    return Row(
-      children: [
-        Container(
-          padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 8),
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(20),
+    return ConstrainedBox(
+      constraints: const BoxConstraints(maxWidth: 200),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(20),
+            ),
+            child: Text(
+              "Follow Me!",
+              style: GoogleFonts.inter(
+                fontWeight: FontWeight.w700,
+                fontSize: 13,
+              ),
+            ),
           ),
-          child: Text(
-            "Follow Me!",
-            style: GoogleFonts.inter(fontWeight: FontWeight.w700, fontSize: 14),
+          const SizedBox(width: 8),
+          Expanded(
+            child: Text(
+              "@onlyyyzaa",
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              style: GoogleFonts.inter(color: Colors.white70, fontSize: 12),
+            ),
           ),
-        ),
-        const SizedBox(width: 10),
-        Text(
-          "@onlyyyzaa",
-          style: GoogleFonts.inter(color: Colors.white70, fontSize: 13),
-        ),
-      ],
+        ],
+      ),
     );
   }
 
