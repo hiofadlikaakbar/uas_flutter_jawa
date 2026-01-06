@@ -15,4 +15,20 @@ const AndroidNotificationChannel channel = AndroidNotificationChannel(
 Future<void> setupFcm() async{
   final messaging = FirebaseMessaging.instance;
   
+  NotificationSettings settings = await messaging.requestPermission(
+    alert: true,
+    announcement: false,
+    badge: true,
+    carPlay: false,
+    criticalAlert: false,
+    provisional: false,
+    sound: true,
+  );
+
+  print('Status permission: ${settings.authorizationStatus}');
+
+  if (settings.authorizationStatus == AuthorizationStatus.denied) {
+    print("User menolak permission notifikasi");
+    return;
+  }
 }
