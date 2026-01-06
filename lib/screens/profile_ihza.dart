@@ -263,21 +263,21 @@ class _ProfileIhzaState extends State<ProfileIhza>
           style: GoogleFonts.inter(color: Colors.white70, fontSize: 14),
         ),
         const SizedBox(height: 6),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
+        Wrap(
+          alignment: WrapAlignment.center,
+          crossAxisAlignment: WrapCrossAlignment.center,
+          spacing: 12,
           children: [
             Container(width: 40, height: 1, color: Colors.white),
-            const SizedBox(width: 12),
             Text(
               "IHZA ANASRULLOH",
               style: GoogleFonts.inter(
-                fontSize: 28,
+                fontSize: 24, // ← kecilin dikit
                 fontWeight: FontWeight.w800,
-                letterSpacing: 1.5,
+                letterSpacing: 1.2,
                 color: Colors.white,
               ),
             ),
-            const SizedBox(width: 12),
             Container(width: 40, height: 1, color: Colors.white),
           ],
         ),
