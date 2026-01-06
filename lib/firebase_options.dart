@@ -66,4 +66,5 @@ class DefaultFirebaseOptions {
     projectId: 'uas-jawa',
     storageBucket: 'uas-jawa.firebasestorage.app',
   );
+
 }
