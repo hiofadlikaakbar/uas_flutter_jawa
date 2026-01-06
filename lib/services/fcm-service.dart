@@ -67,4 +67,9 @@ Future<void> setupFcm() async {
       }
     }
   });
+
+  //background message (saat apk di background)
+  FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) {
+    print("Klik notif dari BACKGROUND");
+  });
 }
