@@ -337,7 +337,7 @@ func main() {
         child: isSaving
             ? const CircularProgressIndicator(color: Colors.black)
             : Text(
-                isCompleted ? "Sudah Selesai ✔" : "Tandai Selesai",
+                isCompleted ? "Sudah Selesai" : "Tandai Selesai",
                 style: const TextStyle(
                   color: Colors.black,
                   fontSize: 16,

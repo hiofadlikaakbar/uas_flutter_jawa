@@ -73,7 +73,7 @@ class _LoginState extends State<LoginPage> {
                   const SizedBox(height: 16),
                   const Center(
                     child: Text(
-                      "CodeLearnJawa",
+                      "JawaCode",
                       style: TextStyle(
                         fontSize: 26,
                         fontWeight: FontWeight.bold,

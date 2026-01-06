@@ -360,7 +360,7 @@ int main() {
         ),
         onPressed: isCompleted ? null : _markCompleted,
         child: Text(
-          isCompleted ? "Sudah Selesai ✔" : "Tandai Selesai",
+          isCompleted ? "Sudah Selesai" : "Tandai Selesai",
           style: const TextStyle(
             color: Colors.black,
             fontSize: 16,
