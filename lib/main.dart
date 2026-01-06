@@ -13,6 +13,7 @@ import 'package:uas_flutter_jawa/screens/splash_screen4.dart';
 import 'package:uas_flutter_jawa/screens/tur_punya.dart';
 import 'package:uas_flutter_jawa/screens/profile_hio.dart';
 import 'package:uas_flutter_jawa/services/fcm-service.dart';
+import 'package:uas_flutter_jawa/services/notification-service.dart';
 import 'screens/splash_screen.dart';
 import 'screens/splash_screen2.dart';
 
@@ -21,6 +22,7 @@ void main() async {
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
   await setupFcm();
+  await NotificationService.init();
 
   await Supabase.initialize(
     url: 'https://qepadldcyhysdbwyxydk.supabase.co',
