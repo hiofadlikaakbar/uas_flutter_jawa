@@ -1,7 +1,9 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:uas_flutter_jawa/dashboard/dahboard_profile.dart';
 import 'package:uas_flutter_jawa/dashboard/dashboard.dart';
+import 'package:uas_flutter_jawa/firebase_options.dart';
 import 'package:uas_flutter_jawa/screens/login.dart';
 import 'package:uas_flutter_jawa/screens/profile_afnan.dart';
 import 'package:uas_flutter_jawa/screens/profile_ihza.dart';
@@ -10,11 +12,17 @@ import 'package:uas_flutter_jawa/screens/splash_screen3.dart';
 import 'package:uas_flutter_jawa/screens/splash_screen4.dart';
 import 'package:uas_flutter_jawa/screens/tur_punya.dart';
 import 'package:uas_flutter_jawa/screens/profile_hio.dart';
+import 'package:uas_flutter_jawa/services/fcm-service.dart';
+import 'package:uas_flutter_jawa/services/notification-service.dart';
 import 'screens/splash_screen.dart';
 import 'screens/splash_screen2.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+
+  await setupFcm();
+  await NotificationService.init();
 
   await Supabase.initialize(
     url: 'https://qepadldcyhysdbwyxydk.supabase.co',
