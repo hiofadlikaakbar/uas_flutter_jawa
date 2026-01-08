@@ -155,7 +155,7 @@ class _ProfileIhzaState extends State<ProfileIhza>
           const Icon(Icons.search, size: 14),
           const SizedBox(width: 6),
           Text(
-            "The Aligator",
+            "TI 23 SE 1",
             style: GoogleFonts.inter(
                 fontWeight: FontWeight.w600, fontSize: 13),
           ),
@@ -263,7 +263,7 @@ class _ProfileIhzaState extends State<ProfileIhza>
     return Column(
       children: [
         Text(
-          "津田 健次郎",
+          "1123150007",
           style: GoogleFonts.inter(
             color: Colors.white70,
             fontSize: 14,
