@@ -49,7 +49,6 @@ Aplikasi ini menyediakan materi pembelajaran yang terstruktur, mudah dipahami, d
   <img src="screenshots/home_screen.png" alt="Home" width="200"/>
   <img src="screenshots/profile_screen.png" alt="Profile" width="200"/>
 </div>
-
 ---
 
 ## Built With
