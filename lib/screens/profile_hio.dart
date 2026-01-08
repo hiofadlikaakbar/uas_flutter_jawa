@@ -45,7 +45,7 @@ class ProfileHio extends StatelessWidget {
 
             const SizedBox(height: 20),
 
-            /// NAME
+            // Nama
             const Text(
               "HIO FADLIKA AKBAR",
               textAlign: TextAlign.center,
