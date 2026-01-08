@@ -2,7 +2,7 @@ name: uas_flutter_jawa
 description: "A new Flutter project."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -30,10 +30,16 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  google_fonts: ^6.1.0
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
+  flutter_svg: ^2.2.3
+  supabase_flutter: ^2.12.0
+  firebase_core: ^4.3.0
+  firebase_messaging: ^16.1.0
+  flutter_local_notifications: ^19.5.0
 
 dev_dependencies:
   flutter_test:
@@ -51,16 +57,46 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
-
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
+  assets:
+    - assets/images/global.png
+    - assets/images/ftik.png
+    - assets/images/se1.jpg
+    - assets/images/jawa.gif
+    - assets/images/ihza.jpg
+    - assets/images/ihzawa.png
+    - assets/images/C++.png
+    - assets/images/PY.png
+    - assets/images/JS.png
+    - assets/images/JAVA.png
+    - assets/images/GO.png
+    - assets/images/Rust.png
+    - assets/images/Tur.jpg
+    - assets/images/1.4.jpeg
+    - assets/images/afnan.jpeg
+    - assets/images/hio.jpeg
+    - assets/images/jawa_leader.png
+  fonts:
+    - family: RobotoMono
+      fonts:
+        - asset: font/RobotoMono-Regular.ttf
+        - asset: font/RobotoMono-Bold.ttf
+          weight: 700
+        - asset: font/Poppins-Italic.ttf
+          style: italic
+        - asset: font/Poppins-Bold.ttf
+          weight: 700
+        - asset: font/Poppins-Regular.ttf
+    - family: Outfit
+      fonts:
+        - asset: font/Outfit-Regular.ttf
+        - asset: font/Outfit-SemiBold.ttf
+        - asset: font/Outfit-Medium.ttf
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
