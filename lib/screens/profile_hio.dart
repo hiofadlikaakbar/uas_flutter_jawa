@@ -59,7 +59,7 @@ class ProfileHio extends StatelessWidget {
 
             const SizedBox(height: 6),
 
-            /// ROLE
+            // Role
             const Text(
               "1123150077 | TI 23 SE 1",
               style: TextStyle(color: Colors.white70, fontSize: 14),
@@ -67,7 +67,7 @@ class ProfileHio extends StatelessWidget {
 
             const SizedBox(height: 28),
 
-            /// ABOUT ME
+            // About
             _neonCard(
               title: "ABOUT ME",
               child: const Text(
@@ -78,7 +78,7 @@ class ProfileHio extends StatelessWidget {
 
             const SizedBox(height: 16),
 
-            /// LOCATION & FOCUS (NO EXPANDED!)
+            //  lokasi dan focus keahlian
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -108,7 +108,7 @@ class ProfileHio extends StatelessWidget {
 
             const SizedBox(height: 16),
 
-            /// SKILLS
+            // keahlian
             _neonCard(
               title: "Techstack",
               child: Wrap(
@@ -141,7 +141,7 @@ class ProfileHio extends StatelessWidget {
     );
   }
 
-  /// NEON CARD WIDGET
+  // neon card
   static Widget _neonCard({required String title, required Widget child}) {
     return Container(
       width: double.infinity,
@@ -177,7 +177,7 @@ class ProfileHio extends StatelessWidget {
   }
 }
 
-/// SKILL CHIP
+// skill chip
 class _SkillChip extends StatelessWidget {
   final String label;
   const _SkillChip(this.label);
