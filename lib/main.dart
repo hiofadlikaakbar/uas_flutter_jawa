@@ -10,7 +10,7 @@ import 'package:uas_flutter_jawa/screens/profile_ihza.dart';
 import 'package:uas_flutter_jawa/screens/signup.dart';
 import 'package:uas_flutter_jawa/screens/splash_screen3.dart';
 import 'package:uas_flutter_jawa/screens/splash_screen4.dart';
-import 'package:uas_flutter_jawa/screens/tur_punya.dart';
+import 'package:uas_flutter_jawa/screens/profile_turtusi.dart';
 import 'package:uas_flutter_jawa/screens/profile_hio.dart';
 import 'package:uas_flutter_jawa/services/fcm-service.dart';
 import 'package:uas_flutter_jawa/services/notification-service.dart';
