@@ -38,7 +38,6 @@ class _MyDashboardState extends State<MyDashboard> {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       setupFcm();
       handleInitialMessage();
-
     });
   }
 
@@ -140,7 +139,7 @@ class _MyDashboardState extends State<MyDashboard> {
               ),
         const SizedBox(height: 8),
         const Text(
-          'Buka skill baru mu dengan belajar di CodeJawa semua materi pemrograman dari pemula sampai lanjutan ada disini',
+          'Buka skill baru mu dengan belajar di JawaCode semua materi pemrograman dari pemula sampai lanjutan ada disini',
           style: TextStyle(color: Colors.white60, fontSize: 14, height: 1.5),
         ),
       ],
