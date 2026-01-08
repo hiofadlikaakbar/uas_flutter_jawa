@@ -43,12 +43,87 @@ Aplikasi ini menyediakan materi pembelajaran yang terstruktur, mudah dipahami, d
 
 ## Screenshots
 
+### Splash Screen
 <div align="center">
-  <img src="screenshots/splash_screen.png" alt="Splash Screen" width="200"/>
-  <img src="screenshots/login_screen.png" alt="Login" width="200"/>
-  <img src="screenshots/home_screen.png" alt="Home" width="200"/>
-  <img src="screenshots/profile_screen.png" alt="Profile" width="200"/>
+  <img src="assets/images/ss/splash1.jpg" width="160"/>
+  <img src="assets/images/ss/splash2.jpg" width="160"/>
+  <img src="assets/images/ss/splash3.jpg" width="160"/>
+  <img src="assets/images/ss/splash4.jpg" width="160"/>
 </div>
+
+### Login Page
+<div align="center">
+  <img src="assets/images/ss/login.jpg" width="200"/>
+</div>
+
+### Register Page
+<div align="center">
+  <img src="assets/images/ss/signup.jpg" width="200"/>
+</div>
+
+### Dashboard
+<div align="center">
+  <img src="assets/images/ss/dashboard.jpg" width="200"/>
+</div>
+
+### Materi 
+<div align="center">
+  <img src="assets/images/ss/c++.jpg" width="160"/>
+  <img src="assets/images/ss/python.jpg" width="160"/>
+  <img src="assets/images/ss/js.jpg" width="160"/>
+  <img src="assets/images/ss/java.jpg" width="160"/>
+  <img src="assets/images/ss/go.jpg" width="160"/>
+  <img src="assets/images/ss/rust.jpg" width="160"/>
+</div>
+
+### Materi Done
+<div align="center">
+  <img src="assets/images/ss/jsselesai.jpg" width="160"/>
+  <img src="assets/images/ss/jsselesai2.jpg" width="160"/>
+</div>
+
+### Profile Team  
+<div align="center">
+  <img src="assets/images/ss/dashboardprofile.jpg" width="160"/>
+  <img src="assets/images/ss/profilehio.jpg" width="160"/>
+  <img src="assets/images/ss/profileihza.jpg" width="160"/>
+  <img src="assets/images/ss/profiletusi.jpg" width="160"/>
+  <img src="assets/images/ss/profileafnan.jpg" width="160"/>
+</div>
+
+### Local Notif After Login
+<div align="center">
+  <img src="assets/images/ss/localnotif1.jpg" width="160"/>
+  <img src="assets/images/ss/localnotif2.jpg" width="160"/>
+</div>
+
+### Fcm (Firebase Cloud Messaging)
+<div align="center">
+  <img src="assets/images/ss/fcm.png" width="160"/> <br/> <br/>
+  <img src="assets/images/ss/fcm1.png" width="300"/>
+  <img src="assets/images/ss/fcm2.png" width="300"/>
+  <img src="assets/images/ss/fcm3.png" width="300"/> <br/> <br/>
+  <img src="assets/images/ss/notiffcm.jpg" width="160"/>
+  <img src="assets/images/ss/notiffcm2.jpg" width="160"/>
+</div>
+
+---
+
+## Demo Video
+
+Lihat video demo aplikasi kami untuk melihat semua fitur dalam aksi!
+
+**[Watch Full Demo on Instagram](https://youtube.com/watch?v=dQw4w9WgXcQ)**
+
+---
+
+## Download APK
+
+Download versi terbaru aplikasi JawaCode:
+
+### Latest Release v1.0.0
+- [**Download APK (85 MB)**](https://drive.google.com/drive/folders/18rS_tfyqZqqe9O0FQTcQtISAckZiOASX?usp=drive_link)
+
 ---
 
 ## Built With
