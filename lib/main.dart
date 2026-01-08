@@ -10,7 +10,7 @@ import 'package:uas_flutter_jawa/screens/profile_ihza.dart';
 import 'package:uas_flutter_jawa/screens/signup.dart';
 import 'package:uas_flutter_jawa/screens/splash_screen3.dart';
 import 'package:uas_flutter_jawa/screens/splash_screen4.dart';
-import 'package:uas_flutter_jawa/screens/tur_punya.dart';
+import 'package:uas_flutter_jawa/screens/profile_turtusi.dart';
 import 'package:uas_flutter_jawa/screens/profile_hio.dart';
 import 'package:uas_flutter_jawa/services/fcm-service.dart';
 import 'package:uas_flutter_jawa/services/notification-service.dart';
@@ -50,7 +50,7 @@ class MyApp extends StatelessWidget {
         '/splash4': (context) => const SplashScreen4(),
         '/login': (context) => const LoginPage(),
         '/signup': (context) => const SignupPage(),
-        '/tur_punya': (context) => const Tur(),
+        '/profile_turtusi': (context) => const Tur(),
         '/profile_afnan': (context) => const MyAfnan(),
         '/dashboard': (context) => const MyDashboard(),
         '/profile_hio': (context) => const ProfileHio(),

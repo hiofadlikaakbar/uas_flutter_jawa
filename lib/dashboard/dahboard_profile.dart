@@ -22,7 +22,7 @@ class DashboardProfile extends StatelessWidget {
         "name": "Muhammad Turtusi Afrizal",
         "role": "JAWA 3",
         "image": "assets/images/1.4.jpeg",
-        "route": "/tur_punya",
+        "route": "/profile_turtusi",
       },
       {
         "name": "Afnan Dani",

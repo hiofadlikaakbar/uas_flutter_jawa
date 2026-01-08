@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:uas_flutter_jawa/screens/final_tur_punya.dart';
+import 'package:uas_flutter_jawa/screens/full_profile_turtusi.dart';
 
 class Tur extends StatelessWidget {
   const Tur({super.key});
