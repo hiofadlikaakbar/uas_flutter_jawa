@@ -139,7 +139,7 @@ class _MyDashboardState extends State<MyDashboard> {
               ),
         const SizedBox(height: 8),
         const Text(
-          'Buka skill baru mu dengan belajar di JawaCode semua materi pemrograman dari pemula sampai lanjutan ada disini',
+          'Buka skill barumu dengan belajar di JawaCode semua materi pemrograman dari basic sampai lanjutan ada disini lho ya',
           style: TextStyle(color: Colors.white60, fontSize: 14, height: 1.5),
         ),
       ],
