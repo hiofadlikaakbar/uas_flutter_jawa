@@ -220,7 +220,7 @@ lib/
 │   └── notification_service.dart
 └──────────────────────────────────────────────────
 ```
-## 📁 Project Structure
+## App Structure
 
 <div align="center">
   <img src="assets/images/ss/architectur.png" width="1200"/>
