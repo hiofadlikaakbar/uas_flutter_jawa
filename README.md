@@ -119,12 +119,14 @@ Lihat video demo aplikasi kami untuk melihat semua fitur dalam aksi!
 
 ## Download APK
 
-Download versi terbaru aplikasi JawaCode:
+Download versi terbaru aplikasi JawaKode:
 
 ### Latest Release v1.0.0
 - [**Download APK (85 MB)**](https://drive.google.com/drive/folders/18rS_tfyqZqqe9O0FQTcQtISAckZiOASX?usp=drive_link)
 
----
+**Minimum Requirements:**
+- Android 6.0 (API level 23) or higher
+- ~100MB free storage space
 
 ## Built With
 
@@ -135,16 +137,135 @@ Download versi terbaru aplikasi JawaCode:
 
 ---
 
+## Getting Started
+
+### Prerequisites
+
+Pastikan Anda sudah menginstall:
+- Flutter SDK (3.16.0 or higher)
+- Dart SDK (3.2.0 or higher)
+- Android Studio / VS Code
+- Git
+
+### Installation
+
+1. Clone repository
+```bash
+git clone https://github.com/hiofadlikaakbar/uas_flutter_jawa
+cd uas_flutter_jawa
+```
+
+2. Install dependencies
+```bash
+flutter pub get
+```
+
+3. Setup Firebase
+```bash
+# Download google-services.json dari Firebase Console
+# Place in android/app/
+cp path/to/google-services.json android/app/
+```
+
+4. Run aplikasi
+```bash
+flutter run
+```
+
+### Build APK
+
+```bash
+# Debug APK
+flutter build apk --debug
+
+# Release APK
+flutter build apk --release
+
+# Split APK by ABI
+flutter build apk --split-per-abi
+```
+
+## 📁 Project Structure
+
+```
+lib/
+├── main.dart                 # Entry point
+|── firebase_optios.dart
+|── constants.dart      
+├── dashboard/                # Main pages after user login
+│   ├── dashboard.dart        
+│   └── dashboard_profile.dart              
+├── detail/                   # Programming language detail pages
+│   ├── C++.dart
+│   ├── GO.dart
+│   ├── JAVA.dart
+│   ├── JS.dart
+│   ├── PY.dart
+│   └── RUST.dart
+├── screens/                  # UI Screens
+│   ├── full_profile_turtusi.dart
+│   ├── login.dart
+│   ├── profile_afnan.dart
+│   ├── profile_hio.dart
+│   ├── profile_ihza.dart
+│   ├── profile_turtusi.dart
+│   ├── signup.dart
+│   ├── splash_screen.dart
+│   ├── splash_screen2.dart
+│   ├── splash_screen3.dart
+│   └── splash_screen4.dart
+├── widgets/                  # Reusable widgets
+├── services/                 # Business logic
+│   ├── fcm-service.dart
+│   └── notification_service.dart
+└──────────────────────────────────────────────────
+```
+## 📁 Project Structure
+
+<div align="center">
+  <img src="assets/images/ss/architectur.png" width="1200"/>
+</div>
+
+## Authentication Flow
+
+```
+1. Splash Screen (Auto-login check)
+   ↓
+2. Login Screen / Register Screen
+   ↓
+3. Home Screen (Dashboard)
+   ↓
+4. Profile & Settings
+```
+
+### Development Workflow
+
+1. Fork repository
+2. Create feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to branch (`git push origin feature/AmazingFeature`)
+5. Open Pull Request
+
+---
+
 ## Team Members
 
 ### Development Team
 
-| Name | Role |
-|------|------|
-| **Hio Fadlika Akbar** | Founder & Mobile Developer |
-| **Ihza Anasrulloh** | Mobile Developer |
-| **Muhammad Turtusi Afrizal Perdana** | Mobile Developer |
-| **Afnan Dani Alaudin** | Mobile Developer |
+| NIM | Name | Role | Contributions | Github |
+|------|------| ------| ------| ------|
+| 1123150077 |**Hio Fadlika Akbar** | Project Lead & Backend Engineer | - Authentication system<br>- Supabase integration<br>- Splash Screen<br>- Database design<br>- Profile screen | https://github.com/hiofadlikaakbar |
+| 1123150007 |**Ihza Anasrulloh** | Frontend Developer (UI/UX) | - Splash screen<br>- Login Page<br>- Dashboard Profile<br>- Profile screen<br>- Video Editing | https://github.com/IhzaAnasrulloh |
+| 1123150012 |**Muhammad Turtusi Afrizal Perdana** | Frontend Developer | - Dashboard implementation<br>- Profile screen<br>- Materi page development<br>- Splash Screen | https://github.com/CoupDerace |
+| 1123150074 |**Afnan Dani Alaudin** | Mobile Developer & Application Tester | - Firebase Cloud Messaging (FCM) integration<br>- Notification <br>- Testing & QA<br>- Profile screen<br>- Splash Screen | https://github.com/afnan923 |
+
+---
+
+## Acknowledgments
+
+- [Flutter Community](https://flutter.dev/community) - For amazing packages
+- [Firebase](https://firebase.google.com/) - For notification services
+- [Supabase](https://www.flaticon.com/) - For backend services
 
 ---
 
