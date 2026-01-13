@@ -113,7 +113,7 @@ Aplikasi ini menyediakan materi pembelajaran yang terstruktur, mudah dipahami, d
 
 Lihat video demo aplikasi kami untuk melihat semua fitur dalam aksi!
 
-**[Watch Full Demo on Youtube Short](https://youtu.be/HIUQvjDB0nE)**
+**[Watch Full Demo on Instagram](https://www.instagram.com/reel/DTdnELnil6pow0nEn22VQwgN3MUDoRFtbgI3HM0/?igsh=MWQ4ZjIxY29rc3NqZQ==)**
 
 ---
 
